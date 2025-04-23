@@ -1,0 +1,131 @@
+/* Top Bar */
+.topBar {
+  display: flex;
+  width: 100%;
+  background-color: #654e6f;
+  color: white;
+}
+
+.topBarLinks {
+  display: flex;
+  width: 100%;
+  justify-content: flex-end;
+  text-decoration: none;
+}
+
+.topBarMenu {
+  display: flex;
+  gap: 1rem;
+  padding: 0 1rem;
+  font-size: 11.2px;
+}
+
+.topBarMenuItem {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.topBarLink:hover {
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+.topBarLink a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* Main Navigation */
+.mainNav {
+  display: flex;
+  width: 100%;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.navContent {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 1rem;
+}
+
+.logo {
+  width: 100%;
+  height: 100%;
+}
+
+@media (min-width: 768px) {
+  .navContent {
+    justify-content: space-evenly;
+  }
+}
+
+.navLinks {
+  display: none;
+  gap: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .navLinks {
+    display: flex;
+  }
+}
+
+.navMenuItem {
+  display: flex;
+  cursor: pointer;
+  align-items: center;
+}
+
+.dropdownIcon {
+  margin-left: 0.5rem;
+  height: 0.75rem;
+  width: 0.75rem;
+  color: #808080;
+}
+
+.navControls {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.languageSelector {
+  display: flex;
+  align-items: center;
+}
+
+.activeLanguage {
+  font-weight: 500;
+}
+
+.languageDivider {
+  margin: 0 0.25rem;
+  color: #9ca3af;
+}
+
+.themeButton {
+  color: #c78500;
+  background: none;
+  border: none;
+  font-size: 1.25rem;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.mobileMenuButton {
+  margin-left: 0.5rem;
+  color: #161616;
+  display: block;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+@media (min-width: 768px) {
+  .mobileMenuButton {
+    display: none;
+  }
+}
