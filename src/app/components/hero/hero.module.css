@@ -87,7 +87,8 @@
 
 .featuresList {
   display: flex;
-  justify-content: center;
+  align-items: center;
+  flex-direction: column;
   gap: 2rem;
   font-size: 0.875rem;
 }
@@ -117,5 +118,11 @@
 
   .heroText {
     text-align: left;
+  }
+
+  .featuresList {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
   }
 }
