@@ -5,5 +5,16 @@ export const routing = defineRouting({
     locales: ['nl', 'en'],
 
     // Used when no locale matches
-    defaultLocale: 'nl'
+    defaultLocale: 'nl',
+
+    // Define pathname mapping between languages
+    pathnames: {
+        '/ervaringsplein': {
+            en: '/experience-square',
+        },
+        // Add other path mappings here
+        // '/voorbeeld-pad': {
+        //   en: '/example-path',
+        // },
+    }
 });
