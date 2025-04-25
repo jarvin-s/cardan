@@ -1,0 +1,29 @@
+{
+  "title": "Jouw partners in digitale toegankelijkheid",
+  "description": "Samen met jou maken wij de hele wereld digitaal toegankelijk én inclusief. Deze branches helpen wij met het borgen van digitale toegankelijkheid:",
+  "nav": {
+    "ervaring": "Ervaringsplein",
+    "mijn-cardan": "Mijn Cardan",
+    "services": "Onze diensten",
+    "industries": "Branches",
+    "knowledge": "Kennisbank",
+    "about": "Over ons",
+    "contact": "Contact"
+  },
+  "home-page": {
+    "title": "Jouw partners in digitale toegankelijkheid",
+    "description": "Samen met jou maken wij de hele wereld digitaal toegankelijk én inclusief. Deze branches helpen wij met het borgen van digitale toegankelijkheid:",
+    "branches": {
+      "government": "Overheid",
+      "businesses": "Bedrijven",
+      "suppliers": "Leveranciers"
+    },
+    "cta-button": "Wordt digitaal toegankelijk",
+    "features": {
+      "wcag": "<strong>WCAG 2.2</strong> onderzoeken",
+      "report": "Rapport voor<strong>toegankelijkheidsverklaring</strong>",
+      "certification": "Ga voor <strong>Waarmerk drempelvrij.nl</strong>",
+      "eaa": "Alle hulp bij de <strong>European Acessibility Act</strong>"
+    }
+  }
+}

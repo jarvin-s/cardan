@@ -1,8 +1,10 @@
 import Image from "next/image";
 import Link from "next/link";
-import styles from "./navbar.module.css";
-
+import styles from "./Navbar.module.css";
+import { useTranslations } from "next-intl";
+import LanguageSwitcher from "../LanguageSwitcher/LanguageSwitcher";
 const Navbar = () => {
+  const t = useTranslations("nav");
   return (
     <header>
       <div className={styles.topBar}>
@@ -10,7 +12,7 @@ const Navbar = () => {
           <ul className={styles.topBarMenu}>
             <li className={styles.topBarMenuItem}>
               <span className={styles.topBarLink}>
-                <Link href="/ervaringsplein">Ervaringsplein</Link>
+                <Link href="/ervaringsplein">{t("ervaring")}</Link>
               </span>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -26,7 +28,7 @@ const Navbar = () => {
             </li>
             <li className={styles.topBarMenuItem}>
               <span className={styles.topBarLink}>
-                <Link href="/">Mijn Cardan</Link>
+                <Link href="/">{t("mijn-cardan")}</Link>
               </span>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -77,7 +79,7 @@ const Navbar = () => {
           </Link>
           <div className={styles.navLinks}>
             <div className={styles.navMenuItem}>
-              <span>Onze diensten</span>
+              <span>{t("services")}</span>
               <svg
                 className={styles.dropdownIcon}
                 viewBox="0 0 24 24"
@@ -92,7 +94,7 @@ const Navbar = () => {
               </svg>
             </div>
             <div className={styles.navMenuItem}>
-              <span>Branches</span>
+              <span>{t("industries")}</span>
               <svg
                 className={styles.dropdownIcon}
                 viewBox="0 0 24 24"
@@ -107,7 +109,7 @@ const Navbar = () => {
               </svg>
             </div>
             <div className={styles.navMenuItem}>
-              <span>Kennisbank</span>
+              <span>{t("knowledge")}</span>
               <svg
                 className={styles.dropdownIcon}
                 viewBox="0 0 24 24"
@@ -122,7 +124,7 @@ const Navbar = () => {
               </svg>
             </div>
             <div className={styles.navMenuItem}>
-              <span>Over ons</span>
+              <span>{t("about")}</span>
               <svg
                 className={styles.dropdownIcon}
                 viewBox="0 0 24 24"
@@ -141,11 +143,7 @@ const Navbar = () => {
             </div>
           </div>
           <div className={styles.navControls}>
-            <div className={styles.languageSelector}>
-              <span className={styles.activeLanguage}>NL</span>
-              <span className={styles.languageDivider}>|</span>
-              <span>EN</span>
-            </div>
+            <LanguageSwitcher />
             <button className={styles.themeButton}>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
