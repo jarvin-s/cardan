@@ -1,0 +1,32 @@
+{
+  "title": "Your partner in digital accessibility",
+  "description": "Together with you, we're making the whole world digitally accessible and inclusive. We help these industries secure digital accessibility:",
+  "nav": {
+    "ervaring": "Experience Square",
+    "mijn-cardan": "My Cardan",
+    "services": "Our services",
+    "industries": "Industries",
+    "knowledge": "Knowledge base",
+    "about": "About Cardan",
+    "contact": "Contact"
+  },
+  "home-page": {
+    "title": "Your partner in digital accessibility",
+    "description": "Together with you, we're making the whole world digitally accessible and inclusive. We help these industries secure digital accessibility:",
+    "branches": {
+      "government": "Government",
+      "businesses": "Businesses",
+      "suppliers": "Suppliers"
+    },
+    "cta-button": "Become digitally accessible",
+    "features": {
+      "wcag": "<strong>WCAG 2.2</strong> audit",
+      "report": "Report for<strong>accessibility statement</strong>",
+      "certification": "Get certified for <strong>Drempelvrij Certificate</strong>",
+      "eaa": "All help with the <strong>European Accessibility Act</strong>"
+    }
+  },
+  "ervaringsplein": {
+    "title": "Welcome to the Experience Square!"
+  }
+}
