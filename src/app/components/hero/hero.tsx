@@ -66,7 +66,7 @@ const Hero = () => {
         </div>
         <div className={styles.heroImage}>
           <Image
-            src="/cardan-team.jpg"
+            src="/images/cardan-team.jpg"
             alt="Cardan team"
             width={584}
             height={584}
