@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Montserrat } from "next/font/google";
 import "../globals.css";
-import Navbar from "../components/Navbar/Navbar";
+import Navbar from "../components/navbar/navbar";
 import { NextIntlClientProvider } from "next-intl";
 import { getLocale, getMessages } from "next-intl/server";
 
