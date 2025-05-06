@@ -1,0 +1,43 @@
+.topBar {
+    background-color: #6b5178;
+    color: white;
+    padding: 0.5rem 1rem;
+    font-size: 0.9rem;
+    display: flex;
+    justify-content: flex-end;
+  }
+  
+  .topBarLinks a {
+    margin-left: 1.5rem;
+    color: white;
+    text-decoration: none;
+  }
+  
+  .mainNav {
+    background-color: white;
+    padding: 0.75rem 1.5rem;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  .navContent {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  .navLinks {
+    list-style: none;
+    display: flex;
+    gap: 1.5rem;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .navLinks li {
+    cursor: pointer;
+    color:black;
+  }
+  
+  .langSwitch {
+    font-size: 0.9rem;
+  }
