@@ -94,7 +94,6 @@
   padding: 8px 16px;
   cursor: pointer;
   font-weight: bold;
-  font-family: inherit;
 }
 
 .sendButton:hover {
@@ -159,4 +158,10 @@
   display: flex;
   justify-content: center;
   gap: 20px;
+}
+
+@media (max-width: 768px) {
+  .faqContainer {
+    flex-direction: column;
+  }
 }
