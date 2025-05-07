@@ -1,0 +1,47 @@
+.faqSection {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.faqCard {
+  background-color: #f8f8f8;
+  border-radius: 8px;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.faqHeader {
+  background-color: #664a7c;
+  color: white;
+  padding: 10px 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.faqHeader h3 {
+  margin: 0;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.expandButton {
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+  font-size: 1.2rem;
+  font-family: inherit;
+}
+
+.faqContent {
+  padding: 15px;
+}
+
+.faqContent p {
+  margin: 0;
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
