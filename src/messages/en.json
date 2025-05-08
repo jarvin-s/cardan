@@ -58,10 +58,8 @@
       "postcode": "ZIP Code",
       "submit": "Submit",
       "next": "Next"
-    },
-    "cerebralPalsy": "Cerebral Palsy",
-    "multipleSclerosis": "Multiple Sclerosis",
-    "timerLabel": "Time:"
+    }
+  },
   "welkom-pagina": {
     "title": "Welcome to the Experience Square!",
     "heading": "Today, you step into the shoes of people who face daily obstacles on the internet.",
@@ -85,16 +83,16 @@
     "telefoon": "<strong>Or call us on +31 (0)88 500 4070</strong>"
   },
   "stationnav": {
-  "titel": "Stations:",
-  "naam1": "Visual Impairment",
-  "slug1": "visual-impairment",
-  "naam2": "Auditory Impairment",
-  "slug2": "auditory-impairment",
-  "naam3": "Cognitive Impairment",
-  "slug3": "cognitive-impairment",
-  "naam4": "Motor Impairment",
-  "slug4": "motor-impairment",
-  "naam5": "Dyslexia & Color Contrast",
-  "slug5": "dyslexia-color-contrast"
+    "titel": "Stations:",
+    "naam1": "Visual Impairment",
+    "slug1": "visual-impairment",
+    "naam2": "Auditory Impairment",
+    "slug2": "auditory-impairment",
+    "naam3": "Cognitive Impairment",
+    "slug3": "cognitive-impairment",
+    "naam4": "Motor Impairment",
+    "slug4": "motor-impairment",
+    "naam5": "Dyslexia & Color Contrast",
+    "slug5": "dyslexia-color-contrast"
   }
 }
