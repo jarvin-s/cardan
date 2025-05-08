@@ -1,0 +1,98 @@
+{
+  "nav": {
+    "ervaring": "Experience Square",
+    "mijn-cardan": "My Cardan",
+    "services": "Our services",
+    "industries": "Industries",
+    "knowledge": "Knowledge base",
+    "about": "About Cardan",
+    "contact": "Contact"
+  },
+  "home-page": {
+    "title": "Your partner in digital accessibility",
+    "description": "Together with you, we're making the whole world digitally accessible and inclusive. We help these industries secure digital accessibility:",
+    "branches": {
+      "government": "Government",
+      "businesses": "Businesses",
+      "suppliers": "Suppliers"
+    },
+    "cta-button": "Become digitally accessible",
+    "features": {
+      "wcag": "<strong>WCAG 2.2</strong> audit",
+      "report": "Report for <strong>accessibility statement</strong>",
+      "certification": "Get certified for <strong>Drempelvrij Certificate</strong>",
+      "eaa": "All help with the <strong>European Accessibility Act</strong>"
+    }
+  },
+  "ervaringsplein": {
+    "title": "Welcome to the Experience Square!",
+    "cognitief": "Cognitive",
+    "motorisch": "Motor"
+  },
+  "cognitief": {
+    "title": "Experience what it's like to have ADHD",
+    "subtitle": "While writing the email, distracting pop-ups and animations similar to thoughts of ADHD appear.",
+    "form": {
+      "title": "Write an email",
+      "subtitle": "Write an email to your teacher, reporting that you're late for today's lesson.",
+      "timer-label": "Time: ",
+      "name": "To",
+      "subject": "Subject",
+      "message": "Message",
+      "submit": "Submit",
+      "next": "Next"
+    }
+  },
+  "motorisch": {
+    "title": "Experience what it's like to have Cerebral Palsy",
+    "subtitle": "While selecting the different input fields, your cursor moves all over the place.",
+    "form": {
+      "title": "Enter your data",
+      "subtitle": "Fill in (fake) data to complete the payment",
+      "timer-label": "Time: ",
+      "cerebral-palsy": "Cerebral Palsy",
+      "multiple-sclerosis": "Multiple Sclerosis",
+      "name": "Name",
+      "lastname": "Last name",
+      "address": "Address",
+      "postcode": "ZIP Code",
+      "submit": "Submit",
+      "next": "Next"
+    }
+  },
+  "welkom-pagina": {
+    "title": "Welcome to the Experience Square!",
+    "heading": "Today, you step into the shoes of people who face daily obstacles on the internet.",
+    "paragraaf": "From visual impairments to motor disabilities. Each of the five stations lets you experience firsthand how important digital accessibility is.",
+    "finaltext": "At the end, you’ll get tips on how you can improve your website.",
+    "button": "Start the Experience Square"
+  },
+  "footerdeel": {
+    "titel1": "Digital Accessibility",
+    "diensten": "Services",
+    "branches": "Industries",
+    "wcag": "The WCAG",
+    "blog": "Blog",
+    "nieuwsbrief": "Inschrijven nieuwsbrief",
+    "titel2": "Cardan",
+    "over-cardan": "About Cardan",
+    "onze-mensen": "Our people",
+    "vacatures": "Vacancies",
+    "titel3": "Contact",
+    "email": "<strong>Mail us at contact@cardan.com</strong>",
+    "telefoon": "<strong>Or call us on +31 (0)88 500 4070</strong>"
+  },
+  "stationnav": {
+    "titel": "Stations:",
+    "naam1": "Visual Impairment",
+    "slug1": "visual-impairment",
+    "naam2": "Auditory Impairment",
+    "slug2": "auditory-impairment",
+    "naam3": "Cognitive Impairment",
+    "slug3": "cognitive-impairment",
+    "naam4": "Motor Impairment",
+    "slug4": "motor-impairment",
+    "naam5": "Dyslexia & Color Contrast",
+    "slug5": "dyslexia-color-contrast"
+  }
+}
