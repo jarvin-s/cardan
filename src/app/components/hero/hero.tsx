@@ -1,5 +1,5 @@
 import Image from "next/image";
-import styles from "./Hero.module.css";
+import styles from "./hero.module.css";
 import { useTranslations } from "next-intl";
 
 const Hero = () => {

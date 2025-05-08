@@ -1,0 +1,92 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    /* align-items: center; */
+    margin: 2rem;
+    text-align: left;
+    margin-left: 18rem;
+    
+  }
+  
+  /* Titel boven het menu */
+  .titel {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+  }
+  
+  /* Horizontale rij van alle stations */
+  .navitems {
+    display: flex;
+    gap: 2rem;
+    flex-wrap: wrap;
+  }
+  
+  /* Klikbare link styling */
+  .stationLink {
+    text-decoration: none;
+    color: inherit;
+    display: inline-block;
+  }
+  
+  /* Individueel station */
+  .station1, .station2, .station3, .station4, .station5 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+  }
+  
+  .station1:hover,
+  .station2:hover,
+  .station3:hover,
+  .station4:hover,
+  .station5:hover {
+    transform: scale(1.05);
+  }
+  
+  /* Het groene balkje boven het nummer */
+  .balkje {
+    width: 9rem;
+    height: 0.5rem;
+    background-color: #E6F7EA;
+    border-radius: 4px;
+    margin-bottom: 0.5rem;
+  }
+  
+  .stationTitel {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    font-size: 1.2rem;
+    font-weight: bold;
+    gap: 0.4rem;
+    flex-wrap: nowrap;
+    max-width: 9.5rem; /* of wat je nodig hebt 150 px*/
+  }
+  /* Nummer van het station */
+  .nummer {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin: 0;
+  }
+  
+  /* Naam van het station */
+  .naam {
+    font-size: 0.875rem;
+    word-break: break-word;
+    line-height: 1.2;
+    text-align: left;
+    margin-left: 1rem;
+  }
+
+  .balkjeactief {
+    width: 60px;
+    height: 8px;
+    background-color: #008743;
+    border-radius: 4px;
+    margin-bottom: 0.5rem;
+  }
+  
