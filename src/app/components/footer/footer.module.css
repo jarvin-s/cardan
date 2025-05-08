@@ -1,0 +1,65 @@
+.footer {
+    background-color: #654F6F;
+    color: white;
+    padding: 40px;
+    padding: 4rem 8rem;
+    border: black;
+    background-image: url("/images/footer/footerbackground.png"); /* pad naar jouw afbeelding */
+    background-repeat: no-repeat;
+    background-position: right bottom;
+    background-size: contain;
+  }
+  
+  .logo {
+    margin-bottom: 4rem;
+    width: 183px;
+    height: 29px;
+    aspect-ratio: auto 183 / 29;
+  }
+  
+  .columns {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8rem;
+    margin-left: 3rem;
+  }
+  
+  .column {
+    /* flex: 0.5; */
+    min-width: 50px;
+  }
+  
+  .column h3 {
+    font-size: 1rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+  }
+  
+  .column ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .column ul li {
+    margin-bottom: 1.2rem;
+  }
+  
+  .column ul li:hover {
+    text-decoration: underline;
+  }
+
+  .column a {
+    color: white;
+    text-decoration: none;
+  }
+
+.column a:hover {
+  text-decoration: underline;
+}
+  
+  .socials {
+    display: flex;
+    gap: 1rem;
+    margin-top: 2rem;
+  }

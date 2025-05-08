@@ -26,7 +26,41 @@
       "eaa": "Alle hulp bij de <strong>European Acessibility Act</strong>"
     }
   },
-  "ervaringsplein": {
-    "title": "Welkom op het Ervaringsplein!"
+  "welkom-pagina": {
+    "title": "Welkom op het Ervaringsplein!",
+    "heading": "Vandaag stap je in de schoenen van mensen die dagelijks obstakels tegenkomen op het internet.",
+    "paragraaf": "Van slechtziendheid tot motorische beperkingen. Elk van de vijf stations laat je zélf ervaren hoe belangrijk digitale toegankelijkheid is.",
+    "finaltext": "Op het einde krijg je tips hoe jij je website kan verbeteren.",
+    "button": "Start het Ervaringsplein"
+  },
+
+  "footerdeel": {
+    "titel1": "Digitale Toegankelijk",
+    "diensten": "Diensten",
+    "branches": "Branches",
+    "wcag": "De WCAG",
+    "blog": "Blog",
+    "nieuwsbrief": "Inschrijven nieuwsbrief",
+    "titel2": "Cardan",
+    "over-cardan": "Over Cardan",
+    "onze-mensen": "Onze mensen",
+    "vacatures": "Vacatures",
+    "titel3": "Contact",
+    "email": "Mail ons op <strong>contact@cardan.com</strong>",
+    "telefoon": "Of bel naar <strong>+31 (0)88 500 4070</strong>"
+  },
+
+  "stationnav": {
+    "titel": "Stations:",
+    "naam1": "Visuele beperking",
+    "slug1": "visuele-beperking",
+    "naam2": "Auditieve beperking",
+    "slug2": "auditieve-beperking",
+    "naam3": "Cognitieve beperking",
+    "slug3": "cognitieve-beperking",
+    "naam4": "Motorische beperking",
+    "slug4": "motorische-beperking",
+    "naam5": "Dyslexie & kleurcontrast",
+    "slug5": "dyslexie-kleurcontrast"
   }
 }

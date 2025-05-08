@@ -26,7 +26,42 @@
       "eaa": "All help with the <strong>European Accessibility Act</strong>"
     }
   },
-  "ervaringsplein": {
-    "title": "Welcome to the Experience Square!"
+  "welkom-pagina": {
+    "title": "Welcome to the Experience Square!",
+    "heading": "Today, you step into the shoes of people who face daily obstacles on the internet.",
+    "paragraaf": "From visual impairments to motor disabilities. Each of the five stations lets you experience firsthand how important digital accessibility is.",
+    "finaltext": "At the end, you’ll get tips on how you can improve your website.",
+    "button": "Start the Experience Square"
+  },
+
+  "footerdeel": {
+    "titel1": "Digital Accessibility",
+    "diensten": "Services",
+    "branches": "Industries",
+    "wcag": "The WCAG",
+    "blog": "Blog",
+    "nieuwsbrief": "Inschrijven nieuwsbrief",
+    "titel2": "Cardan",
+    "over-cardan": "About Cardan",
+    "onze-mensen": "Our people",
+    "vacatures": "Vacancies",
+    "titel3": "Contact",
+    "email": "<strong>Mail us at contact@cardan.com</strong>",
+    "telefoon": "<strong>Or call us on +31 (0)88 500 4070</strong>"
+  },
+
+  "stationnav": {
+  "titel": "Stations:",
+  "naam1": "Visual Impairment",
+  "slug1": "visual-impairment",
+  "naam2": "Auditory Impairment",
+  "slug2": "auditory-impairment",
+  "naam3": "Cognitive Impairment",
+  "slug3": "cognitive-impairment",
+  "naam4": "Motor Impairment",
+  "slug4": "motor-impairment",
+  "naam5": "Dyslexia & Color Contrast",
+  "slug5": "dyslexia-color-contrast"
   }
+
 }
