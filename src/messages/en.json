@@ -1,6 +1,4 @@
 {
-  "title": "Your partner in digital accessibility",
-  "description": "Together with you, we're making the whole world digitally accessible and inclusive. We help these industries secure digital accessibility:",
   "nav": {
     "ervaring": "Experience Square",
     "mijn-cardan": "My Cardan",
@@ -21,12 +19,48 @@
     "cta-button": "Become digitally accessible",
     "features": {
       "wcag": "<strong>WCAG 2.2</strong> audit",
-      "report": "Report for<strong>accessibility statement</strong>",
+      "report": "Report for <strong>accessibility statement</strong>",
       "certification": "Get certified for <strong>Drempelvrij Certificate</strong>",
       "eaa": "All help with the <strong>European Accessibility Act</strong>"
     }
   },
   "ervaringsplein": {
-    "title": "Welcome to the Experience Square!"
+    "title": "Welcome to the Experience Square!",
+    "cognitief": "Cognitive",
+    "motorisch": "Motor"
+  },
+  "cognitief": {
+    "title": "Experience what it's like to have ADHD",
+    "subtitle": "While writing the email, distracting pop-ups and animations similar to thoughts of ADHD appear.",
+    "form": {
+      "title": "Write an email",
+      "subtitle": "Write an email to your teacher, reporting that you're late for today's lesson.",
+      "timer-label": "Time: ",
+      "name": "To",
+      "subject": "Subject",
+      "message": "Message",
+      "submit": "Submit",
+      "next": "Next"
+    }
+  },
+  "motorisch": {
+    "title": "Experience what it's like to have Cerebral Palsy",
+    "subtitle": "While selecting the different input fields, your cursor moves all over the place.",
+    "form": {
+      "title": "Enter your data",
+      "subtitle": "Fill in (fake) data to complete the payment",
+      "timer-label": "Time: ",
+      "cerebral-palsy": "Cerebral Palsy",
+      "multiple-sclerosis": "Multiple Sclerosis",
+      "name": "Name",
+      "lastname": "Last name",
+      "address": "Address",
+      "postcode": "ZIP Code",
+      "submit": "Submit",
+      "next": "Next"
+    },
+    "cerebralPalsy": "Cerebral Palsy",
+    "multipleSclerosis": "Multiple Sclerosis",
+    "timerLabel": "Time:"
   }
 }

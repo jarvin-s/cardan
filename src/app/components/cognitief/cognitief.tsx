@@ -5,7 +5,31 @@ import styles from "./cognitief.module.css";
 import FAQ from "../faq/faq";
 import faqData from "../faq/faq-data.json";
 
-const Cognitief = () => {
+interface CognitiefProps {
+  title: string;
+  subtitle: string;
+  formTitle: string;
+  formTimerLabel: string;
+  formSubtitle: string;
+  formName: string;
+  formSubject: string;
+  formMessage: string;
+  formSubmit: string;
+  formNext: string;
+}
+
+const Cognitief = ({
+  title,
+  subtitle,
+  formTitle,
+  formTimerLabel,
+  formSubtitle,
+  formName,
+  formSubject,
+  formMessage,
+  formSubmit,
+  formNext,
+}: CognitiefProps) => {
   const adhdFAQs = faqData.find((category) => category.category === "ADHD");
   const [time, setTime] = useState(0);
   const [showDistraction, setShowDistraction] = useState(false);
@@ -86,27 +110,19 @@ const Cognitief = () => {
   return (
     <div className={styles.container}>
       <div className={styles.header}>
-        <h1 className={styles.title}>Ervaar hoe het is om ADHD te hebben</h1>
-        <p className={styles.subtitle}>
-          Tijdens het schrijven van de e-mail verschijnen afleidende pop-ups,
-          vergelijkbaar met gedachten bij ADHD.
-        </p>
-        <div className={styles.timer}>
-          <span className={styles.timerLabel}>Tijd: </span>
-          <span className={styles.timerValue}>{formatTime(time)}</span>
-        </div>
+        <h1 className={styles.title}>{title}</h1>
+        <p className={styles.subtitle}>{subtitle}</p>
+        <span className={styles.timerLabel}>{formTimerLabel}</span>
+        <span className={styles.timerValue}>{formatTime(time)}</span>
       </div>
 
       <div className={styles.content}>
         <div className={styles.emailContainer}>
-          <h2 className={styles.emailTitle}>E-mail schrijven</h2>
-          <p className={styles.emailInstructions}>
-            Schrijf een e-mail naar je docent, waarin je meldt dat je te laat
-            gaat komen voor de les van vandaag.
-          </p>
+          <h2 className={styles.emailTitle}>{formTitle}</h2>
+          <p className={styles.emailInstructions}>{formSubtitle}</p>
 
           <div className={styles.formGroup}>
-            <label htmlFor="naar">Naar</label>
+            <label htmlFor="naar">{formName}</label>
             <input
               type="text"
               id="naar"
@@ -117,7 +133,7 @@ const Cognitief = () => {
           </div>
 
           <div className={styles.formGroup}>
-            <label htmlFor="onderwerp">Onderwerp</label>
+            <label htmlFor="onderwerp">{formSubject}</label>
             <input
               type="text"
               id="onderwerp"
@@ -128,7 +144,7 @@ const Cognitief = () => {
           </div>
 
           <div className={styles.formGroup}>
-            <label htmlFor="bericht">Bericht</label>
+            <label htmlFor="bericht">{formMessage}</label>
             <textarea
               id="bericht"
               className={styles.messageField}
@@ -139,7 +155,7 @@ const Cognitief = () => {
             ></textarea>
           </div>
 
-          <button className={styles.sendButton}>Verzenden</button>
+          <button className={styles.sendButton}>{formSubmit}</button>
         </div>
 
         {showDistraction && (
@@ -149,13 +165,22 @@ const Cognitief = () => {
         )}
       </div>
       <div className={styles.nextButtonContainer}>
-        <button className={styles.nextButton}>Volgende</button>
+        <button
+          className={styles.nextButton}
+          onClick={() =>
+            (window.location.href = "/ervaringsplein/motorische-beperking")
+          }
+        >
+          {formNext}
+        </button>
       </div>
 
       <div className={styles.faqContainer}>
-        {adhdFAQs?.faqs.map((faq, index) => (
-          <FAQ key={index} title={faq.title} description={faq.description} />
-        ))}
+        {adhdFAQs?.faqs.map(
+          (faq: { title: string; description: string }, index: number) => (
+            <FAQ key={index} title={faq.title} description={faq.description} />
+          )
+        )}
       </div>
     </div>
   );

@@ -1,6 +1,4 @@
 {
-  "title": "Jouw partners in digitale toegankelijkheid",
-  "description": "Samen met jou maken wij de hele wereld digitaal toegankelijk én inclusief. Deze branches helpen wij met het borgen van digitale toegankelijkheid:",
   "nav": {
     "ervaring": "Ervaringsplein",
     "mijn-cardan": "Mijn Cardan",
@@ -21,12 +19,45 @@
     "cta-button": "Wordt digitaal toegankelijk",
     "features": {
       "wcag": "<strong>WCAG 2.2</strong> onderzoeken",
-      "report": "Rapport voor<strong>toegankelijkheidsverklaring</strong>",
+      "report": "Rapport voor <strong>toegankelijkheidsverklaring</strong>",
       "certification": "Ga voor <strong>Waarmerk drempelvrij.nl</strong>",
       "eaa": "Alle hulp bij de <strong>European Acessibility Act</strong>"
     }
   },
   "ervaringsplein": {
-    "title": "Welkom op het Ervaringsplein!"
+    "title": "Welkom op het Ervaringsplein!",
+    "cognitief": "Cognitief",
+    "motorisch": "Motorisch"
+  },
+  "cognitief": {
+    "title": "Ervaar hoe het is om een ADHD te hebben",
+    "subtitle": "Tijdens het schrijven van de e-mail verschijnen afleidende pop-ups en animaties vergelijkbaar met gedachten bij ADHD.",
+    "form": {
+      "title": "Email schrijven",
+      "subtitle": "Schrijf een e-mail naar je docent, waarin je meldt dat je te laat gaat komen voor de les van vandaag.",
+      "timer-label": "Tijd: ",
+      "name": "Naar",
+      "subject": "Onderwerp",
+      "message": "Bericht",
+      "submit": "Verzenden",
+      "next": "Volgende"
+    }
+  },
+  "motorisch": {
+    "title": "Ervaar hoe het is om een motorische beperking te hebben",
+    "subtitle": "Tijdens het selecteren van de verschillende invulvakken beweegt je cursor alle kanten op.",
+    "form": {
+      "title": "Voer uw gegevens in",
+      "subtitle": "Vul (fictief) gegevens in om de betaling te voltooien",
+      "timer-label": "Tijd: ",
+      "cerebral-palsy": "Cerebrale Parese",
+      "multiple-sclerosis": "Multiple Sclerosis",
+      "name": "Voornaam",
+      "lastname": "Achternaam",
+      "address": "Adres",
+      "postcode": "Postcode",
+      "submit": "Verzenden",
+      "next": "Volgende"
+    }
   }
 }

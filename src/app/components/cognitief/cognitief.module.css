@@ -1,8 +1,9 @@
 .container {
-  max-width: 1200px;
+  max-width: 800px;
   margin: 0 auto;
-  padding: 20px;
-  margin-top: 50px;
+  padding: 2rem;
+  position: relative;
+  min-height: 100vh;
 }
 
 .header {
@@ -10,9 +11,10 @@
 }
 
 .title {
-  font-size: 2rem;
+  font-size: 2.25rem;
   font-weight: bold;
-  margin-bottom: 10px;
+  margin-bottom: 0.75rem;
+  line-height: 1.2;
 }
 
 .subtitle {
@@ -21,15 +23,7 @@
   margin-bottom: 15px;
 }
 
-.timer {
-  margin-top: 15px;
-}
-
 .timerLabel {
-  font-weight: bold;
-}
-
-.timerValue {
   font-weight: bold;
 }
 
@@ -71,10 +65,17 @@
 
 .inputField {
   width: 100%;
-  padding: 8px;
-  border: 1px solid #ddd;
-  border-radius: 4px;
-  font-family: inherit;
+  padding: 0.75rem;
+  border: 1.5px solid #ddd;
+  border-radius: 6px;
+  font-size: 1rem;
+  transition: border-color 0.2s ease;
+}
+
+.inputField:focus {
+  outline: none;
+  border-color: #00853e;
+  box-shadow: 0 0 0 3px rgba(0, 133, 62, 0.1);
 }
 
 .messageField {
@@ -100,6 +101,10 @@
   background-color: #008d45;
 }
 
+.nextButton:hover {
+  background-color: #008d45;
+}
+
 .nextButton {
   background-color: #00a651;
   color: white;
@@ -108,7 +113,6 @@
   padding: 8px 16px;
   cursor: pointer;
   font-weight: bold;
-  font-family: inherit;
 }
 
 .distractionPopup {
