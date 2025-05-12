@@ -1,10 +1,9 @@
-import Cognitief from "@/app/components/cognitief/cognitief";
 import React from "react";
 import { useTranslations } from "next-intl";
+import Dyslexie from "@/app/components/dyslexie/dyslexie";
 import Stationtk from "@/app/components/station/station";
-
-const CognitiefPage = () => {
-  const t = useTranslations("cognitief");
+const DyslexieKleurcontrastPage = () => {
+  const t = useTranslations("dyslexie");
   const t2 = useTranslations("stationnav");
   const stations = [
     { naam: "Visuele beperking", slug: "visuele-beperking" },
@@ -16,20 +15,19 @@ const CognitiefPage = () => {
   return (
     <>
       <Stationtk title={t2("titel")} stations={stations} />
-      <Cognitief
+      <Dyslexie
         title={t("title")}
         subtitle={t("subtitle")}
         formTitle={t("form.title")}
-        formTimerLabel={t("form.timer-label")}
-        formSubtitle={t("form.subtitle")}
-        formName={t("form.name")}
-        formSubject={t("form.subject")}
-        formMessage={t("form.message")}
+        formText={t("form.text")}
         formSubmit={t("form.submit")}
-        formNext={t("form.next")}
+        formFinishButton={t("finish-button")}
+        formDyslexie={t("form.dyslexie")}
+        formKleurcontrast={t("form.kleurcontrast")}
+        formQuestion={t("form.question")}
       />
     </>
   );
 };
 
-export default CognitiefPage;
+export default DyslexieKleurcontrastPage;

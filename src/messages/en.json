@@ -17,6 +17,7 @@
       "suppliers": "Suppliers"
     },
     "cta-button": "Become digitally accessible",
+    "new-button": "New",
     "features": {
       "wcag": "<strong>WCAG 2.2</strong> audit",
       "report": "Report for <strong>accessibility statement</strong>",
@@ -59,6 +60,32 @@
       "submit": "Submit",
       "next": "Next"
     }
+  },
+  "dyslexie": {
+    "title": "Experience what it's like to have Dyslexia",
+    "subtitle": "While reading the text, the text is distorted and difficult to read.",
+    "form": {
+      "title": "Read the text",
+      "submit": "Submit",
+      "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore dolore fugit excepturi ducimus sapiente ut mollitia aliquam veritatis culpa eos. Id exercitationem dicta qui reiciendis neque minima dignissimos magni quam? Consequuntur doloribus possimus dolore laborum, et ullam commodi saepe facere, amet quos fuga eaque, culpa ut quasi molestias aut unde tempora repellat? Alias, fugiat veniam perferendis dolor ratione at exercitationem. Temporibus harum esse expedita minus perferendis hic quis recusandae nostrum nobis architecto! Consequuntur repudiandae, nulla, quibusdam debitis aperiam placeat porro iure possimus fugiat quisquam illo rerum nisi saepe incidunt ipsum. Aliquam sequi aspernatur aliquid, eaque adipisci fugit doloremque quis, perspiciatis ut libero dolore ipsam porro maxime odio. Porro eos repellendus omnis sit consequatur alias tempore, dolorum perspiciatis sint voluptatem consequuntur. Beatae labore eum iste quibusdam repellendus officia suscipit, obcaecati itaque. Iure iste minima corrupti sed eligendi ipsam, voluptatem porro, mollitia excepturi ad doloremque aperiam possimus eaque enim tenetur quis cumque!",
+      "dyslexie": "Dyslexia",
+      "kleurcontrast": "Color Contrast",
+      "question": "What did the children do in the park?"
+    },
+    "finish-button": "Finish"
+  },
+  "rapport": {
+    "title": "Experience Square Report",
+    "text": "Every user deserves a website that works, regardless of disability or assistive technology.",
+    "text2": "Cardan helps organizations test and improve digital accessibility. From audits to concrete recommendations.",
+    "textBold": "Want to know how accessible your website really is?",
+    "ctaText": "Become digitally accessible now",
+    "resultText": "Report on what you can do for each disability"
+  },
+  "kleurcontrast": {
+    "title": "Experience what it's like to have Color Contrast",
+    "subtitle": "While reading the text, the text is distorted and difficult to read.",
+    "finish-button": "Finish"
   },
   "welkom-pagina": {
     "title": "Welcome to the Experience Square!",

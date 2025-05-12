@@ -52,7 +52,12 @@
   color: #008743;
 }
 
-.ctaButton {
+.ctaButtonContainer {
+  display: flex;
+  gap: 1rem;
+}
+
+.newButton {
   border-radius: 0.5rem;
   background-color: #008743;
   padding: 0.75rem 1rem;
@@ -64,9 +69,25 @@
   font-family: inherit;
 }
 
-.ctaButton:hover {
+.newButton:hover {
   cursor: pointer;
   background-color: #007338;
+}
+
+.ctaButton {
+  border-radius: 0.5rem;
+  border: 1px solid #c1e0d1;
+  background-color: #fff;
+  padding: 0.75rem 1rem;
+  font-size: 0.875rem;
+  font-weight: 700;
+  transition-duration: 100ms;
+  font-family: inherit;
+}
+
+.ctaButton:hover {
+  cursor: pointer;
+  background-color: #bdf0d1;
 }
 
 .heroImage {
