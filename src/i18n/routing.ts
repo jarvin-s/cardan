@@ -9,6 +9,12 @@ export const routing = defineRouting({
         '/ervaringsplein': {
             en: '/experience-square',
         },
+        '/ervaringsplein/visuele-beperking': {
+            en: '/experience-square/visual-impairment'
+        },
+        '/ervaringsplein/auditieve-beperking': {
+            en: '/experience-square/auditory-impairment'
+        },
         '/ervaringsplein/cognitieve-beperking': {
             en: '/experience-square/cognitive-impairment',
         },

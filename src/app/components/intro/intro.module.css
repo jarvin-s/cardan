@@ -3,7 +3,7 @@
     display: flex;
     flex-direction: column;
     padding: 2rem;
-    text-align: left;
+    /* text-align: left; */
     background-color: white;
     margin-top: 1.5rem;
     background-image: url("/images/paars-background.png"), url("/images/groen-background.png");
@@ -15,8 +15,11 @@
   
   .content {
     max-width: 56rem; 
-    margin-left: 17rem;
-    margin-top: 6.5rem;
+    margin: 6.5rem auto 0 auto;
+    /* margin-left: 12rem; */
+    /* margin-top: 6.5rem; */
+    padding-left: 2rem;
+    padding-right: 2rem;
 
   }
   
