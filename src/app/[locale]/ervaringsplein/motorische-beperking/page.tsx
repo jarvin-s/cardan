@@ -1,11 +1,21 @@
 import Motorisch from "@/app/components/motorisch/motorisch";
 import React from "react";
 import { useTranslations } from "next-intl";
+import Stationtk from "@/app/components/station/station";
 
 const MotorischPage = () => {
   const t = useTranslations("motorisch");
+  const t2 = useTranslations("stationnav");
+  const stations = [
+    { naam: "Visuele beperking", slug: "visuele-beperking" },
+    { naam: "Auditieve beperking", slug: "auditieve-beperking" },
+    { naam: "Cognitieve beperking", slug: "cognitieve-beperking" },
+    { naam: "Motorische beperking", slug: "motorische-beperking" },
+    { naam: "Dyslexie & kleurcontrast", slug: "dyslexie-kleurcontrast" },
+  ];
   return (
     <>
+      <Stationtk title={t2("titel")} stations={stations} />
       <Motorisch
         title={t("title")}
         subtitle={t("subtitle")}

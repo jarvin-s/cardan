@@ -1,11 +1,21 @@
 import Cognitief from "@/app/components/cognitief/cognitief";
 import React from "react";
 import { useTranslations } from "next-intl";
+import Stationtk from "@/app/components/station/station";
 
 const CognitiefPage = () => {
   const t = useTranslations("cognitief");
+  const t2 = useTranslations("stationnav");
+  const stations = [
+    { naam: "Visuele beperking", slug: "visuele-beperking" },
+    { naam: "Auditieve beperking", slug: "auditieve-beperking" },
+    { naam: "Cognitieve beperking", slug: "cognitieve-beperking" },
+    { naam: "Motorische beperking", slug: "motorische-beperking" },
+    { naam: "Dyslexie & kleurcontrast", slug: "dyslexie-kleurcontrast" },
+  ];
   return (
     <>
+      <Stationtk title={t2("titel")} stations={stations} />
       <Cognitief
         title={t("title")}
         subtitle={t("subtitle")}

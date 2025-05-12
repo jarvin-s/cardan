@@ -1,92 +1,178 @@
 .container {
-    display: flex;
-    flex-direction: column;
-    /* align-items: center; */
-    margin: 2rem;
-    text-align: left;
-    margin-left: 18rem;
-    
-  }
-  
-  /* Titel boven het menu */
-  .titel {
-    font-size: 1.2rem;
-    font-weight: bold;
-    margin-bottom: 1rem;
-  }
-  
-  /* Horizontale rij van alle stations */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 1rem;
+  text-align: left;
+}
+
+/* Titel boven het menu */
+.titel {
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.sliderContainer {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  justify-content: center;
+}
+
+/* Horizontale rij van alle stations */
+.navitems {
+  display: flex;
+  flex-direction: row;
+  gap: 1.25rem;
+  scroll-behavior: smooth;
+}
+
+.navButton {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+  background-color: white;
+  border: 1px solid #e7e3e8;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 10;
+  color: #008743;
+  transition: all 0.2s ease;
+}
+
+.navButton:hover {
+  background-color: #e6f7ea;
+}
+
+.prevButton {
+  left: 0;
+}
+
+.nextButton {
+  right: 0;
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+.dot {
+  width: 0.5rem;
+  height: 0.5rem;
+  border-radius: 50%;
+  background-color: #e7e3e8;
+  transition: all 0.2s ease;
+}
+
+.activeDot {
+  background-color: #008743;
+}
+
+/* Klikbare link styling */
+.stationLink {
+  text-decoration: none;
+  color: inherit;
+  display: inline-block;
+}
+
+/* Individueel station */
+.station {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+  padding: 0.75rem;
+}
+
+.station:hover {
+  box-shadow: 3px 3px #e7e3e8;
+  padding: 0.75rem;
+  border-radius: 0.75rem;
+  transition: 0.2s ease-in-out;
+}
+
+/* Het groene balkje boven het nummer */
+.balkje {
+  width: 100%;
+  height: 0.4rem;
+  background-color: #e6f7ea;
+  border-radius: 3px;
+  margin-bottom: 0.4rem;
+}
+
+.stationTitel {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  font-size: 1rem;
+  font-weight: bold;
+  gap: 0.3rem;
+  max-width: 180px;
+}
+
+/* Nummer van het station */
+.nummer {
+  font-size: 3rem;
+  font-weight: bold;
+  margin: 0;
+}
+
+/* Naam van het station */
+.naam {
+  font-size: 1rem;
+  line-height: 1.2;
+  text-align: left;
+  margin-left: 0.75rem;
+}
+
+.balkjeactief {
+  width: 100%;
+  height: 0.4rem;
+  background-color: #008743;
+  border-radius: 3px;
+  margin-bottom: 0.4rem;
+}
+
+@media (max-width: 767px) {
   .navitems {
-    display: flex;
-    gap: 2rem;
-    flex-wrap: wrap;
-  }
-  
-  /* Klikbare link styling */
-  .stationLink {
-    text-decoration: none;
-    color: inherit;
-    display: inline-block;
-  }
-  
-  /* Individueel station */
-  .station1, .station2, .station3, .station4, .station5 {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    cursor: pointer;
-    transition: transform 0.2s ease;
-  }
-  
-  .station1:hover,
-  .station2:hover,
-  .station3:hover,
-  .station4:hover,
-  .station5:hover {
-    transform: scale(1.05);
-  }
-  
-  /* Het groene balkje boven het nummer */
-  .balkje {
-    width: 9rem;
-    height: 0.5rem;
-    background-color: #E6F7EA;
-    border-radius: 4px;
-    margin-bottom: 0.5rem;
-  }
-  
-  .stationTitel {
-    display: flex;
-    flex-direction: row;
-    align-items: flex-start;
-    font-size: 1.2rem;
-    font-weight: bold;
-    gap: 0.4rem;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
     flex-wrap: nowrap;
-    max-width: 9.5rem; /* of wat je nodig hebt 150 px*/
-  }
-  /* Nummer van het station */
-  .nummer {
-    font-size: 2.5rem;
-    font-weight: bold;
-    margin: 0;
-  }
-  
-  /* Naam van het station */
-  .naam {
-    font-size: 0.875rem;
-    word-break: break-word;
-    line-height: 1.2;
-    text-align: left;
-    margin-left: 1rem;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    padding: 0.5rem 0;
+    width: 100%;
+    justify-content: flex-start;
   }
 
-  .balkjeactief {
-    width: 60px;
-    height: 8px;
-    background-color: #008743;
-    border-radius: 4px;
-    margin-bottom: 0.5rem;
+  .navitems::-webkit-scrollbar {
+    display: none;
   }
-  
+
+  .stationLink {
+    scroll-snap-align: center;
+    min-width: 85%;
+    display: flex;
+    justify-content: center;
+  }
+
+  .stationLink:first-child {
+    padding-left: calc((100% - 85%) / 2);
+  }
+
+  .stationLink:last-child {
+    padding-right: calc((100% - 85%) / 2);
+  }
+}
