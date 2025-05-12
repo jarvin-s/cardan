@@ -1,14 +1,19 @@
 import Intro from "@/app/components/intro/intro";
 import React from "react";
+import { useTranslations } from "next-intl";
 
-// import styles from "./ervaringsplein.module.css";
-// import { useTranslations } from "next-intl";
 
 const Ervaringsplein = () => {
-  // const t = useTranslations("ervaringsplein");
+  const t = useTranslations("welkom-pagina");
   return (
     <>
-      <Intro />
+      <Intro 
+       title={t("title")}
+       heading={t("heading")}
+       paragraaf={t("paragraaf")}
+       finalText={t("finalText")}
+       button={t("button")}
+       />
     </>
 
   );
