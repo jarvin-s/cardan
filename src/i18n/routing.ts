@@ -15,5 +15,11 @@ export const routing = defineRouting({
         '/ervaringsplein/motorische-beperking': {
             en: '/experience-square/motor-impairment',
         },
+        '/ervaringsplein/dyslexie-kleurcontrast': {
+            en: '/experience-square/dyslexia-color-contrast',
+        },
+        '/ervaringsplein/rapport': {
+            en: '/experience-square/report',
+        },
     }
 });

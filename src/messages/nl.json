@@ -17,6 +17,7 @@
       "suppliers": "Leveranciers"
     },
     "cta-button": "Wordt digitaal toegankelijk",
+    "new-button": "Ervaringsplein",
     "features": {
       "wcag": "<strong>WCAG 2.2</strong> onderzoeken",
       "report": "Rapport voor <strong>toegankelijkheidsverklaring</strong>",
@@ -59,6 +60,27 @@
       "submit": "Verzenden",
       "next": "Volgende"
     }
+  },
+  "dyslexie": {
+    "title": "Ervaar hoe het is om dyslexie te hebben",
+    "subtitle": "Tijdens het lezen van de tekst wordt de tekst vervormd en moeilijk te lezen.",
+    "form": {
+      "title": "Lees de tekst",
+      "submit": "Verzenden",
+      "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore dolore fugit excepturi ducimus sapiente ut mollitia aliquam veritatis culpa eos. Id exercitationem dicta qui reiciendis neque minima dignissimos magni quam? Consequuntur doloribus possimus dolore laborum, et ullam commodi saepe facere, amet quos fuga eaque, culpa ut quasi molestias aut unde tempora repellat? Alias, fugiat veniam perferendis dolor ratione at exercitationem. Temporibus harum esse expedita minus perferendis hic quis recusandae nostrum nobis architecto! Consequuntur repudiandae, nulla, quibusdam debitis aperiam placeat porro iure possimus fugiat quisquam illo rerum nisi saepe incidunt ipsum. Aliquam sequi aspernatur aliquid, eaque adipisci fugit doloremque quis, perspiciatis ut libero dolore ipsam porro maxime odio. Porro eos repellendus omnis sit consequatur alias tempore, dolorum perspiciatis sint voluptatem consequuntur. Beatae labore eum iste quibusdam repellendus officia suscipit, obcaecati itaque. Iure iste minima corrupti sed eligendi ipsam, voluptatem porro, mollitia excepturi ad doloremque aperiam possimus eaque enim tenetur quis cumque!",
+      "dyslexie": "Dyslexie",
+      "kleurcontrast": "Kleurcontrast",
+      "question": "Wat deden de kinderen in het park?"
+    },
+    "finish-button": "Afronden"
+  },
+  "rapport": {
+    "title": "Ervaringsplein Rapport",
+    "text": "Iedere gebruiker verdient een website die wérkt, ongeacht beperking of hulpmiddel.",
+    "text2": "Cardan helpt organisaties bij het toetsen en verbeteren van digitale toegankelijkheid. Van audits tot concrete adviezen.",
+    "textBold": "Wil je weten hoe toegankelijk jouw website écht is?",
+    "ctaText": "Wordt nu digitaal toegankelijk",
+    "resultText": "Rapport over wat je voor elke beperking kan doen"
   },
   "welkom-pagina": {
     "title": "Welkom op het Ervaringsplein!",
