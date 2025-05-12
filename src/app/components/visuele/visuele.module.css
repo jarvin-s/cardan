@@ -110,12 +110,11 @@
   border-radius: 4px;
   cursor: pointer;
   text-align: left;
+  border: 1px solid green;
 }
 
 .filterButton:hover {
-  border: 1px solid green;
-  background-color: #f0f0f0;
-
+  background-color: #e6f7ea;
 }
 
 .selected {

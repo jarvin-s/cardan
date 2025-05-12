@@ -1,66 +1,63 @@
 .container {
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    padding: 2rem;
-    /* text-align: left; */
-    background-color: white;
-    margin-top: 1.5rem;
-    background-image: url("/images/paars-background.png"), url("/images/groen-background.png");
-    background-repeat: no-repeat, no-repeat;
-    background-position: left bottom, top right;
-    background-size: 30rem, 30rem;
-    margin-bottom: 3rem;
-  }
-  
-  .content {
-    max-width: 56rem; 
-    margin: 6.5rem auto 0 auto;
-    /* margin-left: 12rem; */
-    /* margin-top: 6.5rem; */
-    padding-left: 2rem;
-    padding-right: 2rem;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  padding: 2rem;
+  background-color: white;
+  margin-top: 1.5rem;
+  background-image: url("/images/paars-background.png"),
+    url("/images/groen-background.png");
+  background-repeat: no-repeat, no-repeat;
+  background-position: left bottom, top right;
+  background-size: 30rem, 30rem;
+  margin-bottom: 3rem;
+}
 
-  }
-  
-  .heading {
-    font-size: 3rem; 
-    font-weight: 700;
-    margin-bottom: 1rem;
-  }
-  
-  .subheading {
-    font-weight: 600;
-    font-size: 1.2rem;
-    margin-bottom: 0.5rem;
-    max-width: 37rem; 
-  }
-  
-  .paragraph {
-    margin-bottom: 0.5rem;
-    max-width: 37rem; 
-    font-size: 1.2rem;
-  }
-  
-  .finalText {
-    margin-bottom: 1.5rem;
-    max-width: 37rem; 
-    font-size: 1.2rem;
-  }
-  
-  .button {
-    background-color: #008743; 
-    color: white;
-    font-weight: 300;
-    padding: 1rem 3rem;
-    border-radius: 0.375rem;
-    font-size: 1.2rem;
-    cursor: pointer;
-    border: none;
-    margin-top: 1rem;
-  }
-  
-  .button:hover {
-    background-color: #007339; 
-  }
-  
+.content {
+  max-width: 56rem;
+  margin: 6.5rem auto 0 auto;
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+
+.heading {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.subheading {
+  font-weight: 600;
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+  max-width: 37rem;
+}
+
+.paragraph {
+  margin-bottom: 0.5rem;
+  max-width: 37rem;
+  font-size: 1.2rem;
+}
+
+.finalText {
+  margin-bottom: 1.5rem;
+  max-width: 37rem;
+  font-size: 1.2rem;
+}
+
+.button {
+  background-color: #008743;
+  color: white;
+  font-weight: 300;
+  padding: 1rem 3rem;
+  border-radius: 0.5rem;
+  font-size: 1.2rem;
+  cursor: pointer;
+  border: none;
+  margin-top: 1rem;
+  font-weight: bold;
+}
+
+.button:hover {
+  background-color: #007339;
+}

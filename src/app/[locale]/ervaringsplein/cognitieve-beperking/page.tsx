@@ -15,7 +15,7 @@ const CognitiefPage = () => {
   ];
   return (
     <>
-      <Stationtk title={t2("titel")} stations={stations} />
+      <Stationtk title={t2("title")} stations={stations} />
       <Cognitief
         title={t("title")}
         subtitle={t("subtitle")}

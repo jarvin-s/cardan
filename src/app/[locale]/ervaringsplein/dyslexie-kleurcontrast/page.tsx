@@ -14,7 +14,7 @@ const DyslexieKleurcontrastPage = () => {
   ];
   return (
     <>
-      <Stationtk title={t2("titel")} stations={stations} />
+      <Stationtk title={t2("title")} stations={stations} />
       <Dyslexie
         title={t("title")}
         subtitle={t("subtitle")}

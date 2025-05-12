@@ -58,7 +58,7 @@
 }
 
 .newButton {
-  border-radius: 0.5rem;
+  border-radius: 6px;
   background-color: #008743;
   padding: 0.75rem 1rem;
   font-size: 0.875rem;
@@ -75,8 +75,8 @@
 }
 
 .ctaButton {
-  border-radius: 0.5rem;
-  border: 1px solid #c1e0d1;
+  border-radius: 6px;
+  border: 1px solid green;
   background-color: #fff;
   padding: 0.75rem 1rem;
   font-size: 0.875rem;
@@ -87,7 +87,7 @@
 
 .ctaButton:hover {
   cursor: pointer;
-  background-color: #bdf0d1;
+  background-color: #e6f7ea;
 }
 
 .heroImage {

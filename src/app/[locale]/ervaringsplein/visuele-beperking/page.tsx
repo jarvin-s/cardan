@@ -5,11 +5,19 @@ import { useTranslations } from "next-intl";
 
 const VisuelePage = () => {
   const t = useTranslations("visuele");
+  const t2 = useTranslations("stationnav");
+  const stations = [
+    { naam: "Visuele beperking", slug: "visuele-beperking" },
+    { naam: "Auditieve beperking", slug: "auditieve-beperking" },
+    { naam: "Cognitieve beperking", slug: "cognitieve-beperking" },
+    { naam: "Motorische beperking", slug: "motorische-beperking" },
+    { naam: "Dyslexie & kleurcontrast", slug: "dyslexie-kleurcontrast" },
+  ];
   return (
     <>
-      <Station />
+      <Station title={t2("title")} stations={stations} />
       <Visuele
-        titel={t("titel")}
+        title={t("title")}
         paragraaf={t("paragraaf")}
         subtekst={t("subtekst")}
         opdracht={t("opdracht")}
@@ -28,4 +36,3 @@ const VisuelePage = () => {
 };
 
 export default VisuelePage;
-
