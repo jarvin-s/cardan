@@ -1,0 +1,133 @@
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 2.6rem;
+}
+
+
+.hoofdtitel {
+  font-size: 2.25rem;
+  font-weight: bold;
+  margin-bottom: 0.75rem;
+  line-height: 1.2;
+}
+
+.hoofdsubtext {
+  font-size: 1.1rem;
+  margin-bottom: 0.3rem;
+  line-height: 1.5;
+}
+
+.block {
+  border: 1px solid #ccc;
+  padding: 2rem;
+  border-radius: 16px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+.blocktitle {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  color: #333;
+  /* text-align: center; */
+}
+
+.subtext {
+  font-size: 0.9rem;
+  margin-bottom: 20px;
+}
+
+.keuzemenu {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.item {
+  display: flex;
+  flex-direction: column;
+  width: 45%;
+  background: #ffffff;
+  /* background: red; */
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  padding: 1rem;
+  transition: transform 0.2s ease;
+}
+
+.item:hover {
+  background-color: #E6F7EA;
+  border: 1px solid green;
+
+}
+
+.soortbeperking {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin: 0.5rem 0;
+}
+
+.omschrijving {
+  font-size: 0.95rem;
+  color: #666;
+  text-align: center;
+}
+
+.tekstblockje {
+  padding: 0.5rem;
+}
+
+.nextButton {
+  display: block;
+  /* margin: 1.5rem auto 0; */
+  background-color: #008743;
+  color: #fff;
+  font-size: 1rem;
+  padding: 0.75rem 2rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.nextButton:hover {
+  background-color: #007339;
+}
+
+.keuzesgrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, auto);
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.keuzesgrid button {
+  background-color: white;
+  border: 1px solid #ddd;
+  padding: 0.75rem;
+  font-size: 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.keuzesgrid button:hover {
+  background-color: #E6F7EA;
+  border: 1px solid green;
+
+}
+
+.headtext {
+  font-size: 1.2rem;
+  font-weight: 300;
+  /* margin-top: 0.5rem; */
+}
+
+.buttons {
+  display: flex;
+  justify-content: space-between;
+
+
+}
