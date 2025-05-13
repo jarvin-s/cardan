@@ -11,14 +11,39 @@ interface StationtkProps {
     naam: string;
     slug: string;
   }[];
+  naam1: string;
+  slug1: string;
+  naam2: string;
+  slug2: string;
+  naam3: string;
+  slug3: string;
+  naam4: string;
+  slug4: string;
+  naam5: string;
+  slug5: string;
 }
 
-export default function Stationtk({ stations }: StationtkProps) {
+export default function Station({
+  stations,
+  naam1,
+  slug1,
+  naam2,
+  slug2,
+  naam3,
+  slug3,
+  naam4,
+  slug4,
+  naam5,
+  slug5,
+}: StationtkProps) {
   const locale = useLocale();
   const pathname = usePathname();
   const sliderRef = useRef<HTMLDivElement>(null);
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isMobile, setIsMobile] = useState(false);
+
+  const enNames = [naam1, naam2, naam3, naam4, naam5];
+  const enSlugs = [slug1, slug2, slug3, slug4, slug5];
 
   useEffect(() => {
     const checkIfMobile = () => {
@@ -112,12 +137,13 @@ export default function Stationtk({ stations }: StationtkProps) {
           {[1, 2, 3, 4, 5].map((num) => {
             const stationIndex = num - 1;
             const stationSlug = stations[stationIndex].slug;
-            const isActive = pathname.includes(stationSlug);
+            const dynamicSlug = locale === "nl" ? stationSlug : enSlugs[stationIndex];
+            const isActive = pathname.includes(dynamicSlug);
 
             return (
               <Link
                 key={num}
-                href={`/${basePath}/${stationSlug}`}
+                href={`/${basePath}/${dynamicSlug}`}
                 className={styles.stationLink}
               >
                 <div
@@ -130,7 +156,9 @@ export default function Stationtk({ stations }: StationtkProps) {
                   <div className={styles.stationTitel}>
                     {getIconByIndex(stationIndex)}
                     <h2 className={styles.naam}>
-                      {stations[stationIndex].naam}
+                      {locale === "nl" 
+                        ? stations[stationIndex].naam 
+                        : enNames[stationIndex]}
                     </h2>
                   </div>
                 </div>

@@ -67,6 +67,10 @@
   border: none;
   transition-duration: 100ms;
   font-family: inherit;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
 }
 
 .newButton:hover {

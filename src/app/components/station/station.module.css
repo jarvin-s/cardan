@@ -104,6 +104,7 @@
 
 .station:hover {
   background-color: #e6f7ea;
+  border: 1px solid #008743;
   padding: 0.75rem;
   border-radius: 0.75rem;
   transition: 0.2s ease-in-out;
