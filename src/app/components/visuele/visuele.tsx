@@ -4,7 +4,7 @@ import styles from './visuele.module.css';
 
 
 interface VisueleProps {
-  titel: string;
+  title: string;
   paragraaf: string;
   subtekst: string;
   opdracht: string;
@@ -19,7 +19,7 @@ interface VisueleProps {
   volgende: string;
 }
 const Visuele = ({
-  titel,
+  title,
   paragraaf,
   subtekst,
   opdracht,
@@ -40,7 +40,7 @@ const Visuele = ({
   return (
     //tekst gedeelte
     <div className={styles.container}>
-      <h1 className={styles.titel}>{titel}</h1>
+      <h1 className={styles.title}>{title}</h1>
       <p className={styles.description}> {paragraaf}
       </p>
       <p className={styles.subdescription}>

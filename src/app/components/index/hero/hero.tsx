@@ -61,8 +61,10 @@ const Hero = () => {
               </span>
             </div>
           </div>
-
-          <button className={styles.ctaButton}>{t("cta-button")}</button>
+          <div className={styles.ctaButtonContainer}>
+            <button className={styles.newButton}>{t("new-button")}</button>
+            <button className={styles.ctaButton}>{t("cta-button")}</button>
+          </div>
         </div>
         <div className={styles.heroImage}>
           <Image

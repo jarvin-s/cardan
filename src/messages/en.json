@@ -17,6 +17,7 @@
       "suppliers": "Suppliers"
     },
     "cta-button": "Become digitally accessible",
+    "new-button": "New",
     "features": {
       "wcag": "<strong>WCAG 2.2</strong> audit",
       "report": "Report for <strong>accessibility statement</strong>",
@@ -24,79 +25,8 @@
       "eaa": "All help with the <strong>European Accessibility Act</strong>"
     }
   },
-  "ervaringsplein": {
-    "title": "Welcome to the Experience Square!",
-    "cognitief": "Cognitive",
-    "motorisch": "Motor"
-  },
-  "cognitief": {
-    "title": "Experience what it's like to have ADHD",
-    "subtitle": "While writing the email, distracting pop-ups and animations similar to thoughts of ADHD appear.",
-    "form": {
-      "title": "Write an email",
-      "subtitle": "Write an email to your teacher, reporting that you're late for today's lesson.",
-      "timer-label": "Time: ",
-      "name": "To",
-      "subject": "Subject",
-      "message": "Message",
-      "submit": "Submit",
-      "next": "Next"
-    }
-  },
-  "motorisch": {
-    "title": "Experience what it's like to have Cerebral Palsy",
-    "subtitle": "While selecting the different input fields, your cursor moves all over the place.",
-    "form": {
-      "title": "Enter your data",
-      "subtitle": "Fill in (fake) data to complete the payment",
-      "timer-label": "Time: ",
-      "cerebral-palsy": "Cerebral Palsy",
-      "multiple-sclerosis": "Multiple Sclerosis",
-      "name": "Name",
-      "lastname": "Last name",
-      "address": "Address",
-      "postcode": "ZIP Code",
-      "submit": "Submit",
-      "next": "Next"
-    }
-  },
-  "welkom-pagina": {
-    "title": "Welcome to the Experience Square!",
-    "heading": "Today, you step into the shoes of people who face daily obstacles on the internet.",
-    "paragraaf": "From visual impairments to motor disabilities. Each of the five stations lets you experience firsthand how important digital accessibility is.",
-    "finalText": "At the end, you’ll get tips on how you can improve your website.",
-    "button": "Start the Experience Square"
-  },
-  "footerdeel": {
-    "titel1": "Digital Accessibility",
-    "diensten": "Services",
-    "branches": "Industries",
-    "wcag": "The WCAG",
-    "blog": "Blog",
-    "nieuwsbrief": "Inschrijven nieuwsbrief",
-    "titel2": "Cardan",
-    "over-cardan": "About Cardan",
-    "onze-mensen": "Our people",
-    "vacatures": "Vacancies",
-    "titel3": "Contact",
-    "email": "<strong>Mail us at contact@cardan.com</strong>",
-    "telefoon": "<strong>Or call us on +31 (0)88 500 4070</strong>"
-  },
-  "stationnav": {
-    "titel": "Stations:",
-    "naam1": "Visual Impairment",
-    "slug1": "visual-impairment",
-    "naam2": "Auditory Impairment",
-    "slug2": "auditory-impairment",
-    "naam3": "Cognitive Impairment",
-    "slug3": "cognitive-impairment",
-    "naam4": "Motor Impairment",
-    "slug4": "motor-impairment",
-    "naam5": "Dyslexia & Color Contrast",
-    "slug5": "dyslexia-color-contrast"
-  },
   "visuele": {
-    "titel": "Experience Visual Impairment",
+    "title": "Experience Visual Impairment",
     "paragraaf": "This mini-game lets you experience what it's like to have visual impairments.",
     "subtekst": "Below you see a layout of a cinema.",
     "opdracht": "Try to reserve a seat",
@@ -144,5 +74,97 @@
     "subtext5": "This simulation shows how important clear communication is for people with hearing impairments in public spaces.",
     "ander": "Try different hearing ability",
     "naarcognitief": "Next"
+  },
+  "cognitief": {
+    "title": "Experience what it's like to have ADHD",
+    "subtitle": "While writing the email, distracting pop-ups and animations similar to thoughts of ADHD appear.",
+    "form": {
+      "title": "Write an email",
+      "subtitle": "Write an email to your teacher, reporting that you're late for today's lesson.",
+      "timer-label": "Time: ",
+      "name": "To",
+      "subject": "Subject",
+      "message": "Message",
+      "submit": "Submit",
+      "next": "Next"
+    }
+  },
+  "motorisch": {
+    "title": "Experience what it's like to have Cerebral Palsy",
+    "subtitle": "While selecting the different input fields, your cursor moves all over the place.",
+    "form": {
+      "title": "Enter your data",
+      "subtitle": "Fill in (fake) data to complete the payment",
+      "timer-label": "Time: ",
+      "cerebral-palsy": "Cerebral Palsy",
+      "multiple-sclerosis": "Multiple Sclerosis",
+      "name": "Name",
+      "lastname": "Last name",
+      "address": "Address",
+      "postcode": "ZIP Code",
+      "submit": "Submit",
+      "next": "Next"
+    }
+  },
+  "dyslexie": {
+    "title": "Experience what it's like to have Dyslexia",
+    "subtitle": "While reading the text, the text is distorted and difficult to read.",
+    "form": {
+      "title": "Read the text",
+      "submit": "Submit",
+      "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore dolore fugit excepturi ducimus sapiente ut mollitia aliquam veritatis culpa eos. Id exercitationem dicta qui reiciendis neque minima dignissimos magni quam? Consequuntur doloribus possimus dolore laborum, et ullam commodi saepe facere, amet quos fuga eaque, culpa ut quasi molestias aut unde tempora repellat? Alias, fugiat veniam perferendis dolor ratione at exercitationem. Temporibus harum esse expedita minus perferendis hic quis recusandae nostrum nobis architecto! Consequuntur repudiandae, nulla, quibusdam debitis aperiam placeat porro iure possimus fugiat quisquam illo rerum nisi saepe incidunt ipsum. Aliquam sequi aspernatur aliquid, eaque adipisci fugit doloremque quis, perspiciatis ut libero dolore ipsam porro maxime odio. Porro eos repellendus omnis sit consequatur alias tempore, dolorum perspiciatis sint voluptatem consequuntur. Beatae labore eum iste quibusdam repellendus officia suscipit, obcaecati itaque. Iure iste minima corrupti sed eligendi ipsam, voluptatem porro, mollitia excepturi ad doloremque aperiam possimus eaque enim tenetur quis cumque!",
+      "dyslexie": "Dyslexia",
+      "kleurcontrast": "Color Contrast",
+      "question": "What did the children do in the park?"
+    },
+    "finish-button": "Finish"
+  },
+  "rapport": {
+    "title": "Experience Square Report",
+    "text": "Every user deserves a website that works, regardless of disability or assistive technology.",
+    "text2": "Cardan helps organizations test and improve digital accessibility. From audits to concrete recommendations.",
+    "textBold": "Want to know how accessible your website really is?",
+    "ctaText": "Become digitally accessible now",
+    "resultText": "Report on what you can do for each disability"
+  },
+  "kleurcontrast": {
+    "title": "Experience what it's like to have Color Contrast",
+    "subtitle": "While reading the text, the text is distorted and difficult to read.",
+    "finish-button": "Finish"
+  },
+  "welkom-pagina": {
+    "title": "Welcome to the Experience Square!",
+    "heading": "Today, you step into the shoes of people who face daily obstacles on the internet.",
+    "paragraaf": "From visual impairments to motor disabilities. Each of the five stations lets you experience firsthand how important digital accessibility is.",
+    "finalText": "At the end, you’ll get tips on how you can improve your website.",
+    "button": "Start the Experience Square"
+  },
+  "footerdeel": {
+    "titel1": "Digital Accessibility",
+    "diensten": "Services",
+    "branches": "Industries",
+    "wcag": "The WCAG",
+    "blog": "Blog",
+    "nieuwsbrief": "Inschrijven nieuwsbrief",
+    "titel2": "Cardan",
+    "over-cardan": "About Cardan",
+    "onze-mensen": "Our people",
+    "vacatures": "Vacancies",
+    "titel3": "Contact",
+    "email": "<strong>Mail us at contact@cardan.com</strong>",
+    "telefoon": "<strong>Or call us on +31 (0)88 500 4070</strong>"
+  },
+  "stationnav": {
+    "title": "Stations:",
+    "naam1": "Visual Impairment",
+    "slug1": "visual-impairment",
+    "naam2": "Auditory Impairment",
+    "slug2": "auditory-impairment",
+    "naam3": "Cognitive Impairment",
+    "slug3": "cognitive-impairment",
+    "naam4": "Motor Impairment",
+    "slug4": "motor-impairment",
+    "naam5": "Dyslexia & Color Contrast",
+    "slug5": "dyslexia-color-contrast"
   }
 }

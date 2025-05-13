@@ -1,8 +1,7 @@
 .backgroundContainer {
-  margin-top: 200px;
+  margin-top: 100px;
   position: relative;
-  min-height: 76vh;
-  padding: 16px;
+  min-height: 100vh;
 }
 
 .container {
@@ -11,42 +10,29 @@
   max-width: 800px;
   justify-content: center;
   margin: 0 auto;
+  padding: 16px;
 }
 
-.content {
+.text {
+  font-size: 1.2rem;
+}
+
+.textBold {
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+.textContainer {
   display: flex;
   flex-direction: column;
-  max-width: 800px;
-  margin: 0 auto;
-  z-index: 1;
-  position: relative;
 }
 
-.heading {
-  font-size: 3rem;
-  margin-bottom: 1rem;
+.title {
+  text-align: center;
+  font-size: 2.5rem;
 }
 
-.subheading {
-  font-weight: 600;
-  font-size: 1.2rem;
-  margin-bottom: 0.5rem;
-  max-width: 37rem;
-}
-
-.paragraph {
-  margin-bottom: 0.5rem;
-  max-width: 37rem;
-  font-size: 1.2rem;
-}
-
-.finalText {
-  margin-bottom: 1.5rem;
-  max-width: 37rem;
-  font-size: 1.2rem;
-}
-
-.button {
+.ctaButton {
   border-radius: 0.5rem;
   background-color: #008743;
   padding: 0.75rem 1rem;
@@ -55,11 +41,9 @@
   color: white;
   border: none;
   transition-duration: 100ms;
-  align-self: flex-start;
-  margin-top: 1rem;
 }
 
-.button:hover {
+.ctaButton:hover {
   cursor: pointer;
   background-color: #007338;
 }
@@ -68,15 +52,29 @@
   position: absolute;
   bottom: 0;
   left: 0;
-  z-index: 0;
   filter: brightness(0.1);
 }
 
 .greenBackground {
   position: absolute;
-  top: -150px;
+  top: 0;
   right: 0;
-  z-index: 0;
+}
+.greyContainer {
+  background-color: #969393;
+  border-radius: 10px;
+  width: 100%;
+  height: 350px;
+}
+
+.greyContainerTitle {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  height: 100%;
+  padding-bottom: 25px;
 }
 
 @media (max-width: 768px) {
@@ -86,16 +84,21 @@
   .purpleBackground {
     display: none;
   }
-  .button {
+  .ctaButton {
     width: 100%;
     font-size: 1rem;
   }
-  .heading {
+  .title {
     font-size: 2rem;
   }
-  .subheading,
-  .paragraph,
-  .finalText {
+  .text,
+  .textBold {
     font-size: 1rem;
+  }
+
+  .greyContainerTitle {
+    margin: 40px;
+    text-align: center;
+    padding-bottom: 65px;
   }
 }

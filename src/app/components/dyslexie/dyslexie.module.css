@@ -3,6 +3,7 @@
   margin: 0 auto;
   padding: 16px;
   position: relative;
+  min-height: 100vh;
 }
 
 .header {
@@ -51,7 +52,7 @@
   border: none;
   background-color: #00853e;
   cursor: pointer;
-  border-radius: 5px;
+  border-radius: 6px;
   font-size: 12px;
   font-weight: 500;
   transition: all 0.2s ease;
@@ -67,61 +68,48 @@
 .tabButton.active {
   background-color: #00853e;
   color: white;
-  box-shadow: 0 2px 4px rgba(0, 133, 62, 0.3);
+  box-shadow: 0 2px 5px rgba(0, 133, 62, 0.3);
 }
 
 .formContainer {
   background-color: #fff;
   border-radius: 10px;
-  padding: 1.75rem;
-  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+  padding: 1.5rem;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
   margin-bottom: 2rem;
   border: 1px solid #f0f0f0;
 }
 
 .formTitle {
-  font-size: 1.5rem;
-  margin-bottom: 0.5rem;
+  font-size: 1.75rem;
+  margin-bottom: 0.75rem;
   color: #222;
 }
 
 .formSubtitle {
   color: #666;
-  margin-bottom: 1.5rem;
-  font-size: 0.9rem;
+  margin-bottom: 2rem;
+  font-size: 1.05rem;
 }
 
 .formGroup {
-  margin-bottom: 1.25rem;
-}
-
-.label {
-  display: block;
-  margin-bottom: 0.4rem;
-  font-weight: 500;
-  color: #333;
-  font-size: 0.9rem;
+  margin-bottom: 1.75rem;
 }
 
 .input {
   width: 100%;
-  padding: 0.6rem;
+  padding: 0.75rem;
   border: 1.5px solid #ddd;
-  border-radius: 5px;
-  font-size: 0.9rem;
+  border-radius: 6px;
+  font-size: 1rem;
   transition: border-color 0.2s ease;
-}
-
-.input:focus {
-  outline: none;
-  border-color: #00853e;
-  box-shadow: 0 0 0 2px rgba(0, 133, 62, 0.1);
+  font-family: inherit;
 }
 
 .buttonContainer {
   display: flex;
   justify-content: flex-start;
-  margin-top: 1.25rem;
+  margin-top: 1.5rem;
 }
 
 .submitButton {
@@ -141,49 +129,29 @@
   background-color: #007339;
 }
 
+.input:focus {
+  outline: none;
+  border-color: #00853e;
+  box-shadow: 0 0 0 3px rgba(0, 133, 62, 0.1);
+}
+
+.formText {
+  line-height: 2;
+  letter-spacing: 0.15em;
+}
+
 .nextButtonContainer {
   display: flex;
   justify-content: flex-end;
-  margin-top: 0.75rem;
-}
-
-.nextButton {
-  display: block;
-  font-weight: bold;
-  background-color: #008743;
-  color: #fff;
-  font-size: 1rem;
-  padding: 0.75rem 2rem;
-  border: none;
-  border-radius: 6px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-.nextButton:hover {
-  background-color: #007339;
-}
-
-.faqContainer {
-  margin-top: 80px;
-  display: flex;
-  justify-content: center;
-  gap: 15px;
-}
-
-@media (max-width: 768px) {
-  .faqContainer {
-    flex-direction: column;
-  }
 }
 
 @media (max-width: 768px) {
   .container {
-    padding: 1rem;
+    padding: 1.5rem;
   }
 
   .formContainer {
-    padding: 1.25rem;
+    padding: 1.5rem;
   }
 
   .tabContainer {
@@ -191,6 +159,6 @@
   }
 
   .title {
-    font-size: 1.5rem;
+    font-size: 1.75rem;
   }
 }

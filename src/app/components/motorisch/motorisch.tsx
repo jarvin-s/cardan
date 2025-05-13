@@ -4,6 +4,7 @@ import React from "react";
 import styles from "./motorisch.module.css";
 import FAQ from "../faq/faq";
 import faqData from "../faq/faq-data.json";
+import { useRouter } from "next/navigation";
 
 interface MotorischProps {
   title: string;
@@ -36,15 +37,20 @@ const Motorisch = ({
   formSubmit,
   formNext,
 }: MotorischProps) => {
+  const router = useRouter();
   const faqs = faqData.find((faq) => faq.category === "Cerebrale Parese")?.faqs;
+
+  const handleNextClick = () => {
+    router.push("/ervaringsplein/dyslexie-kleurcontrast");
+  };
+
   return (
     <div className={styles.container}>
-      <h1 className={styles.title}>{title}</h1>
-      <p className={styles.subtitle}>{subtitle}</p>
-
-      <div className={styles.timerContainer}>
-        <p className={styles.timerLabel}>{formTimerLabel}</p>
-        <p className={styles.timer}>00:00</p>
+      <div className={styles.header}>
+        <h1 className={styles.title}>{title}</h1>
+        <p className={styles.subtitle}>{subtitle}</p>
+        <span className={styles.timerLabel}>{formTimerLabel}</span>
+        <span className={styles.timer}>00:00</span>
       </div>
 
       <div className={styles.tabContainer}>
@@ -104,7 +110,9 @@ const Motorisch = ({
       </div>
 
       <div className={styles.nextButtonContainer}>
-        <button className={styles.nextButton}>{formNext}</button>
+        <button className={styles.nextButton} onClick={handleNextClick}>
+          {formNext}
+        </button>
       </div>
 
       <div className={styles.faqContainer}>

@@ -1,9 +1,8 @@
 .container {
-  max-width: 900px;
+  max-width: 1140px;
   margin: 0 auto;
-  padding: 2.6rem;
+  padding: 16px;
 }
-
 
 .hoofdtitel {
   font-size: 2.25rem;
@@ -29,7 +28,6 @@
   font-size: 1.5rem;
   margin-bottom: 1rem;
   color: #333;
-  /* text-align: center; */
 }
 
 .subtext {
@@ -49,17 +47,15 @@
   flex-direction: column;
   width: 45%;
   background: #ffffff;
-  /* background: red; */
   border: 1px solid #ddd;
   border-radius: 12px;
   padding: 1rem;
   transition: transform 0.2s ease;
+  border: 1px solid green;
 }
 
 .item:hover {
-  background-color: #E6F7EA;
-  border: 1px solid green;
-
+  background-color: #e6f7ea;
 }
 
 .soortbeperking {
@@ -80,13 +76,13 @@
 
 .nextButton {
   display: block;
-  /* margin: 1.5rem auto 0; */
+  font-weight: bold;
   background-color: #008743;
   color: #fff;
   font-size: 1rem;
   padding: 0.75rem 2rem;
   border: none;
-  border-radius: 8px;
+  border-radius: 6px;
   cursor: pointer;
   transition: background-color 0.3s ease;
 }
@@ -114,9 +110,8 @@
 }
 
 .keuzesgrid button:hover {
-  background-color: #E6F7EA;
+  background-color: #e6f7ea;
   border: 1px solid green;
-
 }
 
 .headtext {
@@ -128,6 +123,4 @@
 .buttons {
   display: flex;
   justify-content: space-between;
-
-
 }

@@ -17,6 +17,7 @@
       "suppliers": "Leveranciers"
     },
     "cta-button": "Wordt digitaal toegankelijk",
+    "new-button": "Ervaringsplein",
     "features": {
       "wcag": "<strong>WCAG 2.2</strong> onderzoeken",
       "report": "Rapport voor <strong>toegankelijkheidsverklaring</strong>",
@@ -24,79 +25,8 @@
       "eaa": "Alle hulp bij de <strong>European Acessibility Act</strong>"
     }
   },
-  "ervaringsplein": {
-    "title": "Welkom op het Ervaringsplein!",
-    "cognitief": "Cognitief",
-    "motorisch": "Motorisch"
-  },
-  "cognitief": {
-    "title": "Ervaar hoe het is om een ADHD te hebben",
-    "subtitle": "Tijdens het schrijven van de e-mail verschijnen afleidende pop-ups en animaties vergelijkbaar met gedachten bij ADHD.",
-    "form": {
-      "title": "Email schrijven",
-      "subtitle": "Schrijf een e-mail naar je docent, waarin je meldt dat je te laat gaat komen voor de les van vandaag.",
-      "timer-label": "Tijd: ",
-      "name": "Naar",
-      "subject": "Onderwerp",
-      "message": "Bericht",
-      "submit": "Verzenden",
-      "next": "Volgende"
-    }
-  },
-  "motorisch": {
-    "title": "Ervaar hoe het is om een motorische beperking te hebben",
-    "subtitle": "Tijdens het selecteren van de verschillende invulvakken beweegt je cursor alle kanten op.",
-    "form": {
-      "title": "Voer uw gegevens in",
-      "subtitle": "Vul (fictief) gegevens in om de betaling te voltooien",
-      "timer-label": "Tijd: ",
-      "cerebral-palsy": "Cerebrale Parese",
-      "multiple-sclerosis": "Multiple Sclerosis",
-      "name": "Voornaam",
-      "lastname": "Achternaam",
-      "address": "Adres",
-      "postcode": "Postcode",
-      "submit": "Verzenden",
-      "next": "Volgende"
-    }
-  },
-  "welkom-pagina": {
-    "title": "Welkom op het Ervaringsplein!",
-    "heading": "Vandaag stap je in de schoenen van mensen die dagelijks obstakels tegenkomen op het internet.",
-    "paragraaf": "Van slechtziendheid tot motorische beperkingen. Elk van de vijf stations laat je zélf ervaren hoe belangrijk digitale toegankelijkheid is.",
-    "finalText": "Op het einde krijg je tips hoe jij je website kan verbeteren.",
-    "button": "Start het Ervaringsplein"
-  },
-  "footerdeel": {
-    "titel1": "Digitale Toegankelijk",
-    "diensten": "Diensten",
-    "branches": "Branches",
-    "wcag": "De WCAG",
-    "blog": "Blog",
-    "nieuwsbrief": "Inschrijven nieuwsbrief",
-    "titel2": "Cardan",
-    "over-cardan": "Over Cardan",
-    "onze-mensen": "Onze mensen",
-    "vacatures": "Vacatures",
-    "titel3": "Contact",
-    "email": "Mail ons op <strong>contact@cardan.com</strong>",
-    "telefoon": "Of bel naar <strong>+31 (0)88 500 4070</strong>"
-  },
-  "stationnav": {
-    "titel": "Stations:",
-    "naam1": "Visuele beperking",
-    "slug1": "visuele-beperking",
-    "naam2": "Auditieve beperking",
-    "slug2": "auditieve-beperking",
-    "naam3": "Cognitieve beperking",
-    "slug3": "cognitieve-beperking",
-    "naam4": "Motorische beperking",
-    "slug4": "motorische-beperking",
-    "naam5": "Dyslexie & kleurcontrast",
-    "slug5": "dyslexie-kleurcontrast"
-  },
   "visuele": {
-    "titel": "Visuele beperking ervaren ",
+    "title": "Visuele beperking ervaren ",
     "paragraaf": "Deze mini-game laat je ervaren hoe het is om visuele beperkingen te hebben.",
     "subtekst": "Hieronder zie je een plattegrond van een bioscoop.",
     "opdracht": "Probeer een stoel te reserveren",
@@ -111,7 +41,7 @@
     "volgende": "Volgende"
   },
   "auditieve": {
-    "title": "Auditieve beperking ervaren" ,
+    "title": "Auditieve beperking ervaren",
     "subtext": "Deze simulatie laat je ervaren hoe het is om te horen met een auditieve beperking.",
     "blocktitle1": "Selecteer je gehoorvermogen",
     "subtext1": "Dit zal de duidelijkheid van de omroep aanpassen",
@@ -144,5 +74,92 @@
     "subtext5": "Deze simulatie laat zien hoe belangrijk heldere communicatie is voor mensen met gehoorproblemen in openbare ruimtes.",
     "ander": "Ander gehoorvermogen",
     "naarcognitief": "Volgende"
+  },
+  "cognitief": {
+    "title": "Ervaar hoe het is om een ADHD te hebben",
+    "subtitle": "Tijdens het schrijven van de e-mail verschijnen afleidende pop-ups en animaties vergelijkbaar met gedachten bij ADHD.",
+    "form": {
+      "title": "Email schrijven",
+      "subtitle": "Schrijf een e-mail naar je docent, waarin je meldt dat je te laat gaat komen voor de les van vandaag.",
+      "timer-label": "Tijd: ",
+      "name": "Naar",
+      "subject": "Onderwerp",
+      "message": "Bericht",
+      "submit": "Verzenden",
+      "next": "Volgende"
+    }
+  },
+  "motorisch": {
+    "title": "Ervaar hoe het is om een motorische beperking te hebben",
+    "subtitle": "Tijdens het selecteren van de verschillende invulvakken beweegt je cursor alle kanten op.",
+    "form": {
+      "title": "Voer uw gegevens in",
+      "subtitle": "Vul (fictief) gegevens in om de betaling te voltooien",
+      "timer-label": "Tijd: ",
+      "cerebral-palsy": "Cerebrale Parese",
+      "multiple-sclerosis": "Multiple Sclerosis",
+      "name": "Voornaam",
+      "lastname": "Achternaam",
+      "address": "Adres",
+      "postcode": "Postcode",
+      "submit": "Verzenden",
+      "next": "Volgende"
+    }
+  },
+  "dyslexie": {
+    "title": "Ervaar hoe het is om dyslexie te hebben",
+    "subtitle": "Tijdens het lezen van de tekst wordt de tekst vervormd en moeilijk te lezen.",
+    "form": {
+      "title": "Lees de tekst",
+      "submit": "Verzenden",
+      "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore dolore fugit excepturi ducimus sapiente ut mollitia aliquam veritatis culpa eos. Id exercitationem dicta qui reiciendis neque minima dignissimos magni quam? Consequuntur doloribus possimus dolore laborum, et ullam commodi saepe facere, amet quos fuga eaque, culpa ut quasi molestias aut unde tempora repellat? Alias, fugiat veniam perferendis dolor ratione at exercitationem. Temporibus harum esse expedita minus perferendis hic quis recusandae nostrum nobis architecto! Consequuntur repudiandae, nulla, quibusdam debitis aperiam placeat porro iure possimus fugiat quisquam illo rerum nisi saepe incidunt ipsum. Aliquam sequi aspernatur aliquid, eaque adipisci fugit doloremque quis, perspiciatis ut libero dolore ipsam porro maxime odio. Porro eos repellendus omnis sit consequatur alias tempore, dolorum perspiciatis sint voluptatem consequuntur. Beatae labore eum iste quibusdam repellendus officia suscipit, obcaecati itaque. Iure iste minima corrupti sed eligendi ipsam, voluptatem porro, mollitia excepturi ad doloremque aperiam possimus eaque enim tenetur quis cumque!",
+      "dyslexie": "Dyslexie",
+      "kleurcontrast": "Kleurcontrast",
+      "question": "Wat deden de kinderen in het park?"
+    },
+    "finish-button": "Afronden"
+  },
+  "rapport": {
+    "title": "Ervaringsplein Rapport",
+    "text": "Iedere gebruiker verdient een website die wérkt, ongeacht beperking of hulpmiddel.",
+    "text2": "Cardan helpt organisaties bij het toetsen en verbeteren van digitale toegankelijkheid. Van audits tot concrete adviezen.",
+    "textBold": "Wil je weten hoe toegankelijk jouw website écht is?",
+    "ctaText": "Wordt nu digitaal toegankelijk",
+    "resultText": "Rapport over wat je voor elke beperking kan doen"
+  },
+  "welkom-pagina": {
+    "title": "Welkom op het Ervaringsplein!",
+    "heading": "Vandaag stap je in de schoenen van mensen die dagelijks obstakels tegenkomen op het internet.",
+    "paragraaf": "Van slechtziendheid tot motorische beperkingen. Elk van de vijf stations laat je zélf ervaren hoe belangrijk digitale toegankelijkheid is.",
+    "finalText": "Op het einde krijg je tips hoe jij je website kan verbeteren.",
+    "button": "Start het Ervaringsplein"
+  },
+  "footerdeel": {
+    "titel1": "Digitale Toegankelijk",
+    "diensten": "Diensten",
+    "branches": "Branches",
+    "wcag": "De WCAG",
+    "blog": "Blog",
+    "nieuwsbrief": "Inschrijven nieuwsbrief",
+    "titel2": "Cardan",
+    "over-cardan": "Over Cardan",
+    "onze-mensen": "Onze mensen",
+    "vacatures": "Vacatures",
+    "titel3": "Contact",
+    "email": "Mail ons op <strong>contact@cardan.com</strong>",
+    "telefoon": "Of bel naar <strong>+31 (0)88 500 4070</strong>"
+  },
+  "stationnav": {
+    "title": "Stations:",
+    "naam1": "Visuele beperking",
+    "slug1": "visuele-beperking",
+    "naam2": "Auditieve beperking",
+    "slug2": "auditieve-beperking",
+    "naam3": "Cognitieve beperking",
+    "slug3": "cognitieve-beperking",
+    "naam4": "Motorische beperking",
+    "slug4": "motorische-beperking",
+    "naam5": "Dyslexie & kleurcontrast",
+    "slug5": "dyslexie-kleurcontrast"
   }
 }
