@@ -1,28 +1,29 @@
-.container {
+.backgroundContainer {
+  margin-top: 100px;
+  position: relative;
   min-height: 100vh;
+}
+
+.container {
   display: flex;
   flex-direction: column;
-  padding: 2rem;
-  background-color: white;
-  margin-top: 1.5rem;
-  background-image: url("/images/paars-background.png"),
-    url("/images/groen-background.png");
-  background-repeat: no-repeat, no-repeat;
-  background-position: left bottom, top right;
-  background-size: 30rem, 30rem;
-  margin-bottom: 3rem;
+  max-width: 800px;
+  justify-content: center;
+  margin: 0 auto;
+  padding: 16px;
 }
 
 .content {
-  max-width: 56rem;
-  margin: 6.5rem auto 0 auto;
-  padding-left: 2rem;
-  padding-right: 2rem;
+  display: flex;
+  flex-direction: column;
+  max-width: 800px;
+  margin: 0 auto;
+  z-index: 1;
+  position: relative;
 }
 
 .heading {
-  font-size: 3rem;
-  font-weight: 700;
+  font-size: 2.5rem;
   margin-bottom: 1rem;
 }
 
@@ -46,18 +47,55 @@
 }
 
 .button {
-  background-color: #008743;
-  color: white;
-  font-weight: 300;
-  padding: 1rem 3rem;
   border-radius: 0.5rem;
-  font-size: 1.2rem;
-  cursor: pointer;
+  background-color: #008743;
+  padding: 0.75rem 1rem;
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: white;
   border: none;
+  transition-duration: 100ms;
+  align-self: flex-start;
   margin-top: 1rem;
-  font-weight: bold;
 }
 
 .button:hover {
-  background-color: #007339;
+  cursor: pointer;
+  background-color: #007338;
+}
+
+.purpleBackground {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  z-index: 0;
+  filter: brightness(0.1);
+}
+
+.greenBackground {
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 0;
+}
+
+@media (max-width: 768px) {
+  .greenBackground {
+    display: none;
+  }
+  .purpleBackground {
+    display: none;
+  }
+  .button {
+    width: 100%;
+    font-size: 1rem;
+  }
+  .heading {
+    font-size: 2rem;
+  }
+  .subheading,
+  .paragraph,
+  .finalText {
+    font-size: 1rem;
+  }
 }

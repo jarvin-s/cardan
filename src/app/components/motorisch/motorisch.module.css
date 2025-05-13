@@ -1,5 +1,5 @@
 .container {
-  max-width: 830px;
+  max-width: 1140px;
   margin: 0 auto;
   padding: 16px;
   position: relative;
@@ -10,7 +10,7 @@
 }
 
 .title {
-  font-size: 1.75rem;
+  font-size: 2em;
   font-weight: bold;
   margin-bottom: 0.5rem;
   line-height: 1.2;
@@ -125,14 +125,20 @@
 }
 
 .submitButton {
-  background-color: #00a651;
-  color: white;
+  display: block;
+  font-weight: bold;
+  background-color: #008743;
+  color: #fff;
+  font-size: 1rem;
+  padding: 0.75rem 2rem;
   border: none;
   border-radius: 6px;
-  padding: 6px 14px;
   cursor: pointer;
-  font-weight: bold;
-  font-size: 0.9rem;
+  transition: background-color 0.3s ease;
+}
+
+.submitButton:hover {
+  background-color: #007339;
 }
 
 .nextButtonContainer {
@@ -142,24 +148,20 @@
 }
 
 .nextButton {
-  background-color: #00a651;
-  color: white;
+  display: block;
+  font-weight: bold;
+  background-color: #008743;
+  color: #fff;
+  font-size: 1rem;
+  padding: 0.75rem 2rem;
   border: none;
   border-radius: 6px;
-  padding: 6px 14px;
   cursor: pointer;
-  font-weight: bold;
-  font-size: 0.9rem;
-}
-
-.submitButton:hover {
-  background-color: #008d45;
+  transition: background-color 0.3s ease;
 }
 
 .nextButton:hover {
-  background-color: #006e33;
-  transform: translateY(-1px);
-  box-shadow: 0 2px 6px rgba(0, 133, 62, 0.4);
+  background-color: #007339;
 }
 
 .faqContainer {

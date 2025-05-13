@@ -1,7 +1,7 @@
 .container {
-  max-width: 900px;
+  max-width: 1140px;
   margin: 0 auto;
-  padding: 2.6rem;
+  padding: 16px;
 }
 
 .hoofdtitel {
@@ -76,7 +76,7 @@
 
 .nextButton {
   display: block;
-  /* margin: 1.5rem auto 0; */
+  font-weight: bold;
   background-color: #008743;
   color: #fff;
   font-size: 1rem;

@@ -66,7 +66,7 @@ const Dyslexie = ({
           </div>
         </div>
       </div>
-      <div className={styles.buttonContainer}>
+      <div className={styles.nextButtonContainer}>
         <button
           type="submit"
           className={styles.submitButton}
