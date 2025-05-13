@@ -4,7 +4,6 @@ import Dyslexie from "@/app/components/dyslexie/dyslexie";
 import Stationtk from "@/app/components/station/station";
 const DyslexieKleurcontrastPage = () => {
   const t = useTranslations("dyslexie");
-  const t2 = useTranslations("stationnav");
   const stations = [
     { naam: "Visuele beperking", slug: "visuele-beperking" },
     { naam: "Auditieve beperking", slug: "auditieve-beperking" },
@@ -14,7 +13,7 @@ const DyslexieKleurcontrastPage = () => {
   ];
   return (
     <>
-      <Stationtk title={t2("title")} stations={stations} />
+      <Stationtk stations={stations} />
       <Dyslexie
         title={t("title")}
         subtitle={t("subtitle")}

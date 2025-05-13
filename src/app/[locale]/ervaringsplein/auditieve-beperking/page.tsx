@@ -5,7 +5,6 @@ import { useTranslations } from "next-intl";
 
 const AuditievePage = () => {
   const t = useTranslations("auditieve");
-  const t2 = useTranslations("stationnav");
   const stations = [
     { naam: "Visuele beperking", slug: "visuele-beperking" },
     { naam: "Auditieve beperking", slug: "auditieve-beperking" },
@@ -15,7 +14,7 @@ const AuditievePage = () => {
   ];
   return (
     <>
-      <Station title={t2("title")} stations={stations} />
+      <Station stations={stations} />
       <Auditieve
         title={t("title")}
         subtext={t("subtext")}

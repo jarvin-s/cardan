@@ -5,7 +5,6 @@ import Stationtk from "@/app/components/station/station";
 
 const CognitiefPage = () => {
   const t = useTranslations("cognitief");
-  const t2 = useTranslations("stationnav");
   const stations = [
     { naam: "Visuele beperking", slug: "visuele-beperking" },
     { naam: "Auditieve beperking", slug: "auditieve-beperking" },
@@ -15,7 +14,7 @@ const CognitiefPage = () => {
   ];
   return (
     <>
-      <Stationtk title={t2("title")} stations={stations} />
+      <Stationtk stations={stations} />
       <Cognitief
         title={t("title")}
         subtitle={t("subtitle")}
