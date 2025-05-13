@@ -30,15 +30,13 @@
     "paragraaf": "Deze mini-game laat je ervaren hoe het is om visuele beperkingen te hebben.",
     "subtekst": "Hieronder zie je een plattegrond van een bioscoop.",
     "opdracht": "Probeer een stoel te reserveren",
-    "kleur1": "Groen: ",
-    "kleur2": "Rood: ",
-    "status1": "Beschikbare stoelen",
-    "status2": "Bezet",
     "hoofdnaam": "Kleurenblindheid",
     "combi1": "Geel-Blauw",
     "combi2": "Rood-Groen",
     "combi3": "Totaal kleurenblind",
-    "volgende": "Volgende"
+    "volgende": "Volgende",
+    "reserved_message": "Deze stoel is al gereserveerd.",
+    "success_message": "Succesvol stoel is gereserveerd"
   },
   "auditieve": {
     "title": "Auditieve beperking ervaren",

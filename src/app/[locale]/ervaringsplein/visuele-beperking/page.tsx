@@ -21,15 +21,13 @@ const VisuelePage = () => {
         paragraaf={t("paragraaf")}
         subtekst={t("subtekst")}
         opdracht={t("opdracht")}
-        kleur1={t("kleur1")}
-        kleur2={t("kleur2")}
-        status1={t("status1")}
-        status2={t("status2")}
         hoofdnaam={t("hoofdnaam")}
         combi1={t("combi1")}
         combi2={t("combi2")}
         combi3={t("combi3")}
         volgende={t("volgende")}
+        reserved_message={t("reserved_message")}
+        success_message= {t("success_message")}
       />
     </>
   );

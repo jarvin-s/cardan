@@ -30,15 +30,13 @@
     "paragraaf": "This mini-game lets you experience what it's like to have visual impairments.",
     "subtekst": "Below you see a layout of a cinema.",
     "opdracht": "Try to reserve a seat",
-    "kleur1": "Green: ",
-    "kleur2": "Red: ",
-    "status1": "Available seats",
-    "status2": "Occupied",
     "hoofdnaam": "Color blindness",
     "combi1": "Blue-Yellow",
     "combi2": "Red-Green",
     "combi3": "Total color blindness",
-    "volgende": "Next"
+    "volgende": "Next",
+    "reserved_message": "This seat is already reserved.",
+    "success_message": "Seat successfully reserved."
   },
   "auditieve": {
     "title": "Experience Auditory Impairment",
