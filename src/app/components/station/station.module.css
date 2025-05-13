@@ -94,21 +94,13 @@
   cursor: pointer;
   transition: transform 0.2s ease;
   padding: 0.75rem;
-  /* border: 0.1px solid #00000015;
-  border-radius: 0.75rem;
-  background-color: #008743;
-  color: white; */
 }
 
 .station:hover {
-  /* box-shadow: 3px 3px #e7e3e8; */
+  box-shadow: 3px 3px #e7e3e8;
   padding: 0.75rem;
   border-radius: 0.75rem;
   transition: 0.2s ease-in-out;
-  .balkje {
-    background-color: #008743;
-    transition: 0.2s ease-in-out;
-  }
 }
 
 /* Het groene balkje boven het nummer */
