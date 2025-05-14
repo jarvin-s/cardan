@@ -32,7 +32,6 @@ const CognitiefPage = () => {
         title={t("title")}
         subtitle={t("subtitle")}
         formTitle={t("form.title")}
-        formTimerLabel={t("form.timer-label")}
         formSubtitle={t("form.subtitle")}
         formName={t("form.name")}
         formSubject={t("form.subject")}
