@@ -1,105 +1,132 @@
 'use client';
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import styles from './visuele.module.css';
-
 
 interface VisueleProps {
   title: string;
   paragraaf: string;
   subtekst: string;
   opdracht: string;
-  kleur1: string;
-  kleur2: string;
-  status1: string;
-  status2: string;
   hoofdnaam: string;
   combi1: string;
   combi2: string;
   combi3: string;
   volgende: string;
+  reserved_message: string;
+  success_message: string;
+
 }
+
+type SeatStatus = 'green' | 'red';
+
 const Visuele = ({
   title,
   paragraaf,
   subtekst,
   opdracht,
-  kleur1,
-  kleur2,
-  status1,
-  status2,
   hoofdnaam,
   combi1,
   combi2,
   combi3,
-  volgende
+  volgende,
+  reserved_message,
+  success_message
 }: VisueleProps) => {
-  const [selectedMode, setSelectedMode] = useState('kleurenblindheid');
+  const [selectedMode, setSelectedMode] = useState(combi1);
+  const [seats, setSeats] = useState<SeatStatus[]>([]);
+  const [firstClickStatus, setFirstClickStatus] = useState<SeatStatus | null>(null);
+  const [userReservedSeats, setUserReservedSeats] = useState<number[]>([]);
+  const [message, setMessage] = useState<{ text: string; type: 'error' | 'success' } | null>(null);
 
-  const seats = Array(8 * 8).fill(null);
+  // Genereer stoelen random met 'green' of 'red'
+  useEffect(() => {
+    const randomSeats: SeatStatus[] = Array.from({ length: 64 }, () =>
+      Math.random() > 0.5 ? 'green' : 'red'
+    );
+    setSeats(randomSeats);
+  }, []);
+
+  // Bepaal welke kleur op basis van filter
+  const getSeatClass = (status: SeatStatus) => {
+    if (selectedMode === combi1) {
+      return status === 'green' ? styles.kleur1 : styles.kleur2;
+    } else if (selectedMode === combi2) {
+      return status === 'green' ? styles.kleur3 : styles.kleur4;
+    } else if (selectedMode === combi3) {
+      return status === 'green' ? styles.kleur5 : styles.kleur6;
+    }
+    return '';
+  };
+
+  const handleSeatClick = (index: number, status: SeatStatus) => {
+    if (firstClickStatus === null) {
+      setFirstClickStatus(status);
+      setUserReservedSeats((prev) => [...prev, index]);
+      setMessage({ text: reserved_message, type: 'error' });
+    } else {
+      if (status === firstClickStatus) {
+        setMessage({ text: reserved_message, type: 'error' });
+      } else {
+        if (!userReservedSeats.includes(index)) {
+          setUserReservedSeats((prev) => [...prev, index]);
+          setMessage({ text: success_message, type: 'success' });
+        }
+      }
+    }
+  };
 
   return (
-    //tekst gedeelte
     <div className={styles.container}>
       <h1 className={styles.title}>{title}</h1>
-      <p className={styles.description}> {paragraaf}
-      </p>
-      <p className={styles.subdescription}>
-        {subtekst}
-      </p>
+      <p className={styles.description}>{paragraaf}</p>
+      <p className={styles.subdescription}>{subtekst}</p>
 
-      {/* stoelen gedeelte */}
       <div className={styles.content}>
+        {/* Stoelen */}
         <div className={styles.seatSection}>
           <p className={styles.seatInstruction}>{opdracht}</p>
           <div className={styles.seatGrid}>
-            {seats.map((_, i) => (
-              <div key={i} className={styles.seat}></div>
-            ))}
+            {seats.map((seat, i) => {
+              const isUserReserved = userReservedSeats.includes(i);
+              const seatClass = getSeatClass(seat);
+              const reservedClass = isUserReserved ? styles.userReserved : '';
+              return (
+                <div
+                  key={i}
+                  className={`${styles.seat} ${seatClass} ${reservedClass}`}
+                  onClick={() => handleSeatClick(i, seat)}
+                ></div>
+              );
+            })}
           </div>
 
-          <div className={styles.legend}>
-            <div>
-              <span className={`${styles.legendBox} ${styles.available}`}></span>
-              <span>{kleur1}</span> {status1}
+          {message && (
+            <div className={`${styles.message} ${styles[message.type]}`}>
+              {message.text}
             </div>
-            <div>
-              <span className={`${styles.legendBox} ${styles.occupied}`}></span>
-              <span>{kleur2}</span> {status2}
-            </div>
-          </div>
+          )}
         </div>
 
-        {/* Filtersectie */}
+        {/* Filterselectie */}
         <div className={styles.filterSection}>
           <p className={styles.filterLabel}>{hoofdnaam}</p>
-          <button
-            className={`${styles.filterButton} ${selectedMode === combi1 ? styles.selected : ''}`}
-            onClick={() => setSelectedMode(combi1)}
-          >
-            {combi1}
-          </button>
-          <button
-            className={`${styles.filterButton} ${selectedMode === combi2 ? styles.selected : ''}`}
-            onClick={() => setSelectedMode(combi2)}
-          >
-            {combi2}
-          </button>
-          <button
-            className={`${styles.filterButton} ${selectedMode === combi3 ? styles.selected : ''}`}
-            onClick={() => setSelectedMode(combi3)}
-          >
-            {combi3}
-          </button>
+          {[combi1, combi2, combi3].map((mode) => (
+            <button
+              key={mode}
+              className={`${styles.filterButton} ${selectedMode === mode ? styles.selected : ''}`}
+              onClick={() => setSelectedMode(mode)}
+            >
+              {mode}
+            </button>
+          ))}
         </div>
       </div>
-      
-      {/* volgende button */}
+
+      {/* Volgende knop */}
       <div className={styles.nextContainer}>
         <button
           className={styles.nextButton}
-          onClick={() =>
-            (window.location.href = "/ervaringsplein/auditieve-beperking")
-          }
+          onClick={() => (window.location.href = "/ervaringsplein/auditieve-beperking")}
         >
           {volgende}
         </button>

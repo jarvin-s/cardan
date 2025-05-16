@@ -1,42 +1,34 @@
 "use client";
 
-import React, { useState } from "react";
+import { useRef, useState, useEffect } from "react";
 import styles from "./auditieve.module.css";
+import {
+  MaterialSymbolsPlayArrowRounded,
+  LineMdPlayFilledToPauseTransition,
+} from "./icons";
 
 interface AudioitieveProps {
   title: string;
   subtext: string;
   blocktitle1: string;
   subtext1: string;
-  soort1: string;
-  omschrijving1: string;
-  soort2: string;
-  omschrijving2: string;
-  soort3: string;
-  omschrijving3: string;
-  soort4: string;
-  omschrijving4: string;
+  soort1: string; omschrijving1: string;
+  soort2: string; omschrijving2: string;
+  soort3: string; omschrijving3: string;
+  soort4: string; omschrijving4: string;
   naarluisteren: string;
-  blocktitle2: string;
-  subtext2: string;
-  gehoord: string;
-  blocktitle3: string;
-  subtext3: string;
+  blocktitle2: string; subtext2: string; gehoord: string;
+  blocktitle3: string; subtext3: string;
   antwoord1: string;
   antwoord2: string;
   antwoord3: string;
   antwoord4: string;
   antwoord5: string;
   antwoord6: string;
-  blocktitle4: string;
-  headtext4: string;
-  subtext4: string;
-  opnieuw: string;
-  blocktitle5: string;
-  headtext5: string;
-  subtext5: string;
-  ander: string;
+  blocktitle4: string; headtext4: string; subtext4: string; opnieuw: string;
+  blocktitle5: string; headtext5: string; subtext5: string; ander: string;
   naarcognitief: string;
+  nietnormaal1: string;
 }
 
 const Auditieve = ({
@@ -73,20 +65,51 @@ const Auditieve = ({
   subtext5,
   ander,
   naarcognitief,
+  nietnormaal1,
 }: AudioitieveProps) => {
-  const [step, setStep] = useState<'keuze' | 'luisteren' | 'vraag' | 'feedback'>('keuze');
-  // const [selectedLevel, setSelectedLevel] = useState<string | null>(null);
+  const [step, setStep] = useState<"keuze" | "luisteren" | "vraag" | "feedback">("keuze");
   const [isCorrect, setIsCorrect] = useState<boolean | null>(null);
+  const [selectedAudio, setSelectedAudio] = useState<string>("ernstig.mp3"); // default to first audio
+  const [hasListenedOnce, setHasListenedOnce] = useState(false);
+  const [isPlaying, setIsPlaying] = useState(false);
+  const [audioHasPlayed, setAudioHasPlayed] = useState(false);
+  const [progress, setProgress] = useState(0);
+  const audioRef = useRef<HTMLAudioElement>(null);
 
-  // const handleLevelSelect = (level: string) => {
-  //   setSelectedLevel(level);
-  //   setStep('luisteren');
-  // };
+  useEffect(() => {
+    const audio = audioRef.current;
+    if (!audio) return;
+
+    const updateProgress = () => {
+      const percent = (audio.currentTime / audio.duration) * 100;
+      // console.log("progress:", percent);
+      setProgress(percent);
+    };
+
+    audio.addEventListener("timeupdate", updateProgress);
+    return () => {
+      audio.removeEventListener("timeupdate", updateProgress);
+    };
+  }, []);
+
+  const togglePlay = () => {
+    const audio = audioRef.current;
+    if (!audio) return;
+
+    if (audio.paused) {
+      audio.play();
+      setIsPlaying(true);
+      setAudioHasPlayed(true);
+    } else {
+      audio.pause();
+      setIsPlaying(false);
+    }
+  };
 
   const handleAnswer = (answer: string) => {
-    const correct = answer === 'spoor3';
+    const correct = answer === "spoor3";
     setIsCorrect(correct);
-    setStep('feedback');
+    setStep("feedback");
   };
 
   return (
@@ -95,76 +118,114 @@ const Auditieve = ({
       <p className={styles.hoofdsubtext}>{subtext}</p>
 
       <div className={styles.block}>
-        {step === 'keuze' && (
+        {step === "keuze" && (
           <>
             <h2 className={styles.blocktitle}>{blocktitle1}</h2>
             <p className={styles.subtext}>{subtext1}</p>
+
             <div className={styles.keuzemenu}>
-              {[{ soort: soort1, omschrijving: omschrijving1 },
-              { soort: soort2, omschrijving: omschrijving2 },
-              { soort: soort3, omschrijving: omschrijving3 },
-              { soort: soort4, omschrijving: omschrijving4 }].map((item, index) => (
-                <div key={index} className={styles.item}>
-                  {/* <button onClick={() => handleLevelSelect(item.soort)}>{item.soort}</button> */}
-                  <div className={styles.tekstblockje}>
-                    <h3 className={styles.soortbeperking}>{item.soort}</h3>
-                    <p className={styles.omschrijving}>{item.omschrijving}</p>
-                  </div>
-                </div>
-              ))}
+              {[{ soort: soort1, omschrijving: omschrijving1, bestand: "ernstig.mp3" },
+                { soort: soort2, omschrijving: omschrijving2, bestand: "matig.mp3" },
+                { soort: soort3, omschrijving: omschrijving3, bestand: "licht.mp3" },
+                { soort: soort4, omschrijving: omschrijving4, bestand: "normaal.mp3" }]
+                .map((item, index) => {
+                  const isNormaal = item.bestand === "normaal.mp3";
+                  const isDisabled = isNormaal && !hasListenedOnce;
+                  const isSelected = selectedAudio === item.bestand;
+
+                  return (
+                    <div
+                      key={index}
+                      className={`${styles.item} ${isSelected ? styles.selected : ""} ${isDisabled ? styles.disabled : ""}`}
+                      onClick={() => {
+                        if (!isDisabled) setSelectedAudio(item.bestand);
+                      }}
+                    >
+                      <div className={styles.tekstblockje}>
+                        <h3 className={styles.soortbeperking}>{item.soort}</h3>
+                        <p className={styles.omschrijving}>{item.omschrijving}</p>
+                        {isDisabled && <span className={styles.locked}>{nietnormaal1}</span>}
+                      </div>
+                    </div>
+                  );
+                })}
             </div>
-            <button className={styles.nextButton} onClick={() => setStep('luisteren')}>
+
+            <button
+              className={styles.nextButton}
+              onClick={() => setStep("luisteren")}
+              disabled={!selectedAudio} // Only enabled if an audio is selected
+            >
               {naarluisteren}
             </button>
           </>
         )}
 
-        {step === 'luisteren' && (
+        {step === "luisteren" && (
           <div>
-            <div>
-              <h1 className={styles.blocktitle}>{blocktitle2}</h1>
-              <p className={styles.subtext}>{subtext2}</p>
+            <h1 className={styles.blocktitle}>{blocktitle2}</h1>
+            <p className={styles.subtext}>{subtext2}</p>
+
+            <div className={styles.audioplayer}>
+              <div className={styles.progressBar}>
+                <div className={styles.progress} style={{ width: `50%` }} />
+              </div>
+              <button className={styles.playButton} onClick={togglePlay}>
+                {isPlaying ? (
+                  <LineMdPlayFilledToPauseTransition />
+                ) : (
+                  <MaterialSymbolsPlayArrowRounded />
+                )}
+              </button>
             </div>
-            {/* video/audio hier */}
+
+            <audio
+              ref={audioRef}
+              onEnded={() => setIsPlaying(false)}
+            >
+              <source src={`/audio/${selectedAudio}`} type="audio/mpeg" />
+              Je browser ondersteunt dit audio-element niet.
+            </audio>
+
             <button
               className={styles.nextButton}
-              onClick={() => setStep('vraag')}>{gehoord}
+              onClick={() => {
+                setHasListenedOnce(true);
+                setStep("vraag");
+              }}
+              disabled={!audioHasPlayed}
+            >
+              {gehoord}
             </button>
           </div>
         )}
 
-        {step === 'vraag' && (
+        {step === "vraag" && (
           <div>
-            <div>
-              <h1 className={styles.blocktitle}>{blocktitle3}</h1>
-              <p className={styles.subtext}>{subtext3}</p>
-            </div>
+            <h1 className={styles.blocktitle}>{blocktitle3}</h1>
+            <p className={styles.subtext}>{subtext3}</p>
             <div className={styles.keuzesgrid}>
-              <button onClick={() => handleAnswer('spoor1')}>{antwoord1}</button>
-              <button onClick={() => handleAnswer('spoor2')}>{antwoord2}</button>
-              <button onClick={() => handleAnswer('spoor3')}>{antwoord3}</button>
-              <button onClick={() => handleAnswer('spoor4')}>{antwoord4}</button>
-              <button onClick={() => handleAnswer('spoor5')}>{antwoord5}</button>
-              <button onClick={() => handleAnswer('spoor6')}>{antwoord6}</button>
+              <button onClick={() => handleAnswer("spoor1")}>{antwoord1}</button>
+              <button onClick={() => handleAnswer("spoor2")}>{antwoord2}</button>
+              <button onClick={() => handleAnswer("spoor3")}>{antwoord3}</button>
+              <button onClick={() => handleAnswer("spoor4")}>{antwoord4}</button>
+              <button onClick={() => handleAnswer("spoor5")}>{antwoord5}</button>
+              <button onClick={() => handleAnswer("spoor6")}>{antwoord6}</button>
             </div>
           </div>
         )}
 
-        {step === 'feedback' && (
+        {step === "feedback" && (
           <div>
             {isCorrect ? (
               <>
-                <div>
-                  <h1 className={styles.blocktitle}>{blocktitle5}</h1>
-                  <h5 className={styles.headtext}>{headtext5}</h5>
-                  <p className={styles.subtext}>{subtext5}</p>
-                </div>
+                <h1 className={styles.blocktitle}>{blocktitle5}</h1>
+                <h5 className={styles.headtext}>{headtext5}</h5>
+                <p className={styles.subtext}>{subtext5}</p>
                 <div className={styles.buttons}>
-                  <button
-                    className={styles.nextButton}
-                    onClick={() => setStep('keuze')}>{ander}
+                  <button className={styles.nextButton} onClick={() => setStep("keuze")}>
+                    {ander}
                   </button>
-
                   <button
                     className={styles.nextButton}
                     onClick={() =>
@@ -174,32 +235,21 @@ const Auditieve = ({
                     {naarcognitief}
                   </button>
                 </div>
-
-
-
-
               </>
-
             ) : (
               <>
-                <div>
-                  <h1 className={styles.blocktitle}>{blocktitle4}</h1>
-                  <h5 className={styles.headtext}>{headtext4}</h5>
-                  <p className={styles.subtext}>{subtext4}</p>
-                </div>
-                <button className={styles.nextButton}
-                  onClick={() => setStep('keuze')}
-                >
+                <h1 className={styles.blocktitle}>{blocktitle4}</h1>
+                <h5 className={styles.headtext}>{headtext4}</h5>
+                <p className={styles.subtext}>{subtext4}</p>
+                <button className={styles.nextButton} onClick={() => setStep("keuze")}>
                   {opnieuw}
                 </button>
               </>
             )}
-
-
           </div>
         )}
       </div>
-    </div >
+    </div>
   );
 };
 

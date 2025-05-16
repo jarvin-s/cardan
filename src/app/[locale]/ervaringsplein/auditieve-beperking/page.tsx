@@ -50,6 +50,7 @@ const AuditievePage = () => {
         subtext5={t("subtext5")}
         ander={t("ander")}
         naarcognitief={t("naarcognitief")}
+        nietnormaal1={t("nietnormaal1")}
       />
     </>
   );

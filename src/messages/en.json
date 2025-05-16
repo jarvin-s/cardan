@@ -30,15 +30,13 @@
     "paragraaf": "This mini-game lets you experience what it's like to have visual impairments.",
     "subtekst": "Below you see a layout of a cinema.",
     "opdracht": "Try to reserve a seat",
-    "kleur1": "Green: ",
-    "kleur2": "Red: ",
-    "status1": "Available seats",
-    "status2": "Occupied",
     "hoofdnaam": "Color blindness",
     "combi1": "Blue-Yellow",
     "combi2": "Red-Green",
     "combi3": "Total color blindness",
-    "volgende": "Next"
+    "volgende": "Next",
+    "reserved_message": "This seat is already reserved.",
+    "success_message": "Seat successfully reserved."
   },
   "auditieve": {
     "title": "Experience Auditory Impairment",
@@ -52,7 +50,7 @@
     "soort3": "Mild hearing impairment",
     "omschrijving3": "Some sounds may be harder to distinguish",
     "soort4": "Normal hearing",
-    "omschrijving4": "(This can only be listened to after one playback)",
+    "omschrijving4": "Normal sound",
     "naarluisteren": "Start simulation",
     "blocktitle2": "Listen to the announcement",
     "subtext2": "Pay close attention to the platform change information",
@@ -73,7 +71,8 @@
     "headtext5": "Well done!",
     "subtext5": "This simulation shows how important clear communication is for people with hearing impairments in public spaces.",
     "ander": "Try different hearing ability",
-    "naarcognitief": "Next"
+    "naarcognitief": "Next",
+    "nietnormaal1": "First try another simulatie"
   },
   "cognitief": {
     "title": "Experience what it's like to have ADHD",
