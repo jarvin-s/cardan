@@ -16,7 +16,7 @@
       "businesses": "Bedrijven",
       "suppliers": "Leveranciers"
     },
-    "cta-button": "Wordt digitaal toegankelijk",
+    "cta-button": "Wordt nu digitaal toegankelijk",
     "new-button": "Ervaringsplein",
     "features": {
       "wcag": "<strong>WCAG 2.2</strong> onderzoeken",
@@ -149,7 +149,6 @@
     "telefoon": "Of bel naar <strong>+31 (0)88 500 4070</strong>"
   },
   "stationnav": {
-    "title": "Stations:",
     "naam1": "Visuele beperking",
     "slug1": "visuele-beperking",
     "naam2": "Auditieve beperking",
