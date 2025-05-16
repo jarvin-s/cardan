@@ -3,7 +3,7 @@
 import React, { useEffect, useState, useRef } from "react";
 import styles from "./cognitief.module.css";
 import { useRouter } from "next/navigation";
-import CompleteScreen from "./complete-screen";
+import CompleteScreen from "./completed/complete-screen";
 
 interface CognitiefProps {
   title: string;
@@ -22,6 +22,7 @@ interface Distraction {
   text: string;
   positionX: string;
   positionY: string;
+  isHighlighted: boolean;
 }
 
 const Cognitief = ({
@@ -41,11 +42,19 @@ const Cognitief = ({
   const [completed, setCompleted] = useState(false);
   const [savedTime, setSavedTime] = useState<number | null>(null);
   const [difficulty, setDifficulty] = useState<string>("3");
+  const [nameInput, setNameInput] = useState("");
+  const [subjectInput, setSubjectInput] = useState("");
+  const [messageInput, setMessageInput] = useState("");
+  const [formErrors, setFormErrors] = useState({
+    name: false,
+    subject: false,
+    message: false,
+    messageLength: false,
+  });
   const distractionIdRef = useRef(0);
   const router = useRouter();
 
   useEffect(() => {
-    // Check if there's a saved time in localStorage
     const savedCognitiefTime = localStorage.getItem("cognitiefTime");
     if (savedCognitiefTime) {
       setSavedTime(parseInt(savedCognitiefTime, 10));
@@ -96,12 +105,14 @@ const Cognitief = ({
         distractions[Math.floor(Math.random() * distractions.length)];
       const randomX = `${Math.floor(Math.random() * 80) + 10}%`;
       const randomY = `${Math.floor(Math.random() * 80) + 10}%`;
+      const isHighlighted = distractionIdRef.current % 5 === 2;
 
       const newDistraction = {
         id: distractionIdRef.current++,
         text: randomDistraction,
         positionX: randomX,
         positionY: randomY,
+        isHighlighted,
       };
 
       setDistractionList((prev) => [...prev, newDistraction]);
@@ -112,7 +123,7 @@ const Cognitief = ({
         );
       }, 3500);
 
-      const nextDelay = Math.floor(Math.random() * 3000) + 2000; // 2-5 seconds
+      const nextDelay = Math.floor(Math.random() * 3000) + 2000;
       setTimeout(showDistraction, nextDelay);
     };
 
@@ -132,10 +143,25 @@ const Cognitief = ({
     router.push("/ervaringsplein/motorische-beperking");
   };
 
+  const validateForm = () => {
+    const errors = {
+      name: nameInput.trim() === "",
+      subject: subjectInput.trim() === "",
+      message: messageInput.trim() === "",
+      messageLength: messageInput.trim().length < 50,
+    };
+
+    setFormErrors(errors);
+
+    return !Object.values(errors).some((error) => error);
+  };
+
   const handleSubmit = () => {
-    localStorage.setItem("cognitiefTime", elapsedTime.toString());
-    setSavedTime(elapsedTime);
-    setCompleted(true);
+    if (validateForm()) {
+      localStorage.setItem("cognitiefTime", elapsedTime.toString());
+      setSavedTime(elapsedTime);
+      setCompleted(true);
+    }
   };
 
   const handleDifficultyChange = (value: string) => {
@@ -169,10 +195,20 @@ const Cognitief = ({
                 <input
                   type="text"
                   id="naar"
-                  className={styles.inputField}
+                  className={`${styles.inputField} ${
+                    formErrors.name ? styles.inputError : ""
+                  }`}
                   onFocus={handleInputFocus}
-                  onChange={handleInputFocus}
+                  onChange={(e) => {
+                    handleInputFocus();
+                    setNameInput(e.target.value);
+                  }}
+                  value={nameInput}
+                  required
                 />
+                {formErrors.name && (
+                  <p className={styles.errorMessage}>Naam is verplicht</p>
+                )}
               </div>
 
               <div className={styles.formGroup}>
@@ -180,21 +216,48 @@ const Cognitief = ({
                 <input
                   type="text"
                   id="onderwerp"
-                  className={styles.inputField}
+                  className={`${styles.inputField} ${
+                    formErrors.subject ? styles.inputError : ""
+                  }`}
                   onFocus={handleInputFocus}
-                  onChange={handleInputFocus}
+                  onChange={(e) => {
+                    handleInputFocus();
+                    setSubjectInput(e.target.value);
+                  }}
+                  value={subjectInput}
+                  required
                 />
+                {formErrors.subject && (
+                  <p className={styles.errorMessage}>Onderwerp is verplicht</p>
+                )}
               </div>
 
               <div className={styles.formGroup}>
                 <label htmlFor="bericht">{formMessage}</label>
                 <textarea
                   id="bericht"
-                  className={styles.messageField}
+                  className={`${styles.messageField} ${
+                    formErrors.message || formErrors.messageLength
+                      ? styles.inputError
+                      : ""
+                  }`}
                   rows={5}
                   onFocus={handleInputFocus}
-                  onChange={handleInputFocus}
+                  onChange={(e) => {
+                    handleInputFocus();
+                    setMessageInput(e.target.value);
+                  }}
+                  value={messageInput}
+                  required
                 ></textarea>
+                {formErrors.message && (
+                  <p className={styles.errorMessage}>Bericht is verplicht</p>
+                )}
+                {formErrors.messageLength && !formErrors.message && (
+                  <p className={styles.errorMessage}>
+                    Bericht moet minimaal 50 tekens bevatten
+                  </p>
+                )}
               </div>
               <button className={styles.sendButton} onClick={handleSubmit}>
                 {formSubmit}
@@ -215,6 +278,10 @@ const Cognitief = ({
                 top: distraction.positionY,
                 left: distraction.positionX,
                 transform: "none",
+                backgroundColor: distraction.isHighlighted
+                  ? "#ef3f3f"
+                  : "#e6f7ea",
+                color: distraction.isHighlighted ? "white" : "black",
               }}
             >
               <p>{distraction.text}</p>
