@@ -237,7 +237,8 @@ const Cognitief = ({
                 <textarea
                   id="bericht"
                   className={`${styles.messageField} ${
-                    formErrors.message || formErrors.messageLength
+                    formErrors.message ||
+                    (formErrors.messageLength && messageInput.length < 50)
                       ? styles.inputError
                       : ""
                   }`}
@@ -253,11 +254,14 @@ const Cognitief = ({
                 {formErrors.message && (
                   <p className={styles.errorMessage}>Bericht is verplicht</p>
                 )}
-                {formErrors.messageLength && !formErrors.message && (
-                  <p className={styles.errorMessage}>
-                    Bericht moet minimaal 50 tekens bevatten
-                  </p>
-                )}
+                {formErrors.messageLength &&
+                  !formErrors.message &&
+                  messageInput.length < 50 && (
+                    <p className={styles.errorMessage}>
+                      Bericht heeft nu {messageInput.length} van de 50
+                      karakters.
+                    </p>
+                  )}
               </div>
               <button className={styles.sendButton} onClick={handleSubmit}>
                 {formSubmit}

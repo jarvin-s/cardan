@@ -87,7 +87,7 @@
   text-align: center;
   cursor: pointer;
   transition: transform 0.2s ease;
-  padding: 0.75rem;
+  padding: 1rem 1rem;
   border: 1px solid #00000015;
   border-radius: 0.75rem;
 }
@@ -99,13 +99,12 @@
 }
 
 .stationActive:hover {
-  background-color: #008743!important;
+  background-color: #008743 !important;
 }
 
 .station:hover {
   background-color: #e6f7ea;
   border: 1px solid #008743;
-  padding: 0.75rem;
   border-radius: 0.75rem;
   transition: 0.2s ease-in-out;
 }
@@ -116,23 +115,23 @@
   align-items: center;
   font-size: 1rem;
   font-weight: bold;
-  gap: 0.3rem;
-  max-width: 180px;
-}
-
-/* Nummer van het station */
-.nummer {
-  font-size: 3rem;
-  font-weight: bold;
-  margin: 0;
+  max-width: 200px;
 }
 
 /* Naam van het station */
 .naam {
-  font-size: 1rem;
+  font-size: 0.8rem;
   line-height: 1.2;
   text-align: left;
   margin-left: 0.75rem;
+}
+
+.iconWrapper {
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 @media (max-width: 767px) {

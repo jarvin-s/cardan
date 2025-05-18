@@ -137,7 +137,8 @@ export default function Station({
           {[1, 2, 3, 4, 5].map((num) => {
             const stationIndex = num - 1;
             const stationSlug = stations[stationIndex].slug;
-            const dynamicSlug = locale === "nl" ? stationSlug : enSlugs[stationIndex];
+            const dynamicSlug =
+              locale === "nl" ? stationSlug : enSlugs[stationIndex];
             const isActive = pathname.includes(dynamicSlug);
 
             return (
@@ -154,10 +155,12 @@ export default function Station({
                   }
                 >
                   <div className={styles.stationTitel}>
-                    {getIconByIndex(stationIndex)}
+                    <div className={styles.iconWrapper}>
+                      {getIconByIndex(stationIndex)}
+                    </div>
                     <h2 className={styles.naam}>
-                      {locale === "nl" 
-                        ? stations[stationIndex].naam 
+                      {locale === "nl"
+                        ? stations[stationIndex].naam
                         : enNames[stationIndex]}
                     </h2>
                   </div>
@@ -207,8 +210,8 @@ export default function Station({
 const EyeIcon = () => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
-    width="64"
-    height="64"
+    width="32"
+    height="32"
     viewBox="0 0 24 24"
   >
     <path
@@ -221,8 +224,8 @@ const EyeIcon = () => (
 const EarIcon = () => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
-    width="64"
-    height="64"
+    width="32"
+    height="32"
     viewBox="0 0 24 24"
   >
     <g
@@ -241,8 +244,8 @@ const EarIcon = () => (
 const BrainIcon = () => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
-    width="64"
-    height="64"
+    width="32"
+    height="32"
     viewBox="0 0 24 24"
   >
     <g
@@ -262,8 +265,8 @@ const BrainIcon = () => (
 const HandIcon = () => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
-    width="64"
-    height="64"
+    width="32"
+    height="32"
     viewBox="0 0 24 24"
   >
     <g
@@ -282,8 +285,8 @@ const HandIcon = () => (
 const BookIcon = () => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
-    width="64"
-    height="64"
+    width="32"
+    height="32"
     viewBox="0 0 24 24"
   >
     <path
