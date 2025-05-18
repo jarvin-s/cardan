@@ -12,11 +12,23 @@ const montserrat = Montserrat({
   subsets: ["latin"],
 });
 
-export const metadata: Metadata = {
-  title: "Jouw partner in digitale toegankelijkheid | Cardan",
-  description:
-    "Samen maken wij de hele wereld digitaal toegankelijk en inclusief",
-};
+export async function generateMetadata(): Promise<Metadata> {
+  const locale = await getLocale();
+
+  if (locale === "en") {
+    return {
+      title: "Your partner in digital accessibility | Cardan",
+      description:
+        "Together we make the whole world digitally accessible and inclusive",
+    };
+  }
+
+  return {
+    title: "Jouw partner in digitale toegankelijkheid | Cardan",
+    description:
+      "Samen maken wij de hele wereld digitaal toegankelijk en inclusief",
+  };
+}
 
 export default async function RootLayout({
   children,

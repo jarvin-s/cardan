@@ -14,6 +14,9 @@ interface HeroProps {
   };
   newButtonText: string;
   ctaButtonText: string;
+  demoText: string;
+  newLabel: string;
+
   features: {
     wcag: string;
     report: string;
@@ -28,6 +31,8 @@ const Hero = ({
   branches,
   newButtonText,
   ctaButtonText,
+  demoText,
+  newLabel,
   features,
 }: HeroProps) => {
   const router = useRouter();
@@ -94,20 +99,15 @@ const Hero = ({
           <div className={styles.ctaButtonContainer}>
             <button className={styles.newButton} onClick={handleNewButtonClick}>
               {newButtonText}
-              <svg
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                fill="currentColor"
-                className={styles.arrowIcon}
-              >
-                <path d="M13.293 7.293a1 1 0 0 1 1.414 0l4 4a1 1 0 0 1 0 1.414l-4 4a1 1 0 0 1-1.414-1.414L15.586 13H7a1 1 0 1 1 0-2h8.586l-2.293-2.293a1 1 0 0 1 0-1.414z" />
-              </svg>
             </button>
             <button className={styles.ctaButton} onClick={handleCtaButtonClick}>
               {ctaButtonText}
             </button>
           </div>
+          <p className={styles.newButtonText}>
+            <ArrowUp />
+            <span className={styles.newButtonSpan}>{newLabel} </span> {demoText}
+          </p>
         </div>
         <div className={styles.heroImage}>
           <Image
@@ -148,7 +148,9 @@ const Hero = ({
             >
               <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z" />
             </svg>
-            <span dangerouslySetInnerHTML={{ __html: features.certification }}></span>
+            <span
+              dangerouslySetInnerHTML={{ __html: features.certification }}
+            ></span>
           </div>
           <div className={styles.featureItem}>
             <svg
@@ -163,6 +165,35 @@ const Hero = ({
         </div>
       </div>
     </>
+  );
+};
+
+const ArrowUp = () => {
+  return (
+    <svg
+      version="1.0"
+      xmlns="http://www.w3.org/2000/svg"
+      width="24"
+      height="24"
+      viewBox="0 0 70.000000 84.000000"
+      preserveAspectRatio="xMidYMid meet"
+    >
+      <g
+        transform="translate(0.000000,84.000000) scale(0.100000,-0.100000)"
+        fill="#008743"
+        stroke="none"
+      >
+        <path
+          d="M185 807 c-38 -16 -89 -42 -112 -58 -23 -16 -46 -29 -51 -29 -6 0
+-12 -7 -15 -15 -12 -29 16 -26 71 8 62 38 118 67 127 67 9 0 -1 -29 -46 -143
+-52 -130 -64 -216 -45 -324 36 -209 148 -305 351 -305 124 0 251 30 227 54 -8
+8 -29 6 -76 -6 -83 -20 -207 -21 -277 0 -72 22 -138 87 -169 169 -44 115 -36
+315 16 389 7 11 23 50 35 88 11 37 24 68 28 68 10 0 21 -84 21 -153 0 -34 5
+-49 15 -54 9 -3 18 -3 21 -1 3 3 -1 64 -8 136 -9 102 -16 132 -28 135 -8 2
+-46 -10 -85 -26z"
+        />
+      </g>
+    </svg>
   );
 };
 

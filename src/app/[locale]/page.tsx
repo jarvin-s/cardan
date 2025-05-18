@@ -15,6 +15,8 @@ export default function Home() {
         }}
         newButtonText={t("new-button")}
         ctaButtonText={t("cta-button")}
+        demoText={t("demo-text")}
+        newLabel={t("new-label")}
         features={{
           wcag: t.raw("features.wcag"),
           report: t.raw("features.report"),
