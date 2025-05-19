@@ -81,28 +81,41 @@
     "subtitle": "Tijdens het schrijven van de e-mail verschijnen afleidende pop-ups en animaties vergelijkbaar met gedachten bij ADHD.",
     "form": {
       "title": "Email schrijven",
-      "subtitle": "Schrijf een e-mail naar je docent, waarin je meldt dat je te laat gaat komen voor de les van vandaag.",
+      "subtitle": "Schrijf een e-mail naar je collega waarin je meldt dat je te laat bent voor de meeting van vandaag.",
       "timer-label": "Tijd: ",
       "name": "Naar",
       "subject": "Onderwerp",
       "message": "Bericht",
       "submit": "Verzenden",
-      "next": "Volgende"
+      "next": "Volgende",
+      "placeholders": {
+        "to": "jouw.email@voorbeeld.nl",
+        "subject": "Meeting",
+        "message": "Ik ben te laat voor de meeting van vandaag."
+      },
+      "errorMessage": "Dit veld is verplicht",
+      "textareaErrorMessage": "Moet minimaal 40 tekens bevatten"  
     }
   },
   "motorisch": {
     "title": "Ervaar hoe het is om een motorische beperking te hebben",
-    "subtitle": "Tijdens het selecteren van de verschillende invulvakken beweegt je cursor alle kanten op.",
+    "subtitle": "Tijdens het invullen van de onderstaande gegevens, kan het zijn dat je soms andere tekens krijgt.",
     "form": {
       "title": "Voer uw gegevens in",
-      "subtitle": "Vul (fictief) gegevens in om de betaling te voltooien",
+      "subtitle": "Vul de onderstaande gegevens in binnen de gegeven tijd.",
       "timer-label": "Tijd: ",
       "name": "Voornaam",
       "lastname": "Achternaam",
       "address": "Adres",
       "postcode": "Postcode",
       "submit": "Verzenden",
-      "next": "Volgende"
+      "next": "Volgende",
+      "placeholders": {
+        "name": "Jan",
+        "lastname": "de Vries",
+        "address": "Hoofdstraat 123",
+        "postcode": "1234 AB"
+      }
     }
   },
   "dyslexie": {

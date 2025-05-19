@@ -38,6 +38,13 @@ const CognitiefPage = () => {
         formMessage={t("form.message")}
         formSubmit={t("form.submit")}
         formNext={t("form.next")}
+        placeholders={{
+          to: t("form.placeholders.to"),
+          subject: t("form.placeholders.subject"),
+          message: t("form.placeholders.message"),
+        }}
+        formErrorMessage={t("form.errorMessage")}
+        textareaErrorMessage={t("form.textareaErrorMessage")}
       />
     </>
   );
