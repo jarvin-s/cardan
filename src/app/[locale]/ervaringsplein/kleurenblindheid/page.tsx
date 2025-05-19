@@ -1,16 +1,17 @@
+import Visuele from "@/app/components/visuele/visuele";
+import Station from "@/app/components/station/station";
 import React from "react";
 import { useTranslations } from "next-intl";
-import Dyslexie from "@/app/components/dyslexie/dyslexie";
-import Station from "@/app/components/station/station";
-const DyslexieKleurcontrastPage = () => {
-  const t = useTranslations("dyslexie");
+
+const VisuelePage = () => {
+  const t = useTranslations("visuele");
   const t2 = useTranslations("stationnav");
   const stations = [
-    { naam: "Visuele beperking", slug: "visuele-beperking" },
+    { naam: "Kleurenblindheid", slug: "kleurenblindheid" },
     { naam: "Auditieve beperking", slug: "auditieve-beperking" },
     { naam: "Cognitieve beperking", slug: "cognitieve-beperking" },
     { naam: "Motorische beperking", slug: "motorische-beperking" },
-    { naam: "Dyslexie & kleurcontrast", slug: "dyslexie-kleurcontrast" },
+    { naam: "Dyslexie", slug: "dyslexie" },
   ];
   return (
     <>
@@ -27,19 +28,21 @@ const DyslexieKleurcontrastPage = () => {
         naam5={t2("naam5")}
         slug5={t2("slug5")}
       />
-      <Dyslexie
+      <Visuele
         title={t("title")}
-        subtitle={t("subtitle")}
-        formTitle={t("form.title")}
-        formText={t("form.text")}
-        formSubmit={t("form.submit")}
-        formFinishButton={t("finish-button")}
-        formDyslexie={t("form.dyslexie")}
-        formKleurcontrast={t("form.kleurcontrast")}
-        formQuestion={t("form.question")}
+        paragraaf={t("paragraaf")}
+        subtekst={t("subtekst")}
+        opdracht={t("opdracht")}
+        hoofdnaam={t("hoofdnaam")}
+        combi1={t("combi1")}
+        combi2={t("combi2")}
+        combi3={t("combi3")}
+        volgende={t("volgende")}
+        reserved_message={t("reserved_message")}
+        success_message={t("success_message")}
       />
     </>
   );
 };
 
-export default DyslexieKleurcontrastPage;
+export default VisuelePage;

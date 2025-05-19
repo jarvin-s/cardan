@@ -9,8 +9,8 @@ export const routing = defineRouting({
         '/ervaringsplein': {
             en: '/experience-square',
         },
-        '/ervaringsplein/visuele-beperking': {
-            en: '/experience-square/visual-impairment'
+        '/ervaringsplein/kleurenblindheid': {
+            en: '/experience-square/color-blindness'
         },
         '/ervaringsplein/auditieve-beperking': {
             en: '/experience-square/auditory-impairment'
@@ -21,8 +21,8 @@ export const routing = defineRouting({
         '/ervaringsplein/motorische-beperking': {
             en: '/experience-square/motor-impairment',
         },
-        '/ervaringsplein/dyslexie-kleurcontrast': {
-            en: '/experience-square/dyslexia-color-contrast',
+        '/ervaringsplein/dyslexie': {
+            en: '/experience-square/dyslexia',
         },
         '/ervaringsplein/rapport': {
             en: '/experience-square/report',
