@@ -2,6 +2,7 @@ import React from "react";
 import { useTranslations } from "next-intl";
 import Dyslexie from "@/app/components/dyslexie/dyslexie";
 import Station from "@/app/components/station/station";
+
 const DyslexiePage = () => {
   const t = useTranslations("dyslexie");
   const t2 = useTranslations("stationnav");
