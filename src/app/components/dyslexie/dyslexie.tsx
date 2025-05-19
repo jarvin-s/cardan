@@ -3,6 +3,12 @@
 import React from "react";
 import styles from "./dyslexie.module.css";
 import { useRouter } from "next/navigation";
+import { Special_Elite } from "next/font/google";
+
+const specialElite = Special_Elite({
+  weight: "400",
+  subsets: ["latin"],
+});
 
 interface DyslexieProps {
   title: string;
@@ -11,9 +17,8 @@ interface DyslexieProps {
   formText: string;
   formSubmit: string;
   formFinishButton: string;
-  formDyslexie: string;
-  formKleurcontrast: string;
   formQuestion: string;
+  formPlaceholder: string;
 }
 
 const Dyslexie = ({
@@ -23,9 +28,8 @@ const Dyslexie = ({
   formText,
   formSubmit,
   formFinishButton,
-  formDyslexie,
-  formKleurcontrast,
   formQuestion,
+  formPlaceholder,
 }: DyslexieProps) => {
   const router = useRouter();
   const handleFinish = () => {
@@ -36,26 +40,27 @@ const Dyslexie = ({
       <div className={styles.header}>
         <h1 className={styles.title}>{title}</h1>
         <p className={styles.subtitle}>{subtitle}</p>
-        <span className={styles.timerLabel}>Tijd: </span>
-        <span className={styles.timerValue}>00:00</span>
-      </div>
-
-      <div className={styles.tabContainer}>
-        <button className={styles.tabButtonGreen}>{formDyslexie}</button>
-        <button className={styles.tabButton}>{formKleurcontrast}</button>
+        <div className={styles.timerContainer}>
+          <span className={styles.timerLabel}>
+            <TimerIcon />
+          </span>
+          <span className={styles.timerValue}>00:00</span>
+        </div>
       </div>
 
       <div className={styles.formContainer}>
         <h2 className={styles.formTitle}>{formTitle}</h2>
 
         <div className={styles.formGroup}>
-          <p className={styles.formText}>{formText}</p>
+          <p className={`${styles.formText} ${specialElite.className}`}>
+            {formText}
+          </p>
           <div>
             <h3>{formQuestion}</h3>
             <input
               className={styles.input}
               type="text"
-              placeholder="Typ hier je antwoord"
+              placeholder={formPlaceholder}
             />
           </div>
 
@@ -76,6 +81,28 @@ const Dyslexie = ({
         </button>
       </div>
     </div>
+  );
+};
+
+const TimerIcon = () => {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="32"
+      height="32"
+      viewBox="0 0 24 24"
+    >
+      <g
+        fill="none"
+        stroke="currentColor"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth="2"
+      >
+        <path d="M10 2h4m-2 12l3-3" />
+        <circle cx="12" cy="14" r="8" />
+      </g>
+    </svg>
   );
 };
 

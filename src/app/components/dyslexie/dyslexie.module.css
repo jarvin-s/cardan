@@ -1,5 +1,5 @@
 .container {
-  max-width: 1140px;
+  max-width: 1100px;
   margin: 0 auto;
   padding: 16px;
   position: relative;
@@ -23,65 +23,32 @@
   line-height: 1.4;
 }
 
+.timerContainer {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
 .timerLabel {
   font-weight: bold;
-  font-size: 0.9rem;
+  font-size: 1.5rem;
 }
 
-.tabContainer {
-  display: flex;
-  margin-bottom: 1.5rem;
-  gap: 0.5rem;
-}
-
-.tabButton {
-  padding: 0.6rem 1rem;
-  border: none;
-  background-color: #f3f3f3;
-  cursor: pointer;
-  border-radius: 6px;
-  font-size: 12px;
-  font-weight: 500;
-  transition: all 0.2s ease;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
-  flex: 1;
-}
-
-.tabButtonGreen {
-  padding: 0.6rem 1rem;
-  border: none;
-  background-color: #00853e;
-  cursor: pointer;
-  border-radius: 6px;
-  font-size: 12px;
-  font-weight: 500;
-  transition: all 0.2s ease;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
-  flex: 1;
-  color: white;
-}
-
-.tabButton:hover {
-  background-color: #e9e9e9;
-}
-
-.tabButton.active {
-  background-color: #00853e;
-  color: white;
-  box-shadow: 0 2px 5px rgba(0, 133, 62, 0.3);
+.timerValue {
+  font-size: 1.5rem;
 }
 
 .formContainer {
   background-color: #fff;
   border-radius: 10px;
-  padding: 4rem;
+  padding: 3rem;
   margin-bottom: 2rem;
   border: 1px solid #00000015;
 }
 
 .formTitle {
   font-size: 1.75rem;
-  margin-bottom: 0.75rem;
+  margin-bottom: 1.25rem;
   color: #222;
 }
 
@@ -136,7 +103,8 @@
 
 .formText {
   line-height: 2;
-  letter-spacing: 0.15em;
+  letter-spacing: 0.75em;
+  transform: rotate(2deg);
 }
 
 .nextButtonContainer {

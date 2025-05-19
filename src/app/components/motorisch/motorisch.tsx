@@ -12,8 +12,6 @@ interface MotorischProps {
   formTitle: string;
   formTimerLabel: string;
   formSubtitle: string;
-  formCerebralPalsy: string;
-  formMultipleSclerosis: string;
   formName: string;
   formLastname: string;
   formAddress: string;
@@ -28,8 +26,6 @@ const Motorisch = ({
   formTitle,
   formTimerLabel,
   formSubtitle,
-  formCerebralPalsy,
-  formMultipleSclerosis,
   formName,
   formLastname,
   formAddress,
@@ -41,7 +37,7 @@ const Motorisch = ({
   const faqs = faqData.find((faq) => faq.category === "Cerebrale Parese")?.faqs;
 
   const handleNextClick = () => {
-    router.push("/ervaringsplein/dyslexie-kleurcontrast");
+    router.push("/ervaringsplein/dyslexie");
   };
 
   return (
@@ -51,11 +47,6 @@ const Motorisch = ({
         <p className={styles.subtitle}>{subtitle}</p>
         <span className={styles.timerLabel}>{formTimerLabel}</span>
         <span className={styles.timer}>00:00</span>
-      </div>
-
-      <div className={styles.tabContainer}>
-        <button className={styles.tabButtonGreen}>{formCerebralPalsy}</button>
-        <button className={styles.tabButton}>{formMultipleSclerosis}</button>
       </div>
 
       <div className={styles.formContainer}>
