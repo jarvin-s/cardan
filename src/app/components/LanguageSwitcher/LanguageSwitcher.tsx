@@ -2,14 +2,16 @@
 
 import React from "react";
 import styles from "./LanguageSwitcher.module.css";
-import { useRouter } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import { useLocale } from "next-intl";
 const LanguageSwitcher = () => {
   const router = useRouter();
+  const pathname = usePathname();
   const locale = useLocale();
 
-  const handleLanguageChange = (language: string) => {
-    router.push(`/${language}`);
+  const changeLocale = (newLocale: string) => {
+    const newPathname = `/${newLocale}${pathname.substring(locale.length + 1)}`;
+    router.replace(newPathname);
   };
 
   return (
@@ -19,7 +21,7 @@ const LanguageSwitcher = () => {
           fontWeight: locale === "nl" ? "bold" : "normal",
         }}
         className={styles.languageButton}
-        onClick={() => handleLanguageChange("nl")}
+        onClick={() => changeLocale("nl")}
       >
         NL
       </span>
@@ -29,7 +31,7 @@ const LanguageSwitcher = () => {
           fontWeight: locale === "en" ? "bold" : "normal",
         }}
         className={styles.languageButton}
-        onClick={() => handleLanguageChange("en")}
+        onClick={() => changeLocale("en")}
       >
         EN
       </span>
