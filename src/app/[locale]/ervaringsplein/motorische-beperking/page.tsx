@@ -45,6 +45,12 @@ const MotorischPage = () => {
           address: t("form.placeholders.address"),
           postcode: t("form.placeholders.postcode"),
         }}
+        errors={{
+          name: t("form.errors.name"),
+          lastname: t("form.errors.lastname"),
+          address: t("form.errors.address"),
+          postcode: t("form.errors.postcode"),
+        }}
       />
     </>
   );

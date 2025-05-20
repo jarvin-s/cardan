@@ -2,6 +2,7 @@ import React from "react";
 import styles from "./complete-screen.module.css";
 import { useRouter } from "next/navigation";
 import { motion } from "motion/react";
+import { useLocale } from "next-intl";
 
 interface CompleteScreenProps {
   elapsedTime: number;
@@ -17,6 +18,7 @@ const CompleteScreen = ({
   onDifficultyChange,
 }: CompleteScreenProps) => {
   const router = useRouter();
+  const locale = useLocale();
 
   const formatTime = (seconds: number) => {
     const mins = Math.floor(seconds / 60);
@@ -43,17 +45,25 @@ const CompleteScreen = ({
     >
       <div className={styles.completedContainer}>
         <div className={styles.completedText}>
-          <h1>Motorische beperking simulatie compleet!</h1>
+          <h1>
+            {locale === "nl"
+              ? "Motorische beperking simulatie compleet!"
+              : "Motor impairment simulation complete!"}
+          </h1>
           <p className={styles.completedTime}>
-            Je hebt{" "}
+            {locale === "nl" ? "Je hebt " : "You spent "}
             <span className={styles.formatTimeSpan}>
               {formatTime(savedTime || elapsedTime)}
             </span>{" "}
-            besteed aan deze taak.
+            {locale === "nl" ? "besteed aan deze taak." : "on this task."}
           </p>
         </div>
         <div className={styles.formGroup}>
-          <h1>Hoe moeilijk vond je het om de gegevens in te vullen?</h1>
+          <h1>
+            {locale === "nl"
+              ? "Hoe moeilijk vond je het om de gegevens in te vullen?"
+              : "How difficult did you find it to fill in the data?"}
+          </h1>
           <div className={styles.difficultyContainer}>
             <div className={styles.difficultyOptions}>
               <div className={styles.difficultyOption}>
@@ -69,7 +79,7 @@ const CompleteScreen = ({
                 <div>
                   <label htmlFor="difficulty1">
                     <span className={styles.difficultyDescription}>
-                      Zeer makkelijk
+                      {locale === "nl" ? "Zeer makkelijk" : "Very easy"}
                     </span>
                   </label>
                 </div>
@@ -86,7 +96,7 @@ const CompleteScreen = ({
                 />
                 <label htmlFor="difficulty2">
                   <span className={styles.difficultyDescription}>
-                    Redelijk makkelijk
+                    {locale === "nl" ? "Redelijk makkelijk" : "Fairly easy"}
                   </span>
                 </label>
               </div>
@@ -102,7 +112,9 @@ const CompleteScreen = ({
                 />
                 <label htmlFor="difficulty3">
                   <span className={styles.difficultyDescription}>
-                    Gemiddeld moeilijk
+                    {locale === "nl"
+                      ? "Gemiddeld moeilijk"
+                      : "Moderately difficult"}
                   </span>
                 </label>
               </div>
@@ -118,7 +130,9 @@ const CompleteScreen = ({
                 />
                 <label htmlFor="difficulty4">
                   <span className={styles.difficultyDescription}>
-                    Behoorlijk moeilijk
+                    {locale === "nl"
+                      ? "Behoorlijk moeilijk"
+                      : "Quite difficult"}
                   </span>
                 </label>
               </div>
@@ -134,7 +148,7 @@ const CompleteScreen = ({
                 />
                 <label htmlFor="difficulty5">
                   <span className={styles.difficultyDescription}>
-                    Zeer moeilijk
+                    {locale === "nl" ? "Zeer moeilijk" : "Very difficult"}
                   </span>
                 </label>
               </div>
@@ -143,7 +157,7 @@ const CompleteScreen = ({
         </div>
         <div className={styles.continueButtonContainer}>
           <button className={styles.continueButton} onClick={handleNextClick}>
-            Volgende
+            {locale === "nl" ? "Volgende" : "Next"}
           </button>
         </div>
       </div>

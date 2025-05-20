@@ -94,7 +94,7 @@
         "message": "Ik ben te laat voor de meeting van vandaag."
       },
       "errorMessage": "Dit veld is verplicht",
-      "textareaErrorMessage": "Moet minimaal 40 tekens bevatten"  
+      "textareaErrorMessage": "Moet minimaal 40 tekens bevatten"
     }
   },
   "motorisch": {
@@ -115,6 +115,12 @@
         "lastname": "de Vries",
         "address": "Hoofdstraat 123",
         "postcode": "1234 AB"
+      },
+      "errors": {
+        "name": "Vul de volledige naam in",
+        "lastname": "Vul de volledige achternaam in",
+        "address": "Vul het volledige adres in",
+        "postcode": "Vul de volledige postcode in"
       }
     }
   },
@@ -124,11 +130,13 @@
     "form": {
       "title": "Lees de tekst",
       "submit": "Verzenden",
-      "text": "Lisa fietste elke dag naar school langs het park. Op een ochtend merkte ze dat haar rugzak lichter aanvoelde. Toen ze op school aankwam, ontdekte ze dat haar schrift verdwenen was. Ze dacht terug aan het moment dat ze even was afgestapt bij het bankje in het park. Misschien had ze het daar laten liggen? Tijdens de pauze besloot ze terug te gaan. Onder het bankje vond ze alleen een banaan en een leeg flesje water...",
+      "text": "Timo liep haastig naar de halte, want hij wilde de bus niet missen. Onderweg dacht hij aan zijn huiswerk, dat hij gisteravond nog net op tjid had afgemaakt.",
       "text2": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore dolore fugit excepturi ducimus sapiente ut mollitia aliquam veritatis culpa eos. Id exercitationem dicta qui reiciendis neque minima dignissimos magni quam? Consequuntur doloribus possimus dolore laborum, et ullam commodi saepe facere, amet quos fuga eaque, culpa ut quasi molestias aut unde tempora repellat? Alias, fugiat veniam perferendis dolor ratione at exercitationem. Temporibus harum esse expedita minus perferendis hic quis recusandae nostrum nobis architecto! Consequuntur repudiandae, nulla, quibusdam debitis aperiam placeat porro iure possimus fugiat quisquam illo rerum nisi saepe incidunt ipsum. Aliquam sequi aspernatur aliquid, eaque adipisci fugit doloremque quis, perspiciatis ut libero dolore ipsam porro maxime odio. Porro eos repellendus omnis sit consequatur alias tempore, dolorum perspiciatis sint voluptatem consequuntur. Beatae labore eum iste quibusdam repellendus officia suscipit, obcaecati itaque. Iure iste minima corrupti sed eligendi ipsam, voluptatem porro, mollitia excepturi ad doloremque aperiam possimus eaque enim tenetur quis cumque!",
       "dyslexie": "Dyslexie",
-      "question": "Waar is Lisa haar schrift misschien kwijtgeraakt?",
-      "placeholder": "Typ hier je antwoord"
+      "question": "Wat is de typfout?",
+      "placeholder": "Typ hier je antwoord",
+      "intro-text": "Je krijgt zo een stuk tekst te zien waar een typfout staat, probeer deze te vinden binnen het tijdslimiet.",
+      "start-instruction": "Klik hieronder om met de simulatie te beginnen."
     },
     "finish-button": "Afronden"
   },

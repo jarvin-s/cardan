@@ -1,7 +1,8 @@
-import React from "react";
+import React, { useEffect } from "react";
 import styles from "./complete-screen.module.css";
 import { useRouter } from "next/navigation";
 import { motion } from "motion/react";
+import { useLocale } from "next-intl";
 
 interface CompleteScreenProps {
   elapsedTime: number;
@@ -17,6 +18,14 @@ const CompleteScreen = ({
   onDifficultyChange,
 }: CompleteScreenProps) => {
   const router = useRouter();
+  const locale = useLocale();
+
+  useEffect(() => {
+    const timers = window.setInterval(() => {}, 0);
+    for (let i = 0; i < timers; i++) {
+      window.clearInterval(i);
+    }
+  }, []);
 
   const formatTime = (seconds: number) => {
     const mins = Math.floor(seconds / 60);
@@ -43,17 +52,34 @@ const CompleteScreen = ({
     >
       <div className={styles.completedContainer}>
         <div className={styles.completedText}>
-          <h1>ADHD simulatie compleet!</h1>
+          <h1>
+            {locale === "nl"
+              ? "ADHD simulatie compleet!"
+              : "ADHD simulation complete!"}
+          </h1>
           <p className={styles.completedTime}>
-            Je hebt{" "}
+            {locale === "nl" ? "Je hebt " : "You have "}
             <span className={styles.formatTimeSpan}>
               {formatTime(savedTime || elapsedTime)}
             </span>{" "}
-            besteed aan deze taak.
+            {locale === "nl" ? "besteed aan deze taak." : "spent on this task."}
+          </p>
+          <p className={styles.completedTime}>
+            {elapsedTime < 30
+              ? locale === "nl"
+                ? "Je hebt deze taak in een kort tijdsbestek afgerond."
+                : "You completed this task in a short time."
+              : locale === "nl"
+              ? "Je hebt deze taak in een redelijk tijdsbestek afgerond."
+              : "You completed this task in a reasonable time."}
           </p>
         </div>
         <div className={styles.formGroup}>
-          <h1>Hoe moeilijk vond je het om de e-mail te schrijven?</h1>
+          <h1>
+            {locale === "nl"
+              ? "Hoe moeilijk vond je het om de e-mail te schrijven?"
+              : "How difficult was it to write the email?"}
+          </h1>
           <div className={styles.difficultyContainer}>
             <div className={styles.difficultyOptions}>
               <div className={styles.difficultyOption}>
@@ -69,7 +95,7 @@ const CompleteScreen = ({
                 <div>
                   <label htmlFor="difficulty1">
                     <span className={styles.difficultyDescription}>
-                      Zeer makkelijk
+                      {locale === "nl" ? "Zeer makkelijk" : "Very easy"}
                     </span>
                   </label>
                 </div>
@@ -86,7 +112,7 @@ const CompleteScreen = ({
                 />
                 <label htmlFor="difficulty2">
                   <span className={styles.difficultyDescription}>
-                    Redelijk makkelijk
+                    {locale === "nl" ? "Redelijk makkelijk" : "Fairly easy"}
                   </span>
                 </label>
               </div>
@@ -102,7 +128,9 @@ const CompleteScreen = ({
                 />
                 <label htmlFor="difficulty3">
                   <span className={styles.difficultyDescription}>
-                    Gemiddeld moeilijk
+                    {locale === "nl"
+                      ? "Gemiddeld moeilijk"
+                      : "Moderately difficult"}
                   </span>
                 </label>
               </div>
@@ -118,7 +146,9 @@ const CompleteScreen = ({
                 />
                 <label htmlFor="difficulty4">
                   <span className={styles.difficultyDescription}>
-                    Behoorlijk moeilijk
+                    {locale === "nl"
+                      ? "Behoorlijk moeilijk"
+                      : "Quite difficult"}
                   </span>
                 </label>
               </div>
@@ -134,7 +164,7 @@ const CompleteScreen = ({
                 />
                 <label htmlFor="difficulty5">
                   <span className={styles.difficultyDescription}>
-                    Zeer moeilijk
+                    {locale === "nl" ? "Zeer moeilijk" : "Very difficult"}
                   </span>
                 </label>
               </div>
@@ -143,7 +173,7 @@ const CompleteScreen = ({
         </div>
         <div className={styles.continueButtonContainer}>
           <button className={styles.continueButton} onClick={handleNextClick}>
-            Volgende
+            {locale === "nl" ? "Volgende" : "Next"}
           </button>
         </div>
       </div>

@@ -4,6 +4,7 @@ import React, { useEffect, useState, useRef } from "react";
 import styles from "./cognitief.module.css";
 import { useRouter } from "next/navigation";
 import CompleteScreen from "./completed/complete-screen";
+import { useLocale } from "next-intl";
 
 interface CognitiefProps {
   title: string;
@@ -63,6 +64,7 @@ const Cognitief = ({
   });
   const distractionIdRef = useRef(0);
   const router = useRouter();
+  const locale = useLocale();
   const colors = ["#ef3f3f", "#0d19c1", "#09ab2f", "#f59e0b", "#f916b9"];
 
   useEffect(() => {
@@ -99,15 +101,38 @@ const Cognitief = ({
 
   useEffect(() => {
     const distractions = [
-      "Heb je eraan gedacht om de kat te voeren?",
-      "Even snel naar mijn telefoon meldingen kijken",
-      "Wat eten we vanavond?",
-      "Ik moet nog naar de winkel",
-      "Ik moet social media moeten checken",
-      "Ik moet niet vergeten dat die rekening binnenkort betaald moet worden",
-      "Is mijn telefoon opgeladen?",
-      "Ik wil eigenlijk een TikTok pauze nemen",
-      "Nu moet ik echt doorwerken",
+      {
+        nl: "Heb je eraan gedacht om de kat te voeren?",
+        en: "Did you think about feeding the cat?",
+      },
+      {
+        nl: "Even snel naar mijn telefoon meldingen kijken",
+        en: "Quickly check my phone messages",
+      },
+      {
+        nl: "Wat eten we vanavond?",
+        en: "What are we having for dinner?",
+      },
+      {
+        nl: "Ik moet nog naar de winkel",
+        en: "I need to go to the store",
+      },
+      {
+        nl: "Ik moet social media moeten checken",
+        en: "I need to check social media",
+      },
+      {
+        nl: "Ik moet niet vergeten dat die rekening binnenkort betaald moet worden",
+        en: "I need to remember that that bill is due soon",
+      },
+      {
+        nl: "Is mijn telefoon opgeladen?",
+        en: "Is my phone charged?",
+      },
+      {
+        nl: "Ik wil eigenlijk een TikTok pauze nemen",
+        en: "I want to take a TikTok break",
+      },
     ];
     if (!timerActive) return;
 
@@ -120,7 +145,7 @@ const Cognitief = ({
 
       const newDistraction = {
         id: distractionIdRef.current++,
-        text: randomDistraction,
+        text: locale === "nl" ? randomDistraction.nl : randomDistraction.en,
         positionX: randomX,
         positionY: randomY,
         isHighlighted,
@@ -142,7 +167,7 @@ const Cognitief = ({
     const timeoutId = setTimeout(showDistraction, initialDelay);
 
     return () => clearTimeout(timeoutId);
-  }, [timerActive, distractionList]);
+  }, [timerActive, distractionList, locale]);
 
   const handleInputFocus = () => {
     if (!timerActive) {

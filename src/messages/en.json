@@ -102,7 +102,7 @@
     "subtitle": "While selecting the different input fields, your cursor moves all over the place.",
     "form": {
       "title": "Enter your data",
-      "subtitle": "Fill in (fake) data to complete the payment",
+      "subtitle": "Fill in the data below.",
       "timer-label": "Time: ",
       "name": "Name",
       "lastname": "Last name",
@@ -115,6 +115,12 @@
         "lastname": "Smith",
         "address": "123 Main Street",
         "postcode": "SW1A 1AA"
+      },
+      "errors": {
+        "name": "Please enter the full name",
+        "lastname": "Please enter the full last name",
+        "address": "Please enter the full address",
+        "postcode": "Please enter the full postal code"
       }
     }
   },
@@ -124,10 +130,12 @@
     "form": {
       "title": "Read the text",
       "submit": "Submit",
-      "text": "Lisa cycled to school every day past the park. One morning, she noticed that her backpack felt lighter. When she arrived at school, she discovered that her notebook was missing. She thought back to the moment when she had briefly gotten off her bike at the bench in the park. Maybe she had left it there? During the break, she decided to go back. Under the bench, she only found a banana and an empty bottle of water...",
+      "text": "Timo hurried to the bus stop, becuase he didn't want to miss the bus. On the way, he thought about his homework, which he had finished last night.",
       "dyslexie": "Dyslexia",
-      "question": "Where did Lisa lose her notebook?",
-      "placeholder": "Type your answer here"
+      "question": "What is the typo?",
+      "placeholder": "Type your answer here",
+      "intro-text": "You will see a text with a typo, try to find it within the time limit.",
+      "start-instruction": "Click below to start the simulation."
     },
     "finish-button": "Finish"
   },
@@ -171,6 +179,6 @@
     "naam4": "Motor Impairment",
     "slug4": "motor-impairment",
     "naam5": "Dyslexia",
-    "slug5": "dyslexia-color-contrast"
+    "slug5": "dyslexia"
   }
 }
