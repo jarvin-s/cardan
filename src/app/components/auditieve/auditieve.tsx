@@ -43,6 +43,7 @@ interface AudioitieveProps {
   ander: string;
   naarcognitief: string;
   nietnormaal1: string;
+  nietopnieuw: string;
 }
 
 const Auditieve = ({
@@ -80,12 +81,13 @@ const Auditieve = ({
   ander,
   naarcognitief,
   nietnormaal1,
+  nietopnieuw,
 }: AudioitieveProps) => {
   const [step, setStep] = useState<
     "keuze" | "luisteren" | "vraag" | "feedback"
   >("keuze");
   const [isCorrect, setIsCorrect] = useState<boolean | null>(null);
-  const [selectedAudio, setSelectedAudio] = useState<string>("ernstig.mp3"); // default to first audio
+  const [selectedAudio, setSelectedAudio] = useState<string>("ernstig.mp3"); 
   const [hasListenedOnce, setHasListenedOnce] = useState(false);
   const [isPlaying, setIsPlaying] = useState(false);
   const [audioHasPlayed, setAudioHasPlayed] = useState(false);
@@ -93,12 +95,14 @@ const Auditieve = ({
   const audioRef = useRef<HTMLAudioElement>(null);
 
   useEffect(() => {
+    if (step !== "luisteren") return;
+    
     const audio = audioRef.current;
     if (!audio) return;
 
     const updateProgress = () => {
-      const percent = (audio.currentTime / audio.duration) * 100;
-      // console.log("progress:", percent);
+      const percent =
+        audio.duration > 0 ? (audio.currentTime / audio.duration) * 100 : 0;
       setProgress(percent);
     };
 
@@ -106,7 +110,7 @@ const Auditieve = ({
     return () => {
       audio.removeEventListener("timeupdate", updateProgress);
     };
-  }, []);
+  }, [step]);
 
   const togglePlay = () => {
     const audio = audioRef.current;
@@ -174,9 +178,8 @@ const Auditieve = ({
                 return (
                   <div
                     key={index}
-                    className={`${styles.item} ${
-                      isSelected ? styles.selected : ""
-                    } ${isDisabled ? styles.disabled : ""}`}
+                    className={`${styles.item} ${isSelected ? styles.selected : ""
+                      } ${isDisabled ? styles.disabled : ""}`}
                     onClick={() => {
                       if (!isDisabled) setSelectedAudio(item.bestand);
                     }}
@@ -196,7 +199,7 @@ const Auditieve = ({
             <button
               className={styles.nextButton}
               onClick={() => setStep("luisteren")}
-              disabled={!selectedAudio} // Only enabled if an audio is selected
+              disabled={!selectedAudio} 
             >
               {naarluisteren}
             </button>
@@ -210,12 +213,17 @@ const Auditieve = ({
             exit={{ opacity: 0 }}
             transition={{ duration: 1.25, ease: "backInOut" }}
           >
+
+
+
+
+
             <h1 className={styles.blocktitle}>{blocktitle2}</h1>
             <p className={styles.subtext}>{subtext2}</p>
 
             <div className={styles.audioplayer}>
               <div className={styles.progressBar}>
-                <div className={styles.progress} style={{ width: `50%` }} />
+                <div className={styles.progress} style={{ width: `${progress}%` }} />
               </div>
               <button className={styles.playButton} onClick={togglePlay}>
                 {isPlaying ? (
@@ -298,8 +306,8 @@ const Auditieve = ({
                   <button
                     className={styles.nextButton}
                     onClick={() =>
-                      (window.location.href =
-                        "/ervaringsplein/cognitieve-beperking")
+                    (window.location.href =
+                      "/ervaringsplein/cognitieve-beperking")
                     }
                   >
                     {naarcognitief}
@@ -311,12 +319,25 @@ const Auditieve = ({
                 <h1 className={styles.blocktitle}>{blocktitle4}</h1>
                 <h5 className={styles.headtext}>{headtext4}</h5>
                 <p className={styles.subtext}>{subtext4}</p>
-                <button
-                  className={styles.nextButton}
-                  onClick={() => setStep("keuze")}
-                >
-                  {opnieuw}
-                </button>
+                <div className={styles.buttonsfout}>
+                  <button
+                    className={styles.nextButton}
+                    onClick={() => setStep("keuze")}
+                  >
+                    {opnieuw}
+                  </button>
+
+                  <button
+                    className={styles.nextButton}
+                    onClick={() =>
+                    (window.location.href =
+                      "/ervaringsplein/cognitieve-beperking")
+                    }
+                  >
+                    {nietopnieuw}
+                  </button>
+                </div>
+
               </>
             )}
           </motion.div>
