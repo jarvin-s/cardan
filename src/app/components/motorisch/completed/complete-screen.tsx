@@ -25,13 +25,13 @@ const CompleteScreen = ({
   };
 
   const handleNextClick = () => {
-    router.push("/ervaringsplein/motorische-beperking");
+    router.push("/ervaringsplein/dyslexie");
   };
 
   const handleDifficultyChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const selectedDifficulty = e.target.value;
     onDifficultyChange(selectedDifficulty);
-    localStorage.setItem("cognitiefDifficulty", selectedDifficulty);
+    localStorage.setItem("motorischDifficulty", selectedDifficulty);
   };
 
   return (
@@ -43,7 +43,7 @@ const CompleteScreen = ({
     >
       <div className={styles.completedContainer}>
         <div className={styles.completedText}>
-          <h1>ADHD simulatie compleet!</h1>
+          <h1>Motorische beperking simulatie compleet!</h1>
           <p className={styles.completedTime}>
             Je hebt{" "}
             <span className={styles.formatTimeSpan}>
@@ -53,7 +53,7 @@ const CompleteScreen = ({
           </p>
         </div>
         <div className={styles.formGroup}>
-          <h1>Hoe moeilijk vond je het om de e-mail te schrijven?</h1>
+          <h1>Hoe moeilijk vond je het om de gegevens in te vullen?</h1>
           <div className={styles.difficultyContainer}>
             <div className={styles.difficultyOptions}>
               <div className={styles.difficultyOption}>

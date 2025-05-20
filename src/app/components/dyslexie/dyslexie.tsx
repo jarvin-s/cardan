@@ -1,9 +1,9 @@
 "use client";
 
-import React from "react";
+import React, { useState, useEffect } from "react";
 import styles from "./dyslexie.module.css";
-import { useRouter } from "next/navigation";
 import { Special_Elite } from "next/font/google";
+import CompleteScreen from "./completed/complete-screen";
 
 const specialElite = Special_Elite({
   weight: "400",
@@ -31,10 +31,72 @@ const Dyslexie = ({
   formQuestion,
   formPlaceholder,
 }: DyslexieProps) => {
-  const router = useRouter();
-  const handleFinish = () => {
-    router.push("/ervaringsplein/rapport");
+  const [completed, setCompleted] = useState(false);
+  const [elapsedTime, setElapsedTime] = useState(0);
+  const [timerActive, setTimerActive] = useState(false);
+  const [savedTime, setSavedTime] = useState<number | null>(null);
+  const [difficulty, setDifficulty] = useState("3");
+
+  useEffect(() => {
+    const savedDyslexieTime = localStorage.getItem("dyslexieTime");
+    if (savedDyslexieTime) {
+      setSavedTime(parseInt(savedDyslexieTime, 10));
+    }
+
+    const savedDifficulty = localStorage.getItem("dyslexieDifficulty");
+    if (savedDifficulty) {
+      setDifficulty(savedDifficulty);
+    }
+  }, []);
+
+  useEffect(() => {
+    let timer: NodeJS.Timeout | null = null;
+
+    if (timerActive) {
+      timer = setInterval(() => {
+        setElapsedTime((prev) => prev + 1);
+      }, 1000);
+    }
+
+    return () => {
+      if (timer) clearInterval(timer);
+    };
+  }, [timerActive]);
+
+  const formatTime = (seconds: number) => {
+    const mins = Math.floor(seconds / 60);
+    const secs = seconds % 60;
+    return `${mins}:${secs < 10 ? "0" : ""}${secs}`;
   };
+
+  const handleInputFocus = () => {
+    if (!timerActive) {
+      setTimerActive(true);
+    }
+  };
+
+  const handleFinish = () => {
+    setCompleted(true);
+    setSavedTime(elapsedTime);
+    localStorage.setItem("dyslexieTime", elapsedTime.toString());
+  };
+
+  const handleDifficultyChange = (value: string) => {
+    setDifficulty(value);
+    localStorage.setItem("dyslexieDifficulty", value);
+  };
+
+  if (completed) {
+    return (
+      <CompleteScreen
+        elapsedTime={elapsedTime}
+        savedTime={savedTime}
+        difficulty={difficulty}
+        onDifficultyChange={handleDifficultyChange}
+      />
+    );
+  }
+
   return (
     <div className={styles.container}>
       <div className={styles.header}>
@@ -44,7 +106,7 @@ const Dyslexie = ({
           <span className={styles.timerLabel}>
             <TimerIcon />
           </span>
-          <span className={styles.timerValue}>00:00</span>
+          <span className={styles.timerValue}>{formatTime(elapsedTime)}</span>
         </div>
       </div>
 
@@ -61,6 +123,7 @@ const Dyslexie = ({
               className={styles.input}
               type="text"
               placeholder={formPlaceholder}
+              onFocus={handleInputFocus}
             />
           </div>
 

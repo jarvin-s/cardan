@@ -15,6 +15,13 @@ interface CognitiefProps {
   formMessage: string;
   formSubmit: string;
   formNext: string;
+  placeholders: {
+    to: string;
+    subject: string;
+    message: string;
+  };
+  formErrorMessage: string;
+  textareaErrorMessage: string;
 }
 
 interface Distraction {
@@ -35,6 +42,9 @@ const Cognitief = ({
   formMessage,
   formSubmit,
   formNext,
+  placeholders,
+  formErrorMessage,
+  textareaErrorMessage,
 }: CognitiefProps) => {
   const [elapsedTime, setElapsedTime] = useState(0);
   const [timerActive, setTimerActive] = useState(false);
@@ -53,6 +63,7 @@ const Cognitief = ({
   });
   const distractionIdRef = useRef(0);
   const router = useRouter();
+  const colors = ["#ef3f3f", "#0d19c1", "#09ab2f", "#f59e0b", "#f916b9"];
 
   useEffect(() => {
     const savedCognitiefTime = localStorage.getItem("cognitiefTime");
@@ -148,7 +159,7 @@ const Cognitief = ({
       name: nameInput.trim() === "",
       subject: subjectInput.trim() === "",
       message: messageInput.trim() === "",
-      messageLength: messageInput.trim().length < 50,
+      messageLength: messageInput.trim().length < 40,
     };
 
     setFormErrors(errors);
@@ -189,6 +200,15 @@ const Cognitief = ({
             <div className={styles.emailContainer}>
               <h2 className={styles.emailTitle}>{formTitle}</h2>
               <p className={styles.emailInstructions}>{formSubtitle}</p>
+              <div className={styles.exampleData}>
+                <p>
+                  <span>{formName}:</span> {placeholders.to}
+                  <br />
+                  <span>{formSubject}:</span> {placeholders.subject}
+                  <br />
+                  <span>{formMessage}:</span> {placeholders.message}
+                </p>
+              </div>
 
               <div className={styles.formGroup}>
                 <label htmlFor="naar">{formName}</label>
@@ -207,7 +227,7 @@ const Cognitief = ({
                   required
                 />
                 {formErrors.name && (
-                  <p className={styles.errorMessage}>Naam is verplicht</p>
+                  <p className={styles.errorMessage}>{formErrorMessage}</p>
                 )}
               </div>
 
@@ -228,7 +248,7 @@ const Cognitief = ({
                   required
                 />
                 {formErrors.subject && (
-                  <p className={styles.errorMessage}>Onderwerp is verplicht</p>
+                  <p className={styles.errorMessage}>{formErrorMessage}</p>
                 )}
               </div>
 
@@ -252,14 +272,13 @@ const Cognitief = ({
                   required
                 ></textarea>
                 {formErrors.message && (
-                  <p className={styles.errorMessage}>Bericht is verplicht</p>
+                  <p className={styles.errorMessage}>{formErrorMessage}</p>
                 )}
                 {formErrors.messageLength &&
                   !formErrors.message &&
-                  messageInput.length < 50 && (
+                  messageInput.length < 40 && (
                     <p className={styles.errorMessage}>
-                      Bericht heeft nu {messageInput.length} van de 50
-                      karakters.
+                      {textareaErrorMessage}
                     </p>
                   )}
               </div>
@@ -282,10 +301,9 @@ const Cognitief = ({
                 top: distraction.positionY,
                 left: distraction.positionX,
                 transform: "none",
-                backgroundColor: distraction.isHighlighted
-                  ? "#ef3f3f"
-                  : "#e6f7ea",
-                color: distraction.isHighlighted ? "white" : "black",
+                backgroundColor:
+                  colors[Math.floor(Math.random() * colors.length)],
+                color: "white",
               }}
             >
               <p>{distraction.text}</p>

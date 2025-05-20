@@ -39,7 +39,12 @@ const MotorischPage = () => {
         formPostcode={t("form.postcode")}
         formSubmit={t("form.submit")}
         formNext={t("form.next")}
-        formTimerLabel={t("form.timer-label")}
+        placeholders={{
+          name: t("form.placeholders.name"),
+          lastname: t("form.placeholders.lastname"),
+          address: t("form.placeholders.address"),
+          postcode: t("form.placeholders.postcode"),
+        }}
       />
     </>
   );

@@ -42,7 +42,7 @@
   },
   "auditieve": {
     "title": "Experience Auditory Impairment",
-    "subtext": "This simulation lets you experience what it’s like to hear with an auditory impairment.",
+    "subtext": "This simulation lets you experience what it's like to hear with an auditory impairment.",
     "blocktitle1": "Select your hearing ability",
     "subtext1": "This will adjust the clarity of the announcement",
     "soort1": "Severe hearing impairment",
@@ -87,7 +87,14 @@
       "subject": "Subject",
       "message": "Message",
       "submit": "Submit",
-      "next": "Next"
+      "next": "Next",
+      "placeholders": {
+        "to": "your.email@example.com",
+        "subject": "Meeting",
+        "message": "I'm late for today's lesson."
+      },
+      "errorMessage": "This field is required",
+      "textareaErrorMessage": "Must contain at least 40 characters"
     }
   },
   "motorisch": {
@@ -102,7 +109,13 @@
       "address": "Address",
       "postcode": "ZIP Code",
       "submit": "Submit",
-      "next": "Next"
+      "next": "Next",
+      "placeholders": {
+        "name": "John",
+        "lastname": "Smith",
+        "address": "123 Main Street",
+        "postcode": "SW1A 1AA"
+      }
     }
   },
   "dyslexie": {
@@ -130,7 +143,7 @@
     "title": "Welcome to the Experience Square!",
     "heading": "Today, you step into the shoes of people who face daily obstacles on the internet.",
     "paragraaf": "From visual impairments to motor disabilities. Each of the five stations lets you experience firsthand how important digital accessibility is.",
-    "finalText": "At the end, you’ll get tips on how you can improve your website.",
+    "finalText": "At the end, you'll get tips on how you can improve your website.",
     "button": "Start the Experience Square"
   },
   "footerdeel": {
