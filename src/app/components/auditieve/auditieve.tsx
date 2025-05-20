@@ -1,6 +1,7 @@
 "use client";
 
 import { useRef, useState, useEffect } from "react";
+import { motion } from "framer-motion";
 import styles from "./auditieve.module.css";
 import {
   MaterialSymbolsPlayArrowRounded,
@@ -12,21 +13,34 @@ interface AudioitieveProps {
   subtext: string;
   blocktitle1: string;
   subtext1: string;
-  soort1: string; omschrijving1: string;
-  soort2: string; omschrijving2: string;
-  soort3: string; omschrijving3: string;
-  soort4: string; omschrijving4: string;
+  soort1: string;
+  omschrijving1: string;
+  soort2: string;
+  omschrijving2: string;
+  soort3: string;
+  omschrijving3: string;
+  soort4: string;
+  omschrijving4: string;
   naarluisteren: string;
-  blocktitle2: string; subtext2: string; gehoord: string;
-  blocktitle3: string; subtext3: string;
+  blocktitle2: string;
+  subtext2: string;
+  gehoord: string;
+  blocktitle3: string;
+  subtext3: string;
   antwoord1: string;
   antwoord2: string;
   antwoord3: string;
   antwoord4: string;
   antwoord5: string;
   antwoord6: string;
-  blocktitle4: string; headtext4: string; subtext4: string; opnieuw: string;
-  blocktitle5: string; headtext5: string; subtext5: string; ander: string;
+  blocktitle4: string;
+  headtext4: string;
+  subtext4: string;
+  opnieuw: string;
+  blocktitle5: string;
+  headtext5: string;
+  subtext5: string;
+  ander: string;
   naarcognitief: string;
   nietnormaal1: string;
 }
@@ -67,7 +81,9 @@ const Auditieve = ({
   naarcognitief,
   nietnormaal1,
 }: AudioitieveProps) => {
-  const [step, setStep] = useState<"keuze" | "luisteren" | "vraag" | "feedback">("keuze");
+  const [step, setStep] = useState<
+    "keuze" | "luisteren" | "vraag" | "feedback"
+  >("keuze");
   const [isCorrect, setIsCorrect] = useState<boolean | null>(null);
   const [selectedAudio, setSelectedAudio] = useState<string>("ernstig.mp3"); // default to first audio
   const [hasListenedOnce, setHasListenedOnce] = useState(false);
@@ -119,36 +135,62 @@ const Auditieve = ({
 
       <div className={styles.block}>
         {step === "keuze" && (
-          <>
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 1.25, ease: "backInOut" }}
+          >
             <h2 className={styles.blocktitle}>{blocktitle1}</h2>
             <p className={styles.subtext}>{subtext1}</p>
 
             <div className={styles.keuzemenu}>
-              {[{ soort: soort1, omschrijving: omschrijving1, bestand: "ernstig.mp3" },
-                { soort: soort2, omschrijving: omschrijving2, bestand: "matig.mp3" },
-                { soort: soort3, omschrijving: omschrijving3, bestand: "licht.mp3" },
-                { soort: soort4, omschrijving: omschrijving4, bestand: "normaal.mp3" }]
-                .map((item, index) => {
-                  const isNormaal = item.bestand === "normaal.mp3";
-                  const isDisabled = isNormaal && !hasListenedOnce;
-                  const isSelected = selectedAudio === item.bestand;
+              {[
+                {
+                  soort: soort1,
+                  omschrijving: omschrijving1,
+                  bestand: "ernstig.mp3",
+                },
+                {
+                  soort: soort2,
+                  omschrijving: omschrijving2,
+                  bestand: "matig.mp3",
+                },
+                {
+                  soort: soort3,
+                  omschrijving: omschrijving3,
+                  bestand: "licht.mp3",
+                },
+                {
+                  soort: soort4,
+                  omschrijving: omschrijving4,
+                  bestand: "normaal.mp3",
+                },
+              ].map((item, index) => {
+                const isNormaal = item.bestand === "normaal.mp3";
+                const isDisabled = isNormaal && !hasListenedOnce;
+                const isSelected = selectedAudio === item.bestand;
 
-                  return (
-                    <div
-                      key={index}
-                      className={`${styles.item} ${isSelected ? styles.selected : ""} ${isDisabled ? styles.disabled : ""}`}
-                      onClick={() => {
-                        if (!isDisabled) setSelectedAudio(item.bestand);
-                      }}
-                    >
-                      <div className={styles.tekstblockje}>
-                        <h3 className={styles.soortbeperking}>{item.soort}</h3>
-                        <p className={styles.omschrijving}>{item.omschrijving}</p>
-                        {isDisabled && <span className={styles.locked}>{nietnormaal1}</span>}
-                      </div>
+                return (
+                  <div
+                    key={index}
+                    className={`${styles.item} ${
+                      isSelected ? styles.selected : ""
+                    } ${isDisabled ? styles.disabled : ""}`}
+                    onClick={() => {
+                      if (!isDisabled) setSelectedAudio(item.bestand);
+                    }}
+                  >
+                    <div className={styles.tekstblockje}>
+                      <h3 className={styles.soortbeperking}>{item.soort}</h3>
+                      <p className={styles.omschrijving}>{item.omschrijving}</p>
+                      {isDisabled && (
+                        <span className={styles.locked}>{nietnormaal1}</span>
+                      )}
                     </div>
-                  );
-                })}
+                  </div>
+                );
+              })}
             </div>
 
             <button
@@ -158,11 +200,16 @@ const Auditieve = ({
             >
               {naarluisteren}
             </button>
-          </>
+          </motion.div>
         )}
 
         {step === "luisteren" && (
-          <div>
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 1.25, ease: "backInOut" }}
+          >
             <h1 className={styles.blocktitle}>{blocktitle2}</h1>
             <p className={styles.subtext}>{subtext2}</p>
 
@@ -179,10 +226,7 @@ const Auditieve = ({
               </button>
             </div>
 
-            <audio
-              ref={audioRef}
-              onEnded={() => setIsPlaying(false)}
-            >
+            <audio ref={audioRef} onEnded={() => setIsPlaying(false)}>
               <source src={`/audio/${selectedAudio}`} type="audio/mpeg" />
               Je browser ondersteunt dit audio-element niet.
             </audio>
@@ -197,39 +241,65 @@ const Auditieve = ({
             >
               {gehoord}
             </button>
-          </div>
+          </motion.div>
         )}
 
         {step === "vraag" && (
-          <div>
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 1.25, ease: "backInOut" }}
+          >
             <h1 className={styles.blocktitle}>{blocktitle3}</h1>
             <p className={styles.subtext}>{subtext3}</p>
             <div className={styles.keuzesgrid}>
-              <button onClick={() => handleAnswer("spoor1")}>{antwoord1}</button>
-              <button onClick={() => handleAnswer("spoor2")}>{antwoord2}</button>
-              <button onClick={() => handleAnswer("spoor3")}>{antwoord3}</button>
-              <button onClick={() => handleAnswer("spoor4")}>{antwoord4}</button>
-              <button onClick={() => handleAnswer("spoor5")}>{antwoord5}</button>
-              <button onClick={() => handleAnswer("spoor6")}>{antwoord6}</button>
+              <button onClick={() => handleAnswer("spoor1")}>
+                {antwoord1}
+              </button>
+              <button onClick={() => handleAnswer("spoor2")}>
+                {antwoord2}
+              </button>
+              <button onClick={() => handleAnswer("spoor3")}>
+                {antwoord3}
+              </button>
+              <button onClick={() => handleAnswer("spoor4")}>
+                {antwoord4}
+              </button>
+              <button onClick={() => handleAnswer("spoor5")}>
+                {antwoord5}
+              </button>
+              <button onClick={() => handleAnswer("spoor6")}>
+                {antwoord6}
+              </button>
             </div>
-          </div>
+          </motion.div>
         )}
 
         {step === "feedback" && (
-          <div>
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 1.25, ease: "backInOut" }}
+          >
             {isCorrect ? (
               <>
                 <h1 className={styles.blocktitle}>{blocktitle5}</h1>
                 <h5 className={styles.headtext}>{headtext5}</h5>
                 <p className={styles.subtext}>{subtext5}</p>
                 <div className={styles.buttons}>
-                  <button className={styles.nextButton} onClick={() => setStep("keuze")}>
+                  <button
+                    className={styles.nextButton}
+                    onClick={() => setStep("keuze")}
+                  >
                     {ander}
                   </button>
                   <button
                     className={styles.nextButton}
                     onClick={() =>
-                      (window.location.href = "/ervaringsplein/cognitieve-beperking")
+                      (window.location.href =
+                        "/ervaringsplein/cognitieve-beperking")
                     }
                   >
                     {naarcognitief}
@@ -241,12 +311,15 @@ const Auditieve = ({
                 <h1 className={styles.blocktitle}>{blocktitle4}</h1>
                 <h5 className={styles.headtext}>{headtext4}</h5>
                 <p className={styles.subtext}>{subtext4}</p>
-                <button className={styles.nextButton} onClick={() => setStep("keuze")}>
+                <button
+                  className={styles.nextButton}
+                  onClick={() => setStep("keuze")}
+                >
                   {opnieuw}
                 </button>
               </>
             )}
-          </div>
+          </motion.div>
         )}
       </div>
     </div>

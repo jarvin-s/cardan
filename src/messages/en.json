@@ -17,7 +17,9 @@
       "suppliers": "Suppliers"
     },
     "cta-button": "Become digitally accessible",
-    "new-button": "New",
+    "new-button": "Experience now",
+    "demo-text": "Try our new Experience Square!",
+    "new-label": "New:",
     "features": {
       "wcag": "<strong>WCAG 2.2</strong> audit",
       "report": "Report for <strong>accessibility statement</strong>",
@@ -40,7 +42,7 @@
   },
   "auditieve": {
     "title": "Experience Auditory Impairment",
-    "subtext": "This simulation lets you experience what it’s like to hear with an auditory impairment.",
+    "subtext": "This simulation lets you experience what it's like to hear with an auditory impairment.",
     "blocktitle1": "Select your hearing ability",
     "subtext1": "This will adjust the clarity of the announcement",
     "soort1": "Severe hearing impairment",
@@ -85,7 +87,14 @@
       "subject": "Subject",
       "message": "Message",
       "submit": "Submit",
-      "next": "Next"
+      "next": "Next",
+      "placeholders": {
+        "to": "your.email@example.com",
+        "subject": "Meeting",
+        "message": "I'm late for today's lesson."
+      },
+      "errorMessage": "This field is required",
+      "textareaErrorMessage": "Must contain at least 40 characters"
     }
   },
   "motorisch": {
@@ -95,14 +104,18 @@
       "title": "Enter your data",
       "subtitle": "Fill in (fake) data to complete the payment",
       "timer-label": "Time: ",
-      "cerebral-palsy": "Cerebral Palsy",
-      "multiple-sclerosis": "Multiple Sclerosis",
       "name": "Name",
       "lastname": "Last name",
       "address": "Address",
       "postcode": "ZIP Code",
       "submit": "Submit",
-      "next": "Next"
+      "next": "Next",
+      "placeholders": {
+        "name": "John",
+        "lastname": "Smith",
+        "address": "123 Main Street",
+        "postcode": "SW1A 1AA"
+      }
     }
   },
   "dyslexie": {
@@ -111,10 +124,10 @@
     "form": {
       "title": "Read the text",
       "submit": "Submit",
-      "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore dolore fugit excepturi ducimus sapiente ut mollitia aliquam veritatis culpa eos. Id exercitationem dicta qui reiciendis neque minima dignissimos magni quam? Consequuntur doloribus possimus dolore laborum, et ullam commodi saepe facere, amet quos fuga eaque, culpa ut quasi molestias aut unde tempora repellat? Alias, fugiat veniam perferendis dolor ratione at exercitationem. Temporibus harum esse expedita minus perferendis hic quis recusandae nostrum nobis architecto! Consequuntur repudiandae, nulla, quibusdam debitis aperiam placeat porro iure possimus fugiat quisquam illo rerum nisi saepe incidunt ipsum. Aliquam sequi aspernatur aliquid, eaque adipisci fugit doloremque quis, perspiciatis ut libero dolore ipsam porro maxime odio. Porro eos repellendus omnis sit consequatur alias tempore, dolorum perspiciatis sint voluptatem consequuntur. Beatae labore eum iste quibusdam repellendus officia suscipit, obcaecati itaque. Iure iste minima corrupti sed eligendi ipsam, voluptatem porro, mollitia excepturi ad doloremque aperiam possimus eaque enim tenetur quis cumque!",
+      "text": "Lisa cycled to school every day past the park. One morning, she noticed that her backpack felt lighter. When she arrived at school, she discovered that her notebook was missing. She thought back to the moment when she had briefly gotten off her bike at the bench in the park. Maybe she had left it there? During the break, she decided to go back. Under the bench, she only found a banana and an empty bottle of water...",
       "dyslexie": "Dyslexia",
-      "kleurcontrast": "Color Contrast",
-      "question": "What did the children do in the park?"
+      "question": "Where did Lisa lose her notebook?",
+      "placeholder": "Type your answer here"
     },
     "finish-button": "Finish"
   },
@@ -126,16 +139,11 @@
     "ctaText": "Become digitally accessible now",
     "resultText": "Report on what you can do for each disability"
   },
-  "kleurcontrast": {
-    "title": "Experience what it's like to have Color Contrast",
-    "subtitle": "While reading the text, the text is distorted and difficult to read.",
-    "finish-button": "Finish"
-  },
   "welkom-pagina": {
     "title": "Welcome to the Experience Square!",
     "heading": "Today, you step into the shoes of people who face daily obstacles on the internet.",
     "paragraaf": "From visual impairments to motor disabilities. Each of the five stations lets you experience firsthand how important digital accessibility is.",
-    "finalText": "At the end, you’ll get tips on how you can improve your website.",
+    "finalText": "At the end, you'll get tips on how you can improve your website.",
     "button": "Start the Experience Square"
   },
   "footerdeel": {
@@ -154,16 +162,15 @@
     "telefoon": "<strong>Or call us on +31 (0)88 500 4070</strong>"
   },
   "stationnav": {
-    "title": "Stations:",
-    "naam1": "Visual Impairment",
-    "slug1": "visual-impairment",
+    "naam1": "Colour blindness",
+    "slug1": "color-blindness",
     "naam2": "Auditory Impairment",
     "slug2": "auditory-impairment",
     "naam3": "Cognitive Impairment",
     "slug3": "cognitive-impairment",
     "naam4": "Motor Impairment",
     "slug4": "motor-impairment",
-    "naam5": "Dyslexia & Color Contrast",
+    "naam5": "Dyslexia",
     "slug5": "dyslexia-color-contrast"
   }
 }

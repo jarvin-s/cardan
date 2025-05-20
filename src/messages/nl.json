@@ -16,8 +16,10 @@
       "businesses": "Bedrijven",
       "suppliers": "Leveranciers"
     },
-    "cta-button": "Wordt digitaal toegankelijk",
-    "new-button": "Ervaringsplein",
+    "cta-button": "Wordt nu digitaal toegankelijk",
+    "new-button": "Ervaar nu",
+    "demo-text": "Ervaar ons digitale Ervaringsplein!",
+    "new-label": "Nieuw:",
     "features": {
       "wcag": "<strong>WCAG 2.2</strong> onderzoeken",
       "report": "Rapport voor <strong>toegankelijkheidsverklaring</strong>",
@@ -26,7 +28,7 @@
     }
   },
   "visuele": {
-    "title": "Visuele beperking ervaren ",
+    "title": "Kleurenblindheid ervaren ",
     "paragraaf": "Deze mini-game laat je ervaren hoe het is om visuele beperkingen te hebben.",
     "subtekst": "Hieronder zie je een plattegrond van een bioscoop.",
     "opdracht": "Probeer een stoel te reserveren",
@@ -79,30 +81,41 @@
     "subtitle": "Tijdens het schrijven van de e-mail verschijnen afleidende pop-ups en animaties vergelijkbaar met gedachten bij ADHD.",
     "form": {
       "title": "Email schrijven",
-      "subtitle": "Schrijf een e-mail naar je docent, waarin je meldt dat je te laat gaat komen voor de les van vandaag.",
+      "subtitle": "Schrijf een e-mail naar je collega waarin je meldt dat je te laat bent voor de meeting van vandaag.",
       "timer-label": "Tijd: ",
       "name": "Naar",
       "subject": "Onderwerp",
       "message": "Bericht",
       "submit": "Verzenden",
-      "next": "Volgende"
+      "next": "Volgende",
+      "placeholders": {
+        "to": "jouw.email@voorbeeld.nl",
+        "subject": "Meeting",
+        "message": "Ik ben te laat voor de meeting van vandaag."
+      },
+      "errorMessage": "Dit veld is verplicht",
+      "textareaErrorMessage": "Moet minimaal 40 tekens bevatten"  
     }
   },
   "motorisch": {
     "title": "Ervaar hoe het is om een motorische beperking te hebben",
-    "subtitle": "Tijdens het selecteren van de verschillende invulvakken beweegt je cursor alle kanten op.",
+    "subtitle": "Tijdens het invullen van de onderstaande gegevens, kan het zijn dat je soms andere tekens krijgt.",
     "form": {
       "title": "Voer uw gegevens in",
-      "subtitle": "Vul (fictief) gegevens in om de betaling te voltooien",
+      "subtitle": "Vul de onderstaande gegevens in binnen de gegeven tijd.",
       "timer-label": "Tijd: ",
-      "cerebral-palsy": "Cerebrale Parese",
-      "multiple-sclerosis": "Multiple Sclerosis",
       "name": "Voornaam",
       "lastname": "Achternaam",
       "address": "Adres",
       "postcode": "Postcode",
       "submit": "Verzenden",
-      "next": "Volgende"
+      "next": "Volgende",
+      "placeholders": {
+        "name": "Jan",
+        "lastname": "de Vries",
+        "address": "Hoofdstraat 123",
+        "postcode": "1234 AB"
+      }
     }
   },
   "dyslexie": {
@@ -111,10 +124,11 @@
     "form": {
       "title": "Lees de tekst",
       "submit": "Verzenden",
-      "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore dolore fugit excepturi ducimus sapiente ut mollitia aliquam veritatis culpa eos. Id exercitationem dicta qui reiciendis neque minima dignissimos magni quam? Consequuntur doloribus possimus dolore laborum, et ullam commodi saepe facere, amet quos fuga eaque, culpa ut quasi molestias aut unde tempora repellat? Alias, fugiat veniam perferendis dolor ratione at exercitationem. Temporibus harum esse expedita minus perferendis hic quis recusandae nostrum nobis architecto! Consequuntur repudiandae, nulla, quibusdam debitis aperiam placeat porro iure possimus fugiat quisquam illo rerum nisi saepe incidunt ipsum. Aliquam sequi aspernatur aliquid, eaque adipisci fugit doloremque quis, perspiciatis ut libero dolore ipsam porro maxime odio. Porro eos repellendus omnis sit consequatur alias tempore, dolorum perspiciatis sint voluptatem consequuntur. Beatae labore eum iste quibusdam repellendus officia suscipit, obcaecati itaque. Iure iste minima corrupti sed eligendi ipsam, voluptatem porro, mollitia excepturi ad doloremque aperiam possimus eaque enim tenetur quis cumque!",
+      "text": "Lisa fietste elke dag naar school langs het park. Op een ochtend merkte ze dat haar rugzak lichter aanvoelde. Toen ze op school aankwam, ontdekte ze dat haar schrift verdwenen was. Ze dacht terug aan het moment dat ze even was afgestapt bij het bankje in het park. Misschien had ze het daar laten liggen? Tijdens de pauze besloot ze terug te gaan. Onder het bankje vond ze alleen een banaan en een leeg flesje water...",
+      "text2": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore dolore fugit excepturi ducimus sapiente ut mollitia aliquam veritatis culpa eos. Id exercitationem dicta qui reiciendis neque minima dignissimos magni quam? Consequuntur doloribus possimus dolore laborum, et ullam commodi saepe facere, amet quos fuga eaque, culpa ut quasi molestias aut unde tempora repellat? Alias, fugiat veniam perferendis dolor ratione at exercitationem. Temporibus harum esse expedita minus perferendis hic quis recusandae nostrum nobis architecto! Consequuntur repudiandae, nulla, quibusdam debitis aperiam placeat porro iure possimus fugiat quisquam illo rerum nisi saepe incidunt ipsum. Aliquam sequi aspernatur aliquid, eaque adipisci fugit doloremque quis, perspiciatis ut libero dolore ipsam porro maxime odio. Porro eos repellendus omnis sit consequatur alias tempore, dolorum perspiciatis sint voluptatem consequuntur. Beatae labore eum iste quibusdam repellendus officia suscipit, obcaecati itaque. Iure iste minima corrupti sed eligendi ipsam, voluptatem porro, mollitia excepturi ad doloremque aperiam possimus eaque enim tenetur quis cumque!",
       "dyslexie": "Dyslexie",
-      "kleurcontrast": "Kleurcontrast",
-      "question": "Wat deden de kinderen in het park?"
+      "question": "Waar is Lisa haar schrift misschien kwijtgeraakt?",
+      "placeholder": "Typ hier je antwoord"
     },
     "finish-button": "Afronden"
   },
@@ -149,16 +163,15 @@
     "telefoon": "Of bel naar <strong>+31 (0)88 500 4070</strong>"
   },
   "stationnav": {
-    "title": "Stations:",
-    "naam1": "Visuele beperking",
-    "slug1": "visuele-beperking",
+    "naam1": "Kleurenblindheid",
+    "slug1": "kleurenblindheid",
     "naam2": "Auditieve beperking",
     "slug2": "auditieve-beperking",
     "naam3": "Cognitieve beperking",
     "slug3": "cognitieve-beperking",
     "naam4": "Motorische beperking",
     "slug4": "motorische-beperking",
-    "naam5": "Dyslexie & kleurcontrast",
-    "slug5": "dyslexie-kleurcontrast"
+    "naam5": "Dyslexie",
+    "slug5": "dyslexie"
   }
 }

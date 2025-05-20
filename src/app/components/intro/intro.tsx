@@ -30,7 +30,7 @@ const Intro = ({
           <button
             className={styles.button}
             onClick={() =>
-              (window.location.href = "/ervaringsplein/visuele-beperking")
+              (window.location.href = "/ervaringsplein/kleurenblindheid")
             }
           >
             {button}
