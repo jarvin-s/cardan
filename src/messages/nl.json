@@ -56,15 +56,15 @@
     "naarluisteren": "Start simulatie",
     "blocktitle2": "Luister naar de omroep",
     "subtext2": "Let goed op de informatie over de wijziging van het spoor",
-    "gehoord": "Ik heb de omroep gehoord",
+    "gehoord": "Volgende",
     "blocktitle3": "Selecteer de juiste tijd",
     "subtext3": "Om hoe laat vertrekt de intercity?",
-    "antwoord1": "8:17",
+    "antwoord1": "08:17",
     "antwoord2": "19.47",
     "antwoord3": "18:27",
     "antwoord4": "15:37",
     "antwoord5": "20:07",
-    "antwoord6": "17:28",
+    "antwoord6": "Geen idee",
     "blocktitle4": "Onjuist",
     "headtext4": "De omroep zei wat anders...",
     "subtext4": "Deze simulatie laat zien hoe gehoorproblemen het begrijpen van belangrijke omroepen in openbare ruimtes kunnen beinvloeden.",
@@ -74,7 +74,8 @@
     "subtext5": "Deze simulatie laat zien hoe belangrijk heldere communicatie is voor mensen met gehoorproblemen in openbare ruimtes.",
     "ander": "Ander gehoorvermogen",
     "naarcognitief": "Volgende",
-    "nietnormaal1": "Probeer eerst een andere simulatie"
+    "nietnormaal1": "Probeer eerst een andere simulatie",
+    "nietopnieuw": "Volgende"
   },
   "cognitief": {
     "title": "Ervaar hoe het is om een ADHD te hebben",

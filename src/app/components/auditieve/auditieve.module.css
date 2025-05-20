@@ -140,7 +140,7 @@
 }
 
 .progressBar {
-  height: 6px;
+  height: 8px;
   width: 100%;
   background-color: #ddd;
   border-radius: 5px;
@@ -151,7 +151,6 @@
 .progress {
   height: 100%;
   background-color: #000;
-  /* background-color: yellow; */
   transition: width 0.3s ease;
   width: 89%;
 }
@@ -188,6 +187,13 @@
 }
 
 .selected {
-  background-color: #d9ece2; /* Of een andere kleur die je wilt */
+  background-color: #d9ece2;
   border: 2px solid #008743;
+}
+
+.buttonsfout {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem; 
 }
