@@ -4,6 +4,7 @@ import React, { useState, useEffect } from "react";
 import styles from "./dyslexie.module.css";
 import { Special_Elite } from "next/font/google";
 import CompleteScreen from "./completed/complete-screen";
+import { motion } from "motion/react";
 
 const specialElite = Special_Elite({
   weight: "400",
@@ -13,29 +14,37 @@ const specialElite = Special_Elite({
 interface DyslexieProps {
   title: string;
   subtitle: string;
+  dyslexie: string;
   formTitle: string;
   formText: string;
   formSubmit: string;
-  formFinishButton: string;
   formQuestion: string;
   formPlaceholder: string;
+  introText: string;
+  startInstruction: string;
 }
+
+const TIME_LIMIT = 60;
 
 const Dyslexie = ({
   title,
   subtitle,
+  dyslexie,
   formTitle,
   formText,
   formSubmit,
-  formFinishButton,
   formQuestion,
   formPlaceholder,
+  introText,
+  startInstruction,
 }: DyslexieProps) => {
   const [completed, setCompleted] = useState(false);
-  const [elapsedTime, setElapsedTime] = useState(0);
+  const [timeRemaining, setTimeRemaining] = useState(TIME_LIMIT);
   const [timerActive, setTimerActive] = useState(false);
   const [savedTime, setSavedTime] = useState<number | null>(null);
   const [difficulty, setDifficulty] = useState("3");
+  const [isStarted, setIsStarted] = useState(false);
+  const [userAnswer, setUserAnswer] = useState("");
 
   useEffect(() => {
     const savedDyslexieTime = localStorage.getItem("dyslexieTime");
@@ -52,16 +61,23 @@ const Dyslexie = ({
   useEffect(() => {
     let timer: NodeJS.Timeout | null = null;
 
-    if (timerActive) {
+    if (timerActive && timeRemaining > 0) {
       timer = setInterval(() => {
-        setElapsedTime((prev) => prev + 1);
+        setTimeRemaining((prev) => {
+          if (prev <= 1) {
+            setTimerActive(false);
+            handleFinish();
+            return 0;
+          }
+          return prev - 1;
+        });
       }, 1000);
     }
 
     return () => {
       if (timer) clearInterval(timer);
     };
-  }, [timerActive]);
+  }, [timerActive, timeRemaining]);
 
   const formatTime = (seconds: number) => {
     const mins = Math.floor(seconds / 60);
@@ -69,16 +85,22 @@ const Dyslexie = ({
     return `${mins}:${secs < 10 ? "0" : ""}${secs}`;
   };
 
-  const handleInputFocus = () => {
-    if (!timerActive) {
-      setTimerActive(true);
-    }
+  const handleStart = () => {
+    setIsStarted(true);
+    setTimerActive(true);
+  };
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    handleFinish();
   };
 
   const handleFinish = () => {
     setCompleted(true);
-    setSavedTime(elapsedTime);
-    localStorage.setItem("dyslexieTime", elapsedTime.toString());
+    setTimerActive(false);
+    const timeSpent = TIME_LIMIT - timeRemaining;
+    setSavedTime(timeSpent);
+    localStorage.setItem("dyslexieTime", timeSpent.toString());
   };
 
   const handleDifficultyChange = (value: string) => {
@@ -89,7 +111,7 @@ const Dyslexie = ({
   if (completed) {
     return (
       <CompleteScreen
-        elapsedTime={elapsedTime}
+        elapsedTime={TIME_LIMIT - timeRemaining}
         savedTime={savedTime}
         difficulty={difficulty}
         onDifficultyChange={handleDifficultyChange}
@@ -102,47 +124,63 @@ const Dyslexie = ({
       <div className={styles.header}>
         <h1 className={styles.title}>{title}</h1>
         <p className={styles.subtitle}>{subtitle}</p>
-        <div className={styles.timerContainer}>
-          <span className={styles.timerLabel}>
-            <TimerIcon />
-          </span>
-          <span className={styles.timerValue}>{formatTime(elapsedTime)}</span>
-        </div>
       </div>
 
-      <div className={styles.formContainer}>
-        <h2 className={styles.formTitle}>{formTitle}</h2>
-
-        <div className={styles.formGroup}>
-          <p className={`${styles.formText} ${specialElite.className}`}>
-            {formText}
-          </p>
-          <div>
-            <h3>{formQuestion}</h3>
-            <input
-              className={styles.input}
-              type="text"
-              placeholder={formPlaceholder}
-              onFocus={handleInputFocus}
-            />
+      {!isStarted ? (
+        <div className={styles.header}>
+          <div className={styles.headerText}>
+            <h1>{dyslexie}</h1>
+            <p>{introText}</p>
+            <h5>{startInstruction}</h5>
           </div>
-
-          <div className={styles.buttonContainer}>
-            <button type="submit" className={styles.submitButton}>
-              {formSubmit}
+          <div className={styles.startContainer}>
+            <button className={styles.startButton} onClick={handleStart}>
+              Start
             </button>
           </div>
         </div>
-      </div>
-      <div className={styles.nextButtonContainer}>
-        <button
-          type="submit"
-          className={styles.submitButton}
-          onClick={handleFinish}
+      ) : (
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          transition={{ duration: 0.5, ease: "backInOut" }}
         >
-          {formFinishButton}
-        </button>
-      </div>
+          <div className={styles.formContainer}>
+            <div className={styles.timerContainer}>
+              <span className={styles.timerLabel}>
+                <TimerIcon />
+              </span>
+              <span className={styles.timerValue}>
+                {formatTime(timeRemaining)}
+              </span>
+            </div>
+            <h2 className={styles.formTitle}>{formTitle}</h2>
+
+            <form className={styles.formGroup} onSubmit={handleSubmit}>
+              <p className={`${styles.formText} ${specialElite.className}`}>
+                {formText}
+              </p>
+              <div>
+                <h3>{formQuestion}</h3>
+                <input
+                  className={styles.input}
+                  type="text"
+                  placeholder={formPlaceholder}
+                  value={userAnswer}
+                  onChange={(e) => setUserAnswer(e.target.value)}
+                />
+              </div>
+
+              <div className={styles.buttonContainer}>
+                <button type="submit" className={styles.submitButton}>
+                  {formSubmit}
+                </button>
+              </div>
+            </form>
+          </div>
+        </motion.div>
+      )}
     </div>
   );
 };

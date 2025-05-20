@@ -3,7 +3,6 @@
   margin: 0 auto;
   padding: 16px;
   position: relative;
-  min-height: 100vh;
 }
 
 .header {
@@ -110,6 +109,48 @@
 .nextButtonContainer {
   display: flex;
   justify-content: flex-end;
+}
+
+.headerText {
+  display: flex;
+  flex-direction: column;
+}
+
+.headerText h1 {
+  margin-bottom: 0.5rem;
+}
+
+.headerText p {
+  margin-top: 0;
+  font-size: 1.2rem;
+  color: #666;
+  margin-bottom: 1.5rem;
+}
+
+.headerText h5 {
+  margin-top: 0;
+  font-size: 1.3rem;
+}
+
+.startContainer {
+  display: flex;
+  align-items: center;
+}
+
+.startButton {
+  padding: 0.75rem 1.5rem;
+  font-size: 1.2rem;
+  background-color: #008743;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  font-weight: bold;
+}
+
+.startButton:hover {
+  background-color: #007339;
 }
 
 @media (max-width: 768px) {
