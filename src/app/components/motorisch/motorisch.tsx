@@ -4,6 +4,7 @@ import React, { useEffect, useState } from "react";
 import styles from "./motorisch.module.css";
 import { useRouter } from "next/navigation";
 import CompleteScreen from "./completed/complete-screen";
+import { useLocale } from "next-intl";
 
 interface MotorischProps {
   title: string;
@@ -17,6 +18,12 @@ interface MotorischProps {
   formSubmit: string;
   formNext: string;
   placeholders: {
+    name: string;
+    lastname: string;
+    address: string;
+    postcode: string;
+  };
+  errors: {
     name: string;
     lastname: string;
     address: string;
@@ -36,8 +43,10 @@ const Motorisch = ({
   formSubmit,
   formNext,
   placeholders,
+  errors,
 }: MotorischProps) => {
   const router = useRouter();
+  const locale = useLocale();
   const [completed, setCompleted] = useState(false);
   const [savedTime, setSavedTime] = useState<number | null>(null);
   const [difficulty, setDifficulty] = useState<string>("3");
@@ -64,13 +73,24 @@ const Motorisch = ({
 
   const validateForm = () => {
     const errors = {
-      name: formData.naam.trim() === "" || formData.naam !== "Jan",
+      name:
+        formData.naam.trim() === "" ||
+        (locale === "nl" ? formData.naam !== "Jan" : formData.naam !== "John"),
       lastname:
-        formData.achternaam.trim() === "" || formData.achternaam !== "de Vries",
+        formData.achternaam.trim() === "" ||
+        (locale === "nl"
+          ? formData.achternaam !== "de Vries"
+          : formData.achternaam !== "Smith"),
       address:
-        formData.adres.trim() === "" || formData.adres !== "Hoofdstraat 123",
+        formData.adres.trim() === "" ||
+        (locale === "nl"
+          ? formData.adres !== "Hoofdstraat 123"
+          : formData.adres !== "123 Main Street"),
       postcode:
-        formData.postcode.trim() === "" || formData.postcode !== "1234 AB",
+        formData.postcode.trim() === "" ||
+        (locale === "nl"
+          ? formData.postcode !== "1234 AB"
+          : formData.postcode !== "SW1A 1AA"),
       exactMatch: false,
     };
 
@@ -123,7 +143,7 @@ const Motorisch = ({
       " ": [" "],
     };
 
-    if (Math.random() < 0.2) {
+    if (Math.random() < 0.01) {
       const lastChar = value.slice(-1).toLowerCase();
       if (nearbyKeys[lastChar]) {
         const possibleErrors = nearbyKeys[lastChar];
@@ -248,9 +268,7 @@ const Motorisch = ({
                   onChange={handleInputChange}
                 />
                 {formErrors.name && (
-                  <p className={styles.errorMessage}>
-                    Vul de volledige naam in
-                  </p>
+                  <p className={styles.errorMessage}>{errors.name}</p>
                 )}
               </div>
 
@@ -269,9 +287,7 @@ const Motorisch = ({
                   onChange={handleInputChange}
                 />
                 {formErrors.lastname && (
-                  <p className={styles.errorMessage}>
-                    Vul de volledige achternaam in
-                  </p>
+                  <p className={styles.errorMessage}>{errors.lastname}</p>
                 )}
               </div>
 
@@ -290,9 +306,7 @@ const Motorisch = ({
                   onChange={handleInputChange}
                 />
                 {formErrors.address && (
-                  <p className={styles.errorMessage}>
-                    Vul het volledige adres in
-                  </p>
+                  <p className={styles.errorMessage}>{errors.address}</p>
                 )}
               </div>
 
@@ -311,9 +325,7 @@ const Motorisch = ({
                   onChange={handleInputChange}
                 />
                 {formErrors.postcode && (
-                  <p className={styles.errorMessage}>
-                    Vul de volledige postcode in
-                  </p>
+                  <p className={styles.errorMessage}>{errors.postcode}</p>
                 )}
               </div>
 

@@ -35,9 +35,11 @@ const DyslexiePage = () => {
         formTitle={t("form.title")}
         formText={t("form.text")}
         formSubmit={t("form.submit")}
-        formFinishButton={t("finish-button")}
         formQuestion={t("form.question")}
         formPlaceholder={t("form.placeholder")}
+        dyslexie={t("form.dyslexie")}
+        introText={t("form.intro-text")}
+        startInstruction={t("form.start-instruction")}
       />
     </>
   );

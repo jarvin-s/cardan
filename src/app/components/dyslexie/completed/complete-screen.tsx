@@ -29,7 +29,7 @@ const CompleteScreen = ({
   };
 
   const handleNextClick = () => {
-    router.push("/ervaringsplein/motorische-beperking");
+    router.push("/ervaringsplein/rapport");
   };
 
   const handleDifficultyChange = (e: React.ChangeEvent<HTMLInputElement>) => {
