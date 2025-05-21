@@ -153,6 +153,12 @@
   background-color: #007339;
 }
 
+.errorMessage {
+  color: red;
+  font-weight: bold;
+  margin-top: 1rem;
+}
+
 @media (max-width: 768px) {
   .container {
     padding: 1.5rem;

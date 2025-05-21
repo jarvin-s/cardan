@@ -33,9 +33,9 @@
     "subtekst": "Below you see a layout of a cinema.",
     "opdracht": "Try to reserve a seat",
     "hoofdnaam": "Color blindness",
-    "combi1": "Blue-Yellow",
-    "combi2": "Red-Green",
-    "combi3": "Total color blindness",
+    "combi1": "Tritanopia (Blue/Yellow)",
+    "combi2": "Deuteranopia (Red/Green)",
+    "combi3": "Achromatopsia (Total color blindness)",
     "volgende": "Next",
     "reserved_message": "This seat is already reserved.",
     "success_message": "Seat successfully reserved."
@@ -59,7 +59,7 @@
     "gehoord": "Next",
     "blocktitle3": "Select the correct time",
     "subtext3": "At what time does the intercity train depart?",
-     "antwoord1": "08:17",
+    "antwoord1": "08:17",
     "antwoord2": "19.47",
     "antwoord3": "18:27",
     "antwoord4": "15:37",
@@ -95,7 +95,7 @@
         "message": "I'm late for today's lesson."
       },
       "errorMessage": "This field is required",
-      "textareaErrorMessage": "Must contain at least 40 characters"
+      "textareaErrorMessage": "Must contain at least 35 characters"
     }
   },
   "motorisch": {

@@ -143,7 +143,7 @@ const Motorisch = ({
       " ": [" "],
     };
 
-    if (Math.random() < 0.01) {
+    if (Math.random() < 0.35) {
       const lastChar = value.slice(-1).toLowerCase();
       if (nearbyKeys[lastChar]) {
         const possibleErrors = nearbyKeys[lastChar];

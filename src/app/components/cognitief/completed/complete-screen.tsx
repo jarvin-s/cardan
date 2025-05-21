@@ -64,14 +64,14 @@ const CompleteScreen = ({
             </span>{" "}
             {locale === "nl" ? "besteed aan deze taak." : "spent on this task."}
           </p>
-          <p className={styles.completedTime}>
+          <p className={styles.completedTimeText}>
             {elapsedTime < 30
               ? locale === "nl"
-                ? "Je hebt deze taak in een kort tijdsbestek afgerond."
-                : "You completed this task in a short time."
+                ? "Goed gedaan — je bleef bij de taak en was sneller klaar dan gemiddeld."
+                : "Well done — you stayed on task and completed this faster than average."
               : locale === "nl"
-              ? "Je hebt deze taak in een redelijk tijdsbestek afgerond."
-              : "You completed this task in a reasonable time."}
+              ? "Je nam je tijd — dat betekent vaak dat je brein achter de schermen hard aan het werk is."
+              : "You took your time — that often means your brain was working hard behind the scenes."}
           </p>
         </div>
         <div className={styles.formGroup}>

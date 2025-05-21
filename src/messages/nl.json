@@ -33,9 +33,9 @@
     "subtekst": "Hieronder zie je een plattegrond van een bioscoop.",
     "opdracht": "Probeer een stoel te reserveren",
     "hoofdnaam": "Kleurenblindheid",
-    "combi1": "Geel-Blauw",
-    "combi2": "Rood-Groen",
-    "combi3": "Totaal kleurenblind",
+    "combi1": "Tritanopia (Blauw/Geel)",
+    "combi2": "Deuteranopia (Rood/Groen)",
+    "combi3": "Achromatopsia (Totaal kleurenblind)",
     "volgende": "Volgende",
     "reserved_message": "Deze stoel is al gereserveerd.",
     "success_message": "Succesvol stoel is gereserveerd"
@@ -95,7 +95,7 @@
         "message": "Ik ben te laat voor de meeting van vandaag."
       },
       "errorMessage": "Dit veld is verplicht",
-      "textareaErrorMessage": "Moet minimaal 40 tekens bevatten"
+      "textareaErrorMessage": "Moet minimaal 35 tekens bevatten"
     }
   },
   "motorisch": {

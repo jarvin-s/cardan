@@ -184,7 +184,7 @@ const Cognitief = ({
       name: nameInput.trim() === "",
       subject: subjectInput.trim() === "",
       message: messageInput.trim() === "",
-      messageLength: messageInput.trim().length < 40,
+      messageLength: messageInput.trim().length < 35,
     };
 
     setFormErrors(errors);

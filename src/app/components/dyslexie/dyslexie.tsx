@@ -5,6 +5,7 @@ import styles from "./dyslexie.module.css";
 import { Special_Elite } from "next/font/google";
 import CompleteScreen from "./completed/complete-screen";
 import { motion } from "motion/react";
+import { useLocale } from "next-intl";
 
 const specialElite = Special_Elite({
   weight: "400",
@@ -25,6 +26,9 @@ interface DyslexieProps {
 }
 
 const TIME_LIMIT = 60;
+const MAX_TRIES = 3;
+const CORRECT_ANSWER = "tjid";
+const CORRECT_ANSWER_EN = "becuase";
 
 const Dyslexie = ({
   title,
@@ -45,6 +49,9 @@ const Dyslexie = ({
   const [difficulty, setDifficulty] = useState("3");
   const [isStarted, setIsStarted] = useState(false);
   const [userAnswer, setUserAnswer] = useState("");
+  const [tries, setTries] = useState(0);
+  const [errorMessage, setErrorMessage] = useState("");
+  const locale = useLocale();
 
   useEffect(() => {
     const savedDyslexieTime = localStorage.getItem("dyslexieTime");
@@ -92,7 +99,28 @@ const Dyslexie = ({
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    handleFinish();
+
+    if (
+      userAnswer.toLowerCase() === CORRECT_ANSWER ||
+      userAnswer.toLowerCase() === CORRECT_ANSWER_EN
+    ) {
+      handleFinish();
+    } else {
+      const nextTries = tries + 1;
+      setTries(nextTries);
+      setErrorMessage(
+        locale === "nl"
+          ? `Onjuist antwoord. Nog ${MAX_TRIES - nextTries} poging(en) over.`
+          : `Incorrect answer. ${MAX_TRIES - nextTries} ${
+              MAX_TRIES - nextTries === 1 ? "try" : "tries"
+            } remaining.`
+      );
+      setUserAnswer("");
+
+      if (nextTries >= MAX_TRIES) {
+        handleFinish();
+      }
+    }
   };
 
   const handleFinish = () => {
@@ -163,6 +191,9 @@ const Dyslexie = ({
               </p>
               <div>
                 <h3>{formQuestion}</h3>
+                {errorMessage && (
+                  <p className={styles.errorMessage}>{errorMessage}</p>
+                )}
                 <input
                   className={styles.input}
                   type="text"
