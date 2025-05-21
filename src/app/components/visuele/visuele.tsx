@@ -122,6 +122,28 @@ const Visuele = ({
               }`}
               onClick={() => setSelectedMode(mode)}
             >
+              <div className={styles.colorSquares}>
+                {mode === combi1 && (
+                  <>
+                    <div
+                      className={`${styles.colorSquare} ${styles.tritanColor1}`}
+                    />
+                    <div
+                      className={`${styles.colorSquare} ${styles.tritanColor2}`}
+                    />
+                  </>
+                )}
+                {mode === combi2 && (
+                  <>
+                    <div
+                      className={`${styles.colorSquare} ${styles.deuteranColor1}`}
+                    />
+                    <div
+                      className={`${styles.colorSquare} ${styles.deuteranColor2}`}
+                    />
+                  </>
+                )}
+              </div>
               {mode}
             </button>
           ))}
