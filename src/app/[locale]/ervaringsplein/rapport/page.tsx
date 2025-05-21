@@ -11,7 +11,6 @@ const RapportPage = () => {
       text2={t("text2")}
       textBold={t("textBold")}
       ctaText={t("ctaText")}
-      resultText={t("resultText")}
     />
   );
 };
