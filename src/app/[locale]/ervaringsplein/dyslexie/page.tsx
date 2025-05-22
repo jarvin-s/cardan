@@ -2,6 +2,7 @@ import React from "react";
 import { useTranslations } from "next-intl";
 import Dyslexie from "@/app/components/dyslexie/dyslexie";
 import Station from "@/app/components/station/station";
+import PageTransition from "@/app/components/transitions/page-transition";
 
 const DyslexiePage = () => {
   const t = useTranslations("dyslexie");
@@ -29,18 +30,20 @@ const DyslexiePage = () => {
         naam5={t2("naam5")}
         slug5={t2("slug5")}
       />
-      <Dyslexie
-        title={t("title")}
-        subtitle={t("subtitle")}
-        formTitle={t("form.title")}
-        formText={t("form.text")}
-        formSubmit={t("form.submit")}
-        formQuestion={t("form.question")}
-        formPlaceholder={t("form.placeholder")}
-        dyslexie={t("form.dyslexie")}
-        introText={t("form.intro-text")}
-        startInstruction={t("form.start-instruction")}
-      />
+      <PageTransition>
+        <Dyslexie
+          title={t("title")}
+          subtitle={t("subtitle")}
+          formTitle={t("form.title")}
+          formText={t("form.text")}
+          formSubmit={t("form.submit")}
+          formQuestion={t("form.question")}
+          formPlaceholder={t("form.placeholder")}
+          dyslexie={t("form.dyslexie")}
+          introText={t("form.intro-text")}
+          startInstruction={t("form.start-instruction")}
+        />
+      </PageTransition>
     </>
   );
 };

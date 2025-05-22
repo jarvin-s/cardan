@@ -2,6 +2,7 @@ import Motorisch from "@/app/components/motorisch/motorisch";
 import React from "react";
 import { useTranslations } from "next-intl";
 import Station from "@/app/components/station/station";
+import PageTransition from "@/app/components/transitions/page-transition";
 
 const MotorischPage = () => {
   const t = useTranslations("motorisch");
@@ -28,30 +29,32 @@ const MotorischPage = () => {
         naam5={t2("naam5")}
         slug5={t2("slug5")}
       />
-      <Motorisch
-        title={t("title")}
-        subtitle={t("subtitle")}
-        formTitle={t("form.title")}
-        formSubtitle={t("form.subtitle")}
-        formName={t("form.name")}
-        formLastname={t("form.lastname")}
-        formAddress={t("form.address")}
-        formPostcode={t("form.postcode")}
-        formSubmit={t("form.submit")}
-        formNext={t("form.next")}
-        placeholders={{
-          name: t("form.placeholders.name"),
-          lastname: t("form.placeholders.lastname"),
-          address: t("form.placeholders.address"),
-          postcode: t("form.placeholders.postcode"),
-        }}
-        errors={{
-          name: t("form.errors.name"),
-          lastname: t("form.errors.lastname"),
-          address: t("form.errors.address"),
-          postcode: t("form.errors.postcode"),
-        }}
-      />
+      <PageTransition>
+        <Motorisch
+          title={t("title")}
+          subtitle={t("subtitle")}
+          formTitle={t("form.title")}
+          formSubtitle={t("form.subtitle")}
+          formName={t("form.name")}
+          formLastname={t("form.lastname")}
+          formAddress={t("form.address")}
+          formPostcode={t("form.postcode")}
+          formSubmit={t("form.submit")}
+          formNext={t("form.next")}
+          placeholders={{
+            name: t("form.placeholders.name"),
+            lastname: t("form.placeholders.lastname"),
+            address: t("form.placeholders.address"),
+            postcode: t("form.placeholders.postcode"),
+          }}
+          errors={{
+            name: t("form.errors.name"),
+            lastname: t("form.errors.lastname"),
+            address: t("form.errors.address"),
+            postcode: t("form.errors.postcode"),
+          }}
+        />
+      </PageTransition>
     </>
   );
 };

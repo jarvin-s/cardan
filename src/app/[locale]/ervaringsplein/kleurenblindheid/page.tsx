@@ -2,6 +2,7 @@ import Visuele from "@/app/components/visuele/visuele";
 import Station from "@/app/components/station/station";
 import React from "react";
 import { useTranslations } from "next-intl";
+import PageTransition from "@/app/components/transitions/page-transition";
 
 const VisuelePage = () => {
   const t = useTranslations("visuele");
@@ -28,19 +29,22 @@ const VisuelePage = () => {
         naam5={t2("naam5")}
         slug5={t2("slug5")}
       />
-      <Visuele
-        title={t("title")}
-        paragraaf={t("paragraaf")}
-        subtekst={t("subtekst")}
-        opdracht={t("opdracht")}
-        hoofdnaam={t("hoofdnaam")}
-        combi1={t("combi1")}
-        combi2={t("combi2")}
-        combi3={t("combi3")}
-        volgende={t("volgende")}
-        reserved_message={t("reserved_message")}
-        success_message={t("success_message")}
-      />
+      <PageTransition>
+        <Visuele
+          title={t("title")}
+          paragraaf={t("paragraaf")}
+          subtekst={t("subtekst")}
+          opdracht={t("opdracht")}
+          hoofdnaam={t("hoofdnaam")}
+          combi1={t("combi1")}
+          combi2={t("combi2")}
+          combi3={t("combi3")}
+          volgende={t("volgende")}
+          reserved_message={t("reserved_message")}
+          success_message={t("success_message")}
+          report={t("report")}
+        />
+      </PageTransition>
     </>
   );
 };

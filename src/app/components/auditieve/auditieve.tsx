@@ -87,7 +87,7 @@ const Auditieve = ({
     "keuze" | "luisteren" | "vraag" | "feedback"
   >("keuze");
   const [isCorrect, setIsCorrect] = useState<boolean | null>(null);
-  const [selectedAudio, setSelectedAudio] = useState<string>("ernstig.mp3"); 
+  const [selectedAudio, setSelectedAudio] = useState<string>("ernstig.mp3");
   const [hasListenedOnce, setHasListenedOnce] = useState(false);
   const [isPlaying, setIsPlaying] = useState(false);
   const [audioHasPlayed, setAudioHasPlayed] = useState(false);
@@ -96,7 +96,7 @@ const Auditieve = ({
 
   useEffect(() => {
     if (step !== "luisteren") return;
-    
+
     const audio = audioRef.current;
     if (!audio) return;
 
@@ -139,12 +139,7 @@ const Auditieve = ({
 
       <div className={styles.block}>
         {step === "keuze" && (
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            transition={{ duration: 1.25, ease: "backInOut" }}
-          >
+          <div>
             <h2 className={styles.blocktitle}>{blocktitle1}</h2>
             <p className={styles.subtext}>{subtext1}</p>
 
@@ -178,8 +173,9 @@ const Auditieve = ({
                 return (
                   <div
                     key={index}
-                    className={`${styles.item} ${isSelected ? styles.selected : ""
-                      } ${isDisabled ? styles.disabled : ""}`}
+                    className={`${styles.item} ${
+                      isSelected ? styles.selected : ""
+                    } ${isDisabled ? styles.disabled : ""}`}
                     onClick={() => {
                       if (!isDisabled) setSelectedAudio(item.bestand);
                     }}
@@ -199,11 +195,11 @@ const Auditieve = ({
             <button
               className={styles.nextButton}
               onClick={() => setStep("luisteren")}
-              disabled={!selectedAudio} 
+              disabled={!selectedAudio}
             >
               {naarluisteren}
             </button>
-          </motion.div>
+          </div>
         )}
 
         {step === "luisteren" && (
@@ -213,17 +209,15 @@ const Auditieve = ({
             exit={{ opacity: 0 }}
             transition={{ duration: 1.25, ease: "backInOut" }}
           >
-
-
-
-
-
             <h1 className={styles.blocktitle}>{blocktitle2}</h1>
             <p className={styles.subtext}>{subtext2}</p>
 
             <div className={styles.audioplayer}>
               <div className={styles.progressBar}>
-                <div className={styles.progress} style={{ width: `${progress}%` }} />
+                <div
+                  className={styles.progress}
+                  style={{ width: `${progress}%` }}
+                />
               </div>
               <button className={styles.playButton} onClick={togglePlay}>
                 {isPlaying ? (
@@ -306,8 +300,8 @@ const Auditieve = ({
                   <button
                     className={styles.nextButton}
                     onClick={() =>
-                    (window.location.href =
-                      "/ervaringsplein/cognitieve-beperking")
+                      (window.location.href =
+                        "/ervaringsplein/cognitieve-beperking")
                     }
                   >
                     {naarcognitief}
@@ -330,14 +324,13 @@ const Auditieve = ({
                   <button
                     className={styles.nextButton}
                     onClick={() =>
-                    (window.location.href =
-                      "/ervaringsplein/cognitieve-beperking")
+                      (window.location.href =
+                        "/ervaringsplein/cognitieve-beperking")
                     }
                   >
                     {nietopnieuw}
                   </button>
                 </div>
-
               </>
             )}
           </motion.div>

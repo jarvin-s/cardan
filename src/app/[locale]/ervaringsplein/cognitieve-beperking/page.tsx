@@ -2,6 +2,7 @@ import Cognitief from "@/app/components/cognitief/cognitief";
 import React from "react";
 import { useTranslations } from "next-intl";
 import Station from "@/app/components/station/station";
+import PageTransition from "@/app/components/transitions/page-transition";
 
 const CognitiefPage = () => {
   const t = useTranslations("cognitief");
@@ -28,24 +29,26 @@ const CognitiefPage = () => {
         naam5={t2("naam5")}
         slug5={t2("slug5")}
       />
-      <Cognitief
-        title={t("title")}
-        subtitle={t("subtitle")}
-        formTitle={t("form.title")}
-        formSubtitle={t("form.subtitle")}
-        formName={t("form.name")}
-        formSubject={t("form.subject")}
-        formMessage={t("form.message")}
-        formSubmit={t("form.submit")}
-        formNext={t("form.next")}
-        placeholders={{
-          to: t("form.placeholders.to"),
-          subject: t("form.placeholders.subject"),
-          message: t("form.placeholders.message"),
-        }}
-        formErrorMessage={t("form.errorMessage")}
-        textareaErrorMessage={t("form.textareaErrorMessage")}
-      />
+      <PageTransition>
+        <Cognitief
+          title={t("title")}
+          subtitle={t("subtitle")}
+          formTitle={t("form.title")}
+          formSubtitle={t("form.subtitle")}
+          formName={t("form.name")}
+          formSubject={t("form.subject")}
+          formMessage={t("form.message")}
+          formSubmit={t("form.submit")}
+          formNext={t("form.next")}
+          placeholders={{
+            to: t("form.placeholders.to"),
+            subject: t("form.placeholders.subject"),
+            message: t("form.placeholders.message"),
+          }}
+          formErrorMessage={t("form.errorMessage")}
+          textareaErrorMessage={t("form.textareaErrorMessage")}
+        />
+      </PageTransition>
     </>
   );
 };

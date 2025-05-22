@@ -5,7 +5,6 @@ import Navbar from "../components/navbar/navbar";
 import { NextIntlClientProvider } from "next-intl";
 import { getLocale, getMessages } from "next-intl/server";
 import Footer from "@/app/components/footer/footer";
-import PageTransition from "@/app/components/transitions/page-transition";
 
 const montserrat = Montserrat({
   weight: ["400", "500", "600", "700"],
@@ -43,7 +42,7 @@ export default async function RootLayout({
       <body className={`${montserrat.className}`}>
         <NextIntlClientProvider messages={messages}>
           <Navbar />
-          <PageTransition>{children}</PageTransition>
+          {children}
           <Footer />
         </NextIntlClientProvider>
       </body>
