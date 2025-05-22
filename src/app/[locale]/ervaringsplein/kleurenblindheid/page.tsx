@@ -42,7 +42,6 @@ const VisuelePage = () => {
           volgende={t("volgende")}
           reserved_message={t("reserved_message")}
           success_message={t("success_message")}
-          report={t("report")}
         />
       </PageTransition>
     </>
