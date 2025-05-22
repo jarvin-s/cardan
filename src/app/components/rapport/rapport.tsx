@@ -3,6 +3,7 @@
 import React, { useEffect, useState } from "react";
 import styles from "./rapport.module.css";
 import Image from "next/image";
+import { useLocale } from "next-intl";
 
 interface RapportProps {
   title: string;
@@ -18,6 +19,7 @@ const Rapport = ({ title, text, text2, textBold, ctaText }: RapportProps) => {
     motorisch: 0,
     dyslexie: 0,
   });
+  const locale = useLocale();
 
   useEffect(() => {
     const cognitiefTime = localStorage.getItem("cognitiefTime");
@@ -32,7 +34,8 @@ const Rapport = ({ title, text, text2, textBold, ctaText }: RapportProps) => {
   }, []);
 
   const formatTime = (seconds: number): string => {
-    if (seconds === 0) return "Niet voltooid";
+    if (seconds === 0)
+      return locale === "nl" ? "Niet voltooid" : "Not completed";
     const minutes = Math.floor(seconds / 60);
     const remainingSeconds = seconds % 60;
     return `${minutes}:${remainingSeconds.toString().padStart(2, "0")}`;
@@ -40,6 +43,14 @@ const Rapport = ({ title, text, text2, textBold, ctaText }: RapportProps) => {
 
   const handleCtaClick = () => {
     window.location.href = "https://www.cardan.com/contact";
+  };
+
+  const translations = {
+    cognitiveTest: locale === "nl" ? "Cognitieve test" : "Cognitive test",
+    motorTest: locale === "nl" ? "Motorische test" : "Motor skills test",
+    dyslexiaTest: locale === "nl" ? "Dyslexie test" : "Dyslexia test",
+    purpleAlt: locale === "nl" ? "Paars achtergrond" : "Purple background",
+    greenAlt: locale === "nl" ? "Groen achtergrond" : "Green background",
   };
 
   return (
@@ -50,14 +61,16 @@ const Rapport = ({ title, text, text2, textBold, ctaText }: RapportProps) => {
           <div className={styles.greyContainer}>
             <div className={styles.results}>
               <p>
-                <BrainIcon /> Cognitieve test:{" "}
+                <BrainIcon /> {translations.cognitiveTest}:{" "}
                 {formatTime(savedTimes.cognitief)}
               </p>
               <p>
-                <HandIcon /> Motorische test: {formatTime(savedTimes.motorisch)}
+                <HandIcon /> {translations.motorTest}:{" "}
+                {formatTime(savedTimes.motorisch)}
               </p>
               <p>
-                <BookIcon /> Dyslexie test: {formatTime(savedTimes.dyslexie)}
+                <BookIcon /> {translations.dyslexiaTest}:{" "}
+                {formatTime(savedTimes.dyslexie)}
               </p>
             </div>
           </div>
@@ -79,7 +92,7 @@ const Rapport = ({ title, text, text2, textBold, ctaText }: RapportProps) => {
         <div className={styles.purpleBackground}>
           <Image
             src="/images/paars-background.png"
-            alt="Paars achtergrond"
+            alt={translations.purpleAlt}
             width={600}
             height={400}
             style={{ width: "100%", height: "auto" }}
@@ -88,7 +101,7 @@ const Rapport = ({ title, text, text2, textBold, ctaText }: RapportProps) => {
         <div className={styles.greenBackground}>
           <Image
             src="/images/groen-background.png"
-            alt="Groen achtergrond"
+            alt={translations.greenAlt}
             width={600}
             height={400}
             style={{ width: "100%", height: "auto" }}
