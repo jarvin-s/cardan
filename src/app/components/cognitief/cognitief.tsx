@@ -249,6 +249,7 @@ const Cognitief = ({
                     setNameInput(e.target.value);
                   }}
                   value={nameInput}
+                  autoComplete="off"
                   required
                 />
                 {formErrors.name && (
@@ -270,6 +271,7 @@ const Cognitief = ({
                     setSubjectInput(e.target.value);
                   }}
                   value={subjectInput}
+                  autoComplete="off"
                   required
                 />
                 {formErrors.subject && (
@@ -294,6 +296,7 @@ const Cognitief = ({
                     setMessageInput(e.target.value);
                   }}
                   value={messageInput}
+                  autoComplete="off"
                   required
                 ></textarea>
                 {formErrors.message && (

@@ -266,6 +266,7 @@ const Motorisch = ({
                   onFocus={handleInputFocus}
                   value={formData.naam}
                   onChange={handleInputChange}
+                  autoComplete="off"
                 />
                 {formErrors.name && (
                   <p className={styles.errorMessage}>{errors.name}</p>
@@ -285,6 +286,7 @@ const Motorisch = ({
                   onFocus={handleInputFocus}
                   value={formData.achternaam}
                   onChange={handleInputChange}
+                  autoComplete="off"
                 />
                 {formErrors.lastname && (
                   <p className={styles.errorMessage}>{errors.lastname}</p>
@@ -304,6 +306,7 @@ const Motorisch = ({
                   onFocus={handleInputFocus}
                   value={formData.adres}
                   onChange={handleInputChange}
+                  autoComplete="off"
                 />
                 {formErrors.address && (
                   <p className={styles.errorMessage}>{errors.address}</p>
@@ -323,6 +326,7 @@ const Motorisch = ({
                   onFocus={handleInputFocus}
                   value={formData.postcode}
                   onChange={handleInputChange}
+                  autoComplete="off"
                 />
                 {formErrors.postcode && (
                   <p className={styles.errorMessage}>{errors.postcode}</p>

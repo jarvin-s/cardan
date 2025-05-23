@@ -106,6 +106,7 @@
 .keuzesgrid button {
   background-color: white;
   border: 1px solid #ddd;
+  color: black;
   padding: 0.75rem;
   font-size: 1rem;
   border-radius: 8px;

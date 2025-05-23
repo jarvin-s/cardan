@@ -27,8 +27,8 @@ interface DyslexieProps {
 
 const TIME_LIMIT = 60;
 const MAX_TRIES = 3;
-const CORRECT_ANSWER = "tjid";
-const CORRECT_ANSWER_EN = "becuase";
+const CORRECT_ANSWER = ["tjid", "tijd"];
+const CORRECT_ANSWER_EN = ["becuase", "because"];
 
 const Dyslexie = ({
   title,
@@ -101,8 +101,8 @@ const Dyslexie = ({
     e.preventDefault();
 
     if (
-      userAnswer.toLowerCase() === CORRECT_ANSWER ||
-      userAnswer.toLowerCase() === CORRECT_ANSWER_EN
+      CORRECT_ANSWER.includes(userAnswer.toLowerCase()) ||
+      CORRECT_ANSWER_EN.includes(userAnswer.toLowerCase())
     ) {
       handleFinish();
     } else {
