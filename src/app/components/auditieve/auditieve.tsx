@@ -148,25 +148,25 @@ const Auditieve = ({
                 {
                   soort: soort1,
                   omschrijving: omschrijving1,
-                  bestand: "ernstig.mp3",
+                  bestand: "audio/ernstig.mp3",
                 },
                 {
                   soort: soort2,
                   omschrijving: omschrijving2,
-                  bestand: "matig.mp3",
+                  bestand: "audio/matig.mp3",
                 },
                 {
                   soort: soort3,
                   omschrijving: omschrijving3,
-                  bestand: "licht.mp3",
+                  bestand: "audio/licht.mp3",
                 },
                 {
                   soort: soort4,
                   omschrijving: omschrijving4,
-                  bestand: "normaal.mp3",
+                  bestand: "audio/normaal.mp3",
                 },
               ].map((item, index) => {
-                const isNormaal = item.bestand === "normaal.mp3";
+                const isNormaal = item.bestand === "audio/normaal.mp3";
                 const isDisabled = isNormaal && !hasListenedOnce;
                 const isSelected = selectedAudio === item.bestand;
 
