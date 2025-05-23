@@ -87,7 +87,7 @@ const Auditieve = ({
     "keuze" | "luisteren" | "vraag" | "feedback"
   >("keuze");
   const [isCorrect, setIsCorrect] = useState<boolean | null>(null);
-  const [selectedAudio, setSelectedAudio] = useState<string>("ernstig.mp3");
+  const [selectedAudio, setSelectedAudio] = useState<string>("ernstig.MP3");
   const [hasListenedOnce, setHasListenedOnce] = useState(false);
   const [isPlaying, setIsPlaying] = useState(false);
   const [audioHasPlayed, setAudioHasPlayed] = useState(false);
@@ -148,25 +148,25 @@ const Auditieve = ({
                 {
                   soort: soort1,
                   omschrijving: omschrijving1,
-                  bestand: "audio/ernstig.mp3",
+                  bestand: "ernstig.MP3",
                 },
                 {
                   soort: soort2,
                   omschrijving: omschrijving2,
-                  bestand: "audio/matig.mp3",
+                  bestand: "matig.MP3",
                 },
                 {
                   soort: soort3,
                   omschrijving: omschrijving3,
-                  bestand: "audio/licht.mp3",
+                  bestand: "licht.MP3",
                 },
                 {
                   soort: soort4,
                   omschrijving: omschrijving4,
-                  bestand: "audio/normaal.mp3",
+                  bestand: "normaal.MP3",
                 },
               ].map((item, index) => {
-                const isNormaal = item.bestand === "audio/normaal.mp3";
+                const isNormaal = item.bestand === "normaal.MP3";
                 const isDisabled = isNormaal && !hasListenedOnce;
                 const isSelected = selectedAudio === item.bestand;
 
