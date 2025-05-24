@@ -83,6 +83,7 @@
   border-radius: 6px;
   border: 1px solid green;
   background-color: #fff;
+  color: black;
   padding: 0.75rem 1rem;
   font-size: 0.625rem;
   font-weight: 700;
@@ -174,7 +175,7 @@
     font-size: 0.875rem;
   }
 
-  .ctaButton:hover {
+  .ctaButton {
     font-size: 0.875rem;
   }
 }
