@@ -62,7 +62,7 @@
   border-radius: 6px;
   background-color: #008743;
   padding: 0.75rem 1rem;
-  font-size: 0.875rem;
+  font-size: 0.625rem;
   font-weight: 700;
   color: white;
   border: none;
@@ -84,7 +84,7 @@
   border: 1px solid green;
   background-color: #fff;
   padding: 0.75rem 1rem;
-  font-size: 0.875rem;
+  font-size: 0.625rem;
   font-weight: 700;
   transition-duration: 100ms;
   font-family: inherit;
@@ -168,5 +168,13 @@
     display: flex;
     flex-direction: row;
     justify-content: center;
+  }
+
+  .newButton {
+    font-size: 0.875rem;
+  }
+
+  .ctaButton:hover {
+    font-size: 0.875rem;
   }
 }
